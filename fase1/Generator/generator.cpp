@@ -15,6 +15,7 @@ std::vector<vertices> dados;
 std::vector<vertices> plano (float lado);
 std::vector<vertices> esfera (float raio, int camadasX, int camadasY);
 std::vector<vertices> cone (float raio, float altura,  int camadasX, int camadasY);
+std::vector<vertices> box (float width, float height, float length, float layers);
 void escreverFicheiro(std::string, std::vector<vertices> dados);
 
 
@@ -252,4 +253,85 @@ std::vector<vertices> cone (float raio, float altura,  int slices, int stacks) {
     }
 
     return resultado;
+}
+
+
+std::vector<vertices> box(float width, float height, float length, float layers) {
+	
+	std::vector<vertices> resultado;
+
+	vertices coordenadas1;
+	vertices coordenadas2;
+	vertices coordenadas3;
+	vertices coordenadas4;
+	vertices coordenadas5;
+	vertices coordenadas6;
+
+	float x_pos, x_shift, y_pos, y_shift, z_pos, z_shift;
+
+	y_pos = height / 2;
+	if (layers == 0) {
+		y_shift = h;
+	}
+	else {
+		y_shift = height / layers;
+	}
+
+	x_pos = width / 2;
+	if (layers == 0) {
+		x_shift = width;
+		layers = 1;
+	}
+	else {
+		x_shift = width / layers;
+	}
+
+	z_pos = length / 4;
+	if (layers == 0) {
+		z_shift = length;
+		layers = 1;
+	}
+	else {
+		z_shift = length / layers;
+	}
+
+
+	for (int i = 0; i < layers; i++) {
+		for (int j = 0; j < layers; j++) {
+
+			//cria a face da frente de XY
+			coordenadas1.x = -x_pos + (j*x_shift);
+			coordenadas1.y = -y_pos + (i*y_shift);
+			coordenadas1.z = length;
+			resultado.push_back(coordenadas1);
+
+			coordenadas2.x = (-x_pos + x_shift) + (j*x_shift);
+			coordenadas2.y = -y_pos + (i*y_shift);
+			coordenadas2.z = length;
+			resultado.push_back(coordenadas2);
+
+			coordenadas3.x = (-x_pos + x_shift) + (j*x_shift);
+			coordenadas3.y = (-y_pos + y_shift) + (i*y_shift);
+			coordenadas3.z = length;
+			resultado.push_back(coordenadas3);
+
+			coordenadas4.x = -x_pos + (j*x_shift);
+			coordenadas4.y = -y_pos + (i*y_shift);
+			coordenadas4.z = length;
+			resultado.push_back(coordenadas4);
+
+			coordenadas5.x = (-x_pos + x_shift) + (j*x_shift);
+			coordenadas5.y = (-y_pos + y_shift) + (i*y_shift);
+			coordenadas5.z = length;
+			resultado.push_back(coordenadas5);
+
+			coordenadas6.x = -x_pos + (j*x_shift);
+			coordenadas6.y = (-y_pos + y_shift) + (i*y_shift);
+			coordenadas6.z = length;
+			resultado.push_back(coordenadas6);				
+		}
+	}
+
+
+	return resultado;
 }
