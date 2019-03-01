@@ -6,25 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/carlos/CLionProjects/fase1/Estrutura/estrutura.h
-
-/home/carlos/CLionProjects/fase1/Generator/generator.cpp
-math.h
--
-stdio.h
--
-string.h
--
-iostream
--
-fstream
--
-GL/glut.h
--
-stdlib.h
--
-../Estrutura/estrutura.h
-/home/carlos/CLionProjects/fase1/Estrutura/estrutura.h
-vector
--
-
