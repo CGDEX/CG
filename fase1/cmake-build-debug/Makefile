@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/carlos/CLionProjects/fase1/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named engine
+
+# Build rule for target.
+engine: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 engine
+.PHONY : engine
+
+# fast build rule for target.
+engine/fast:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
+.PHONY : engine/fast
+
+#=============================================================================
 # Target rules for targets named generator
 
 # Build rule for target.
@@ -122,33 +135,6 @@ generator: cmake_check_build_system
 generator/fast:
 	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
-
-Estrutura/estrutura.o: Estrutura/estrutura.cpp.o
-
-.PHONY : Estrutura/estrutura.o
-
-# target to build an object file
-Estrutura/estrutura.cpp.o:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/estrutura.cpp.o
-.PHONY : Estrutura/estrutura.cpp.o
-
-Estrutura/estrutura.i: Estrutura/estrutura.cpp.i
-
-.PHONY : Estrutura/estrutura.i
-
-# target to preprocess a source file
-Estrutura/estrutura.cpp.i:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/estrutura.cpp.i
-.PHONY : Estrutura/estrutura.cpp.i
-
-Estrutura/estrutura.s: Estrutura/estrutura.cpp.s
-
-.PHONY : Estrutura/estrutura.s
-
-# target to generate assembly for a file
-Estrutura/estrutura.cpp.s:
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/estrutura.cpp.s
-.PHONY : Estrutura/estrutura.cpp.s
 
 Generator/generator.o: Generator/generator.cpp.o
 
@@ -177,21 +163,79 @@ Generator/generator.cpp.s:
 	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Generator/generator.cpp.s
 .PHONY : Generator/generator.cpp.s
 
+engine/engine.o: engine/engine.cpp.o
+
+.PHONY : engine/engine.o
+
+# target to build an object file
+engine/engine.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/engine.cpp.o
+.PHONY : engine/engine.cpp.o
+
+engine/engine.i: engine/engine.cpp.i
+
+.PHONY : engine/engine.i
+
+# target to preprocess a source file
+engine/engine.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/engine.cpp.i
+.PHONY : engine/engine.cpp.i
+
+engine/engine.s: engine/engine.cpp.s
+
+.PHONY : engine/engine.s
+
+# target to generate assembly for a file
+engine/engine.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/engine.cpp.s
+.PHONY : engine/engine.cpp.s
+
+engine/tinyxml2.o: engine/tinyxml2.cpp.o
+
+.PHONY : engine/tinyxml2.o
+
+# target to build an object file
+engine/tinyxml2.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tinyxml2.cpp.o
+.PHONY : engine/tinyxml2.cpp.o
+
+engine/tinyxml2.i: engine/tinyxml2.cpp.i
+
+.PHONY : engine/tinyxml2.i
+
+# target to preprocess a source file
+engine/tinyxml2.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tinyxml2.cpp.i
+.PHONY : engine/tinyxml2.cpp.i
+
+engine/tinyxml2.s: engine/tinyxml2.cpp.s
+
+.PHONY : engine/tinyxml2.s
+
+# target to generate assembly for a file
+engine/tinyxml2.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tinyxml2.cpp.s
+.PHONY : engine/tinyxml2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... edit_cache"
+	@echo "... engine"
 	@echo "... rebuild_cache"
 	@echo "... generator"
-	@echo "... edit_cache"
-	@echo "... Estrutura/estrutura.o"
-	@echo "... Estrutura/estrutura.i"
-	@echo "... Estrutura/estrutura.s"
 	@echo "... Generator/generator.o"
 	@echo "... Generator/generator.i"
 	@echo "... Generator/generator.s"
+	@echo "... engine/engine.o"
+	@echo "... engine/engine.i"
+	@echo "... engine/engine.s"
+	@echo "... engine/tinyxml2.o"
+	@echo "... engine/tinyxml2.i"
+	@echo "... engine/tinyxml2.s"
 .PHONY : help
 
 
