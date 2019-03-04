@@ -203,7 +203,7 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
     glutInitWindowPosition(100,100);
     glutInitWindowSize(800,800);
-    glutCreateWindow("Homer Simpson's engine");
+    glutCreateWindow("1Fase@CG");
 
     if(argc < 2){
         std::cout << "Doh! Deu erro! :(" << std::endl;
