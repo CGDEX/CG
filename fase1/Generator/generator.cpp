@@ -136,9 +136,7 @@ std::vector<vertices> cone (float raio, float altura,  int slices, int stacks) {
             coordenadas3.z = novo_raio*cos(a);
             resultado.push_back(coordenadas3);
 
-            coordenadas4.x = raio*sin(a+desl1);
-            coordenadas4.y = alt;
-            coordenadas4.z = raio*cos(a+desl1);
+            coordenadas4 = coordenadas2;
             resultado.push_back(coordenadas4);
 
             coordenadas5.x = novo_raio*sin(a+desl1);
@@ -146,9 +144,7 @@ std::vector<vertices> cone (float raio, float altura,  int slices, int stacks) {
             coordenadas5.z = novo_raio*cos(a+desl1);
             resultado.push_back(coordenadas5);
 
-            coordenadas6.x = novo_raio*sin(a);
-            coordenadas6.y = alt+desl2;
-            coordenadas6.z = novo_raio*cos(a);
+            coordenadas6 = coordenadas3;
             resultado.push_back(coordenadas6);
         }
         raio -= desl_r;
@@ -352,7 +348,7 @@ std::vector<vertices> cria_plano_esquerda_direita(float largura, float altura, f
 
 std::vector<vertices> box(float largura, float altura, float comprimento, int camadas) {
     // Face da frente
-    std::vector<vertices> resultado = cria_plano_frente_tras(largura,altura,(comprimento/2),camadas);
+    std::vector<vertices> resultado1 = cria_plano_frente_tras(largura,altura,(comprimento/2),camadas);
 
     //face de trás
     std::vector<vertices> resultado2 = cria_plano_frente_tras(largura,altura,(-comprimento/2),camadas);
@@ -368,5 +364,19 @@ std::vector<vertices> box(float largura, float altura, float comprimento, int ca
     //Face de direita
     std::vector<vertices> resultado5 = cria_plano_esquerda_direita((largura/2),altura,comprimento,camadas);
 
-    return resultado5;
+    //Face da esquerda
+    std::vector<vertices> resultado6 = cria_plano_esquerda_direita((-largura/2),altura,comprimento,camadas);
+    std::reverse(resultado6.begin(),resultado6.end());
+
+
+    std::vector<vertices> resultadoFinal (resultado1.size()+resultado2.size()+resultado3.size()+resultado4.size()+resultado5.size()+resultado6.size());
+    resultadoFinal.insert(resultadoFinal.end(),resultado1.begin(),resultado1.end());
+    resultadoFinal.insert(resultadoFinal.end(),resultado2.begin(),resultado2.end());
+    resultadoFinal.insert(resultadoFinal.end(),resultado3.begin(),resultado3.end());
+    resultadoFinal.insert(resultadoFinal.end(),resultado4.begin(),resultado4.end());
+    resultadoFinal.insert(resultadoFinal.end(),resultado5.begin(),resultado5.end());
+    resultadoFinal.insert(resultadoFinal.end(),resultado6.begin(),resultado6.end());
+
+
+    return resultadoFinal;
 }
