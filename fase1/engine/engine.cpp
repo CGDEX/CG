@@ -114,7 +114,7 @@ void lerFicheiro(std::string caminho) {
     std::string linha;
 
     if(ficheiro.fail()) {
-        std::cout << "Doh, não consegui encontrar o ficheiro 3D!"<< std::endl;
+        std::cout << "Error 404! File Not Found!!!"<< std::endl;
     }
     else {
         while(getline(ficheiro,linha)) {
@@ -148,7 +148,7 @@ void lerXML(std::string caminho) {
         }
     }
     else {
-        std::cout << "Doh, não encontrei o ficheiro :(" << std::endl;
+        std::cout << "Error 404! File Not Found!!!" << std::endl;
     }
 }
 
@@ -206,7 +206,7 @@ int main(int argc, char** argv) {
     glutCreateWindow("1Fase@CG");
 
     if(argc < 2){
-        std::cout << "Doh! Deu erro! :(" << std::endl;
+        std::cout << "Erro!!" << std::endl;
         return 0;
     }
 
