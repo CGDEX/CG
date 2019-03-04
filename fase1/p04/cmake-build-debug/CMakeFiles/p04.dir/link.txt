@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/p04.dir/main.cpp.o  -o p04 

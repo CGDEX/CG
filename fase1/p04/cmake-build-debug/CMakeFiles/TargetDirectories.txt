@@ -1,3 +1,0 @@
-/home/carlos/CLionProjects/fase1/p04/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/carlos/CLionProjects/fase1/p04/cmake-build-debug/CMakeFiles/p04.dir
-/home/carlos/CLionProjects/fase1/p04/cmake-build-debug/CMakeFiles/edit_cache.dir
