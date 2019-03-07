@@ -42,7 +42,7 @@ int main(int argc, char** argv) {
                            dados = box (atof(argv[2]),atof(argv[3]),atof(argv[4]),atof(argv[5]));
                            escreverFicheiro("../Files3D/box.3d",dados);
                            std::cout << "Ficheiro box.3d escrito com sucesso"<< std::endl;
-                        } else if (!(strcmp(argv[1],"help"))){
+                        } else if (!(strcmp(argv[1],"-help"))){
                                 imprimeMenuHelp();
                             }
                             else {
@@ -54,12 +54,38 @@ int main(int argc, char** argv) {
 
 
 void imprimeMenuHelp() {
-    std::cout << "CG-BOT is here to help you!" << std::endl;
-    std::cout << "Figuras possiveis: sphere, cone, box, plane." << std::endl;
-    std::cout << "Como gerar box: ./generator box largura altura comprimento camadas (Atenção, se não quiser camadas utilize 0)" << std::endl;
-    std::cout << "Como gerar sphere: ./generator sphere raio slices stacks" << std::endl;
-    std::cout << "Como gerar cone: ./generator cone raio altura slices stacks" << std::endl;
-    std::cout << "Como gerar plane: ./generator plane lado" << std::endl;
+	
+	std::cout << "|-----------------------------------------> FIGURA <---------------------------------------------|" << std::endl;
+	std::cout << "|																  								   |" << std::endl;
+	std::cout << "|						Figuras possíveis: sphere												   |" << std::endl;
+	std::cout << "|								   		   cone													   |" << std::endl;
+	std::cout << "|					    	               box													   |" << std::endl;
+	std::cout << "|						                   plane												   |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                      Como gerar:                                                               |" << std::endl;
+	std::cout << "|							-> box: ./generator box <largura> <altura> <comprimento> <camadas>     |" << std::endl;
+	std::cout << "|								(Atenção, se não quiser camadas utilize 0)                         |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                          -> sphere: ./generator sphere <raio> <slices> <stacks>                |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                          -> cone: ./generator cone <raio> <altura> <slices> <stacks>           |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                          -> plane: ./generator plane <lado>                                    |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|----------------------------------------> Controlos 3D <----------------------------------------|" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                      * TRANSLAÇÃO: w, a, s, d  | W, A, S, D                                    |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                      * ROTAÇÃO: Seta cima, baixo, esquerda, direita                            |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                      * ZOOM: + | -                                                             |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|                      * REPRESENTAÇÃO DO SÓLIDO:                                                |" << std::endl;
+	std::cout << "|                          -> por linhas: l | L                                                  |" << std::endl;
+	std::cout << "|                          -> por pontos: p | P                                                  |" << std::endl;
+	std::cout << "|                          -> preenchido: o | O                                                  |" << std::endl;
+	std::cout << "|                                                                                                |" << std::endl;
+	std::cout << "|---------------------------------------------><-------------------------------------------------|" << std::endl;
 
 }
 
