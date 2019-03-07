@@ -10,12 +10,8 @@ std::vector<vertices> estrutura;
 
 float camX = 10, camY = 5, camZ = 10;
 float translate_x, translate_y, translate_z;
-float rotate_x, rotate_y, rotate_z;
 float eixo_x, eixo_y, eixo_z;
 int modo_desenho = GL_LINE;
-float R=1;
-float G=1;
-float B=1;
 
 
 
@@ -114,7 +110,7 @@ void lerFicheiro(std::string caminho) {
     std::string linha;
 
     if(ficheiro.fail()) {
-        std::cout << "Error 404! File Not Found!!!"<< std::endl;
+        std::cout << "Bip bip! não consegui encontrar o ficheiro 3D!"<< std::endl;
     }
     else {
         while(getline(ficheiro,linha)) {
@@ -148,7 +144,7 @@ void lerXML(std::string caminho) {
         }
     }
     else {
-        std::cout << "Error 404! File Not Found!!!" << std::endl;
+        std::cout << "Bip bip! Erro xml! Não consegui encontrar o ficheiro :(" << std::endl;
     }
 }
 
@@ -184,7 +180,7 @@ void renderScene(void) {
     glEnd();
 
     glColor3f(1,1,1);
-    glPolygonMode(GL_FRONT_AND_BACK,modo_desenho); // Changes how our shapes are represented (drawn). Lines, Points or Filled
+    glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
     glBegin(GL_TRIANGLES);
     for (int i=0;i<estrutura.size();i++) {
         glVertex3f(estrutura[i].x,estrutura[i].y,estrutura[i].z);
@@ -203,14 +199,14 @@ int main(int argc, char** argv) {
     glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
     glutInitWindowPosition(100,100);
     glutInitWindowSize(800,800);
-    glutCreateWindow("1Fase@CG");
+    glutCreateWindow("CG-BOT's engine");
 
     if(argc < 2){
-        std::cout << "Erro!!" << std::endl;
+        std::cout << "Bip bip! Não recebi nenhuma directoria do ficheiro xml! " << std::endl;
         return 0;
     }
 
-    else lerXML(argv[1]); // Read XML File
+    else lerXML(argv[1]);
 
     glutDisplayFunc(renderScene);
     glutReshapeFunc(changeSize);

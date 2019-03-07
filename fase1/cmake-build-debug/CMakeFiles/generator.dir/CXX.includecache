@@ -8,9 +8,27 @@
 
 /home/carlos/CLionProjects/fase1/Estrutura/estrutura.h
 
-/home/carlos/CLionProjects/fase1/Generator/././plano.cpp
+/home/carlos/CLionProjects/fase1/Generator/./box.cpp
 ../Estrutura/estrutura.h
-/home/carlos/CLionProjects/fase1/Generator/./Estrutura/estrutura.h
+/home/carlos/CLionProjects/fase1/Generator/Estrutura/estrutura.h
+algorithm
+-
+vector
+-
+
+/home/carlos/CLionProjects/fase1/Generator/./cone.cpp
+../Estrutura/estrutura.h
+/home/carlos/CLionProjects/fase1/Generator/Estrutura/estrutura.h
+algorithm
+-
+vector
+-
+math.h
+-
+
+/home/carlos/CLionProjects/fase1/Generator/./plano.cpp
+../Estrutura/estrutura.h
+/home/carlos/CLionProjects/fase1/Generator/Estrutura/estrutura.h
 stdio.h
 -
 stdlib.h
@@ -19,8 +37,12 @@ vector
 -
 
 /home/carlos/CLionProjects/fase1/Generator/./sphere.cpp
-./plano.cpp
-/home/carlos/CLionProjects/fase1/Generator/././plano.cpp
+../Estrutura/estrutura.h
+/home/carlos/CLionProjects/fase1/Generator/Estrutura/estrutura.h
+algorithm
+-
+vector
+-
 math.h
 -
 
@@ -37,10 +59,16 @@ GL/glut.h
 -
 stdlib.h
 -
-../Estrutura/estrutura.h
-/home/carlos/CLionProjects/fase1/Estrutura/estrutura.h
-./sphere.cpp
-/home/carlos/CLionProjects/fase1/Generator/./sphere.cpp
 algorithm
 -
+../Estrutura/estrutura.h
+/home/carlos/CLionProjects/fase1/Estrutura/estrutura.h
+./cone.cpp
+/home/carlos/CLionProjects/fase1/Generator/./cone.cpp
+./box.cpp
+/home/carlos/CLionProjects/fase1/Generator/./box.cpp
+./plano.cpp
+/home/carlos/CLionProjects/fase1/Generator/./plano.cpp
+./sphere.cpp
+/home/carlos/CLionProjects/fase1/Generator/./sphere.cpp
 

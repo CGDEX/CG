@@ -1,4 +1,6 @@
-#include "./plano.cpp"
+#include "../Estrutura/estrutura.h"
+#include <algorithm>
+#include <vector>
 #include <math.h>
 
 std::vector<vertices> esfera (float raio, int slices, int stacks) {
