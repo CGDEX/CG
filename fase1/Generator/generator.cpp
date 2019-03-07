@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
                            escreverFicheiro("../Files3D/box.3d",dados);
                            std::cout << "Ficheiro box.3d escrito com sucesso"<< std::endl;
                         } else {
-                           std::cout << "Doh! Erro 404!"<< std::endl;
+                           std::cout << "Error 404!"<< std::endl;
                           }
 }
 
