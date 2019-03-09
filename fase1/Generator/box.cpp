@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <vector>
 
-
+// Função que cria um vector com as coordenadas de vários pontos para criar um plano de frente e outra de trás.
 std::vector<vertices> cria_plano_frente_tras(float largura, float altura, float comprimento, int camadas) {
     std::vector<vertices> resultado;
     vertices coordenadas1;
@@ -64,7 +64,7 @@ std::vector<vertices> cria_plano_frente_tras(float largura, float altura, float 
     return resultado;
 
 }
-
+// Função que cria um vector com as coordenadas de vários pontos para criar um plano de cima e outra de baixo.
 std::vector<vertices> cria_plano_cima_baixo(float largura, float altura, float comprimento, int camadas) {
     std::vector<vertices> resultado;
     vertices coordenadas1;
@@ -128,7 +128,7 @@ std::vector<vertices> cria_plano_cima_baixo(float largura, float altura, float c
 }
 
 
-
+// Função que cria um vector com as coordenadas de vários pontos para criar um plano de esquerda e outra de direita.
 std::vector<vertices> cria_plano_esquerda_direita(float largura, float altura, float comprimento, int camadas) {
     std::vector<vertices> resultado;
     vertices coordenadas1;
@@ -193,7 +193,7 @@ std::vector<vertices> cria_plano_esquerda_direita(float largura, float altura, f
 }
 
 
-
+// Função que cria um vector com as coordenadas de vários pontos para criar uma caixa
 std::vector<vertices> box(float largura, float altura, float comprimento, int camadas) {
     // Face da frente
     std::vector<vertices> resultado1 = cria_plano_frente_tras(largura,altura,(comprimento/2),camadas);

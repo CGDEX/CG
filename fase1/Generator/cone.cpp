@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <vector>
 #include <math.h>
-
+// Função que cria um vector com as coordenadas de vários pontos para criar um cone
 std::vector<vertices> cone (float raio, float altura,  int slices, int stacks) {
 
     std::vector<vertices> resultado;
@@ -23,7 +23,7 @@ std::vector<vertices> cone (float raio, float altura,  int slices, int stacks) {
     float a,novo_raio= 0;
 
 
-    for (a=0;a<2*M_PI;a+=desl1) {
+    for (int i=0;i<slices;i++) {
 
         coordenadas1.x = raio*sin(a);
         coordenadas1.y = (-altura)/2;
@@ -40,6 +40,7 @@ std::vector<vertices> cone (float raio, float altura,  int slices, int stacks) {
         coordenadas3.y = (-altura)/2;
         coordenadas3.z = raio*cos(a+desl1);
         resultado.push_back(coordenadas3);
+        a+=desl1;
     }
 
     for (int i=0;i<stacks;i++) {

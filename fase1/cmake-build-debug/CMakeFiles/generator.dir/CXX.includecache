@@ -16,6 +16,16 @@ algorithm
 vector
 -
 
+/home/carlos/CLionProjects/fase1/Generator/./cilindro.cpp
+../Estrutura/estrutura.h
+/home/carlos/CLionProjects/fase1/Generator/Estrutura/estrutura.h
+algorithm
+-
+vector
+-
+math.h
+-
+
 /home/carlos/CLionProjects/fase1/Generator/./cone.cpp
 ../Estrutura/estrutura.h
 /home/carlos/CLionProjects/fase1/Generator/Estrutura/estrutura.h
@@ -71,4 +81,6 @@ algorithm
 /home/carlos/CLionProjects/fase1/Generator/./plano.cpp
 ./sphere.cpp
 /home/carlos/CLionProjects/fase1/Generator/./sphere.cpp
+./cilindro.cpp
+/home/carlos/CLionProjects/fase1/Generator/./cilindro.cpp
 

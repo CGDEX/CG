@@ -3,6 +3,7 @@
 #include <vector>
 #include <math.h>
 
+// Função que cria um vector com as coordenadas de vários pontos para criar uma esfera
 std::vector<vertices> esfera (float raio, int slices, int stacks) {
 
     // STACKS - CAMADAS HORIZONTAIS

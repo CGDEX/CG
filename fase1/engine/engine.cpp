@@ -103,7 +103,7 @@ void letrasTeclado(unsigned char key, int x, int y){
 
 
 
-
+// Função que recebe um string que é o caminho e vai ler o ficheiro e a medida que vai lendo o ficheiro vai meter na estrutura as coordenadas
 void lerFicheiro(std::string caminho) {
 
     std::ifstream ficheiro(caminho);
@@ -129,6 +129,7 @@ void lerFicheiro(std::string caminho) {
     }
 }
 
+// Função que recebe o caminho de um ficheiro XML e depois vai ler esse mesmo ficheiro utilizando o parser tinyxml2.
 void lerXML(std::string caminho) {
     tinyxml2::XMLDocument doc;
     tinyxml2::XMLElement *elem;
@@ -192,7 +193,7 @@ void renderScene(void) {
 }
 
 
-
+// Função main que vai receber o ficheiro XML e desenhar a figura.
 int main(int argc, char** argv) {
 
     glutInit(&argc, argv);

@@ -2,6 +2,9 @@
 #define GENERATOR_ESTRUTURA_H
 
 
+
+
+// Estrutura de um ponto
 struct vertices {
     float x;
     float y;

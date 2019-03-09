@@ -3,6 +3,7 @@
 
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Estrutura/estrutura.h
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/./box.cpp
+CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/./cilindro.cpp
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/./cone.cpp
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/./plano.cpp
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/./sphere.cpp
