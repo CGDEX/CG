@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 project(fase1)
 
 project(engine)
-set(ENGINE_FILES ./engine/engine.cpp ./engine/tinyxml2.cpp)
+set(ENGINE_FILES ./engine/engine.cpp ./engine/tinyxml2.cpp engine/engine.h Estrutura/vertice.h Estrutura/estrutura.cpp Estrutura/estrutura.h)
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 

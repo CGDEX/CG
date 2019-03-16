@@ -1,4 +1,4 @@
-#include "../Estrutura/estrutura.h"
+#include "../Estrutura/vertice.h"
 #include <algorithm>
 #include <vector>
 #include <math.h>

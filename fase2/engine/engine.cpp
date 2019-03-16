@@ -3,17 +3,15 @@
 #include <fstream>
 #include <iostream>
 #include <GL/glut.h>
-#include "../Estrutura/estrutura.h"
-#include "tinyxml2.h"
-
-std::vector<vertices> estrutura;
+#include "./parser.cpp"
+#include "./engine.h"
 
 float camX = 10, camY = 5, camZ = 10;
 float translate_x, translate_y, translate_z;
 float eixo_x, eixo_y, eixo_z;
 int modo_desenho = GL_LINE;
 
-
+Estrutura* structure = new Estrutura();
 
 
 
@@ -103,51 +101,6 @@ void letrasTeclado(unsigned char key, int x, int y){
 
 
 
-// Função que recebe um string que é o caminho e vai ler o ficheiro e a medida que vai lendo o ficheiro vai meter na estrutura as coordenadas
-void lerFicheiro(std::string caminho) {
-
-    std::ifstream ficheiro(caminho);
-    std::string linha;
-
-    if(ficheiro.fail()) {
-        std::cout << "Bip bip! não consegui encontrar o ficheiro 3D!"<< std::endl;
-    }
-    else {
-        while(getline(ficheiro,linha)) {
-            vertices coordenadas;
-            size_t pos;
-            coordenadas.x = std::stof(linha,&pos);
-
-            linha.erase(0,pos+1);
-            coordenadas.y = std::stof(linha,&pos);
-
-            linha.erase(0,pos+1);
-            coordenadas.z = std::stof(linha,&pos);
-
-            estrutura.push_back(coordenadas);
-        }
-    }
-}
-
-// Função que recebe o caminho de um ficheiro XML e depois vai ler esse mesmo ficheiro utilizando o parser tinyxml2.
-void lerXML(std::string caminho) {
-    tinyxml2::XMLDocument doc;
-    tinyxml2::XMLElement *elem;
-
-    if(!(doc.LoadFile(caminho.c_str()))) {
-
-        elem = doc.FirstChildElement();
-
-        for (elem = elem->FirstChildElement();elem;elem = elem->NextSiblingElement()){
-            std::string caminho3D= "../Files3D/";
-            caminho3D.append(elem->Attribute("file"));
-            lerFicheiro(caminho3D);
-        }
-    }
-    else {
-        std::cout << "Bip bip! Erro xml! Não consegui encontrar o ficheiro :(" << std::endl;
-    }
-}
 
 
 
@@ -181,10 +134,15 @@ void renderScene(void) {
     glEnd();
 
     glColor3f(1,1,1);
+
     glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
     glBegin(GL_TRIANGLES);
-    for (int i=0;i<estrutura.size();i++) {
-        glVertex3f(estrutura[i].x,estrutura[i].y,estrutura[i].z);
+
+    std::vector<vertices*> coordenadas = structure->getCoordenadas();
+
+    for (int i=0;i<coordenadas.size();i++) {
+        glVertex3f(coordenadas[i]->x,coordenadas[i]->y,coordenadas[i]->z);
+
     }
     glEnd();
 
@@ -207,7 +165,7 @@ int main(int argc, char** argv) {
         return 0;
     }
 
-    else lerXML(argv[1]);
+    else lerXML(argv[1],structure);
 
     glutDisplayFunc(renderScene);
     glutReshapeFunc(changeSize);

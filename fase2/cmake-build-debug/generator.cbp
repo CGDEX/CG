@@ -130,10 +130,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/estrutura.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/estrutura.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/vertice.h">
+			<Option target="engine"/>
+		</Unit>
 		<Unit filename="/home/carlos/CLionProjects/fase2/Generator/generator.cpp">
 			<Option target="generator"/>
 		</Unit>
 		<Unit filename="/home/carlos/CLionProjects/fase2/engine/engine.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/carlos/CLionProjects/fase2/engine/engine.h">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/carlos/CLionProjects/fase2/engine/tinyxml2.cpp">

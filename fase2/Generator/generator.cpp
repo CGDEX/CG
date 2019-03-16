@@ -5,7 +5,7 @@
 #include <GL/glut.h>
 #include <stdlib.h>
 #include <algorithm>
-#include "../Estrutura/estrutura.h"
+#include "../Estrutura/vertice.h"
 #include "./cone.cpp"
 #include "./box.cpp"
 #include "./plano.cpp"

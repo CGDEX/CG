@@ -136,6 +136,33 @@ generator/fast:
 	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
+Estrutura/estrutura.o: Estrutura/estrutura.cpp.o
+
+.PHONY : Estrutura/estrutura.o
+
+# target to build an object file
+Estrutura/estrutura.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/estrutura.cpp.o
+.PHONY : Estrutura/estrutura.cpp.o
+
+Estrutura/estrutura.i: Estrutura/estrutura.cpp.i
+
+.PHONY : Estrutura/estrutura.i
+
+# target to preprocess a source file
+Estrutura/estrutura.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/estrutura.cpp.i
+.PHONY : Estrutura/estrutura.cpp.i
+
+Estrutura/estrutura.s: Estrutura/estrutura.cpp.s
+
+.PHONY : Estrutura/estrutura.s
+
+# target to generate assembly for a file
+Estrutura/estrutura.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/estrutura.cpp.s
+.PHONY : Estrutura/estrutura.cpp.s
+
 Generator/generator.o: Generator/generator.cpp.o
 
 .PHONY : Generator/generator.o
@@ -227,6 +254,9 @@ help:
 	@echo "... engine"
 	@echo "... rebuild_cache"
 	@echo "... generator"
+	@echo "... Estrutura/estrutura.o"
+	@echo "... Estrutura/estrutura.i"
+	@echo "... Estrutura/estrutura.s"
 	@echo "... Generator/generator.o"
 	@echo "... Generator/generator.i"
 	@echo "... Generator/generator.s"
