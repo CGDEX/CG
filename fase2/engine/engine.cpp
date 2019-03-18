@@ -4,14 +4,14 @@
 #include <iostream>
 #include <GL/glut.h>
 #include "./parser.cpp"
-#include "./engine.h"
+
 
 float camX = 10, camY = 5, camZ = 10;
 float translate_x, translate_y, translate_z;
 float eixo_x, eixo_y, eixo_z;
 int modo_desenho = GL_LINE;
 
-Estrutura* structure = new Estrutura();
+Structure* structure = new Structure();
 
 
 
@@ -113,35 +113,26 @@ void renderScene(void) {
               0.0f, 1.0f, 0.0f);
 
 
-    glTranslatef(translate_x, translate_y, translate_z);
-    glBegin(GL_LINES);
 
-    // Eixo X
-    glColor3f(1.0,0,0);
-    glVertex3f(0,0,0);
-    glVertex3f(5 + eixo_x,0,0);
+    std::vector<rotations*> roots = structure->getRotacoes();
+    std::vector<scales*> escalas = structure->getEscalas();
+    std::vector<vertices*> coords = structure->getCoordenadas();
+    std::vector<translations*> transl = structure->getTranslacoes();
 
-    // Eixo Y
-    glColor3f(0,1.0,0);
-    glVertex3f(0,0,0);
-    glVertex3f(0,5 + eixo_y,0);
 
-    // Eixo Z
-    glColor3f(0,0,1.0);
-    glVertex3f(0,0,0);
-    glVertex3f(0,0,5 + eixo_z);
 
-    glEnd();
 
     glColor3f(1,1,1);
 
     glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
     glBegin(GL_TRIANGLES);
 
-    std::vector<vertices*> coordenadas = structure->getCoordenadas();
+    glTranslatef(transl[0]->x,transl[0]->y,transl[0]->z);
 
-    for (int i=0;i<coordenadas.size();i++) {
-        glVertex3f(coordenadas[i]->x,coordenadas[i]->y,coordenadas[i]->z);
+    for (int i=0;i<coords.size();i++) {
+
+        glVertex3f(coords[i]->x,coords[i]->y,coords[i]->z);
+
 
     }
     glEnd();

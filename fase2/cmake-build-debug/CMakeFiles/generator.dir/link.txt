@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/generator.dir/Generator/generator.cpp.o  -o generator 
+/usr/bin/c++  -Wall -O3 -g -g   CMakeFiles/generator.dir/Generator/generator.cpp.o  -o generator 

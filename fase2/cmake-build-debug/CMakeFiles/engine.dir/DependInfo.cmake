@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/carlos/CLionProjects/fase2/Estrutura/estrutura.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/estrutura.cpp.o"
+  "/home/carlos/CLionProjects/fase2/Estrutura/structure.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/structure.cpp.o"
   "/home/carlos/CLionProjects/fase2/engine/engine.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/engine/engine.cpp.o"
   "/home/carlos/CLionProjects/fase2/engine/tinyxml2.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/engine/tinyxml2.cpp.o"
   )

@@ -130,13 +130,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/estrutura.cpp">
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/rotation.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/estrutura.h">
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/scale.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/vertice.h">
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/structure.cpp">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/structure.h">
+			<Option target="engine"/>
+		</Unit>
+		<Unit filename="/home/carlos/CLionProjects/fase2/Estrutura/translate.h">
 			<Option target="engine"/>
 		</Unit>
 		<Unit filename="/home/carlos/CLionProjects/fase2/Generator/generator.cpp">

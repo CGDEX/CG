@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/61/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/61/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/carlos/CLionProjects/fase2/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/61/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2018.3.4/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/61/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -136,32 +136,32 @@ generator/fast:
 	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
-Estrutura/estrutura.o: Estrutura/estrutura.cpp.o
+Estrutura/structure.o: Estrutura/structure.cpp.o
 
-.PHONY : Estrutura/estrutura.o
+.PHONY : Estrutura/structure.o
 
 # target to build an object file
-Estrutura/estrutura.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/estrutura.cpp.o
-.PHONY : Estrutura/estrutura.cpp.o
+Estrutura/structure.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/structure.cpp.o
+.PHONY : Estrutura/structure.cpp.o
 
-Estrutura/estrutura.i: Estrutura/estrutura.cpp.i
+Estrutura/structure.i: Estrutura/structure.cpp.i
 
-.PHONY : Estrutura/estrutura.i
+.PHONY : Estrutura/structure.i
 
 # target to preprocess a source file
-Estrutura/estrutura.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/estrutura.cpp.i
-.PHONY : Estrutura/estrutura.cpp.i
+Estrutura/structure.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/structure.cpp.i
+.PHONY : Estrutura/structure.cpp.i
 
-Estrutura/estrutura.s: Estrutura/estrutura.cpp.s
+Estrutura/structure.s: Estrutura/structure.cpp.s
 
-.PHONY : Estrutura/estrutura.s
+.PHONY : Estrutura/structure.s
 
 # target to generate assembly for a file
-Estrutura/estrutura.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/estrutura.cpp.s
-.PHONY : Estrutura/estrutura.cpp.s
+Estrutura/structure.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/structure.cpp.s
+.PHONY : Estrutura/structure.cpp.s
 
 Generator/generator.o: Generator/generator.cpp.o
 
@@ -254,9 +254,9 @@ help:
 	@echo "... engine"
 	@echo "... rebuild_cache"
 	@echo "... generator"
-	@echo "... Estrutura/estrutura.o"
-	@echo "... Estrutura/estrutura.i"
-	@echo "... Estrutura/estrutura.s"
+	@echo "... Estrutura/structure.o"
+	@echo "... Estrutura/structure.i"
+	@echo "... Estrutura/structure.s"
 	@echo "... Generator/generator.o"
 	@echo "... Generator/generator.i"
 	@echo "... Generator/generator.s"
