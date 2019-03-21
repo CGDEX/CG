@@ -7,14 +7,25 @@
 #include "scale.h"
 
 class Structure {
-    std::vector<vertices*> coordenadas;
+
     std::vector<rotations*> rotacoes;
     std::vector<translations*> translacoes;
     std::vector<scales*> escalas;
 
+    // TUDO MAL EM CIMA
+    std::vector<vertices*> coordenadas;
+    translations* translacao;
+    scales* escala;
+    rotations* rotacao;
+
+
+
+
+
 public:
     Structure();
     void insertRotacao(rotations* coords);
+    void insertCoords(std::vector<vertices*> coords);
     void insertScale(scales* escala);
     void insertTranslate(translations* coords);
     void setCoordenadas(std::vector<vertices*> coords);

@@ -12,6 +12,8 @@ float eixo_x, eixo_y, eixo_z;
 int modo_desenho = GL_LINE;
 
 Structure* structure = new Structure();
+std::vector<Structure*> estrutura;
+
 
 
 
@@ -116,7 +118,7 @@ void renderScene(void) {
 
     std::vector<rotations*> roots = structure->getRotacoes();
     std::vector<scales*> escalas = structure->getEscalas();
-    std::vector<vertices*> coords = structure->getCoordenadas();
+    std::vector<vertices*> coords;
     std::vector<translations*> transl = structure->getTranslacoes();
 
 
@@ -127,14 +129,22 @@ void renderScene(void) {
     glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
     glBegin(GL_TRIANGLES);
 
-    glTranslatef(transl[0]->x,transl[0]->y,transl[0]->z);
-
-    for (int i=0;i<coords.size();i++) {
-
-        glVertex3f(coords[i]->x,coords[i]->y,coords[i]->z);
 
 
+
+    for(int j=0;j<estrutura.size();j++) {
+        coords = estrutura[j]->getCoordenadas();
+
+        for (int i=0;i<coords.size();i++) {
+            glVertex3f(coords[i]->x,coords[i]->y,coords[i]->z);
+
+
+        }
     }
+
+
+
+
     glEnd();
 
     glutSwapBuffers();
@@ -156,7 +166,15 @@ int main(int argc, char** argv) {
         return 0;
     }
 
-    else lerXML(argv[1],structure);
+    else estrutura = lerXML(argv[1]);
+
+
+
+    for(int j=0;j<estrutura.size();j++) {
+        std::cout<<j<<std::endl;
+    }
+
+
 
     glutDisplayFunc(renderScene);
     glutReshapeFunc(changeSize);

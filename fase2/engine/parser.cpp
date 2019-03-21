@@ -2,11 +2,27 @@
 #include "tinyxml2.h"
 
 
+
+int achouT = 0;
+translations* translacao = new translations();
+
+int achouS = 0;
+scales* escala = new scales();
+
+int achouR = 0;
+rotations* rotacao = new rotations();
+
+int i=0;
+
+std::vector<Structure*> estrut;
+
+
 // Função que recebe um string que é o caminho e vai ler o ficheiro e a medida que vai lendo o ficheiro vai meter na estrutura as coordenadas
-void lerFicheiro(std::string caminho,Structure* structure) {
-    std::vector<vertices*> resultado;
+std::vector<vertices*> lerFicheiro(std::string caminho) {
+
     std::ifstream ficheiro(caminho);
     std::string linha;
+    std::vector<vertices*> verts;
 
     if(ficheiro.fail()) {
         std::cout << "Bip bip! não consegui encontrar o ficheiro 3D!"<< std::endl;
@@ -24,131 +40,138 @@ void lerFicheiro(std::string caminho,Structure* structure) {
             linha.erase(0,pos+1);
             vertice->z = std::stof(linha,&pos);
 
-            resultado.push_back(vertice);
+            verts.push_back(vertice);
 
         }
-        structure->setCoordenadas(resultado);
     }
+
+    return verts;
 }
 
 
 
-void parserFiguras(tinyxml2::XMLElement* elemento,Structure* structure) {
-
-
-    std::cout<<"JDIOSJADOSIJADIOSJAODIJ"<<std::endl;
+std::vector<vertices*>  parserFiguras(tinyxml2::XMLElement* elemento) {
+    std::cout<<"dasjdosaijdoisa"<<std::endl;
+    std::vector<vertices*> verts;
     for(elemento=elemento->FirstChildElement();elemento;elemento=elemento->NextSiblingElement()) {
         std::cout<<"ciclo for parserFiguras"<<std::endl;
         std::string caminho3D= "../Files3D/";
         caminho3D.append(elemento->Attribute("file"));
         std::cout<<"caminho: "<<caminho3D<<std::endl;
-        lerFicheiro(caminho3D,structure);
+        verts = lerFicheiro(caminho3D);
     }
-
-
+    return verts;
 }
 
-void parserRotation(tinyxml2::XMLElement* elemento,Structure* structure) {
-    std::cout<<"PARSING ROTATION!"<<std::endl;
-    std::cout<<"parserRotation - Elemento nome: " <<elemento->Name() <<std::endl;
+void parserRotation(tinyxml2::XMLElement* elemento,rotations* rotate) {
 
-    rotations* resultado = new rotations();
-
-    elemento->QueryFloatAttribute("angle",&(resultado->angle));
-    elemento->QueryFloatAttribute("axisX",&(resultado->x));
-    elemento->QueryFloatAttribute("axisY",&(resultado->y));
-    elemento->QueryFloatAttribute("axisZ",&(resultado->z));
-
-    std::cout<<resultado->angle<<std::endl;
-
-
-    structure->insertRotacao(resultado);
+    elemento->QueryFloatAttribute("angle",&(rotate->angle));
+    elemento->QueryFloatAttribute("axisX",&(rotate->x));
+    elemento->QueryFloatAttribute("axisY",&(rotate->y));
+    elemento->QueryFloatAttribute("axisZ",&(rotate->z));
 }
 
-void parserTranslate(tinyxml2::XMLElement* elemento,Structure* structure) {
+void parserTranslate(tinyxml2::XMLElement* elemento,translations* transl) {
 
-
-    translations* resultado = new translations();
-
-
-    elemento->QueryFloatAttribute("X",&(resultado->x));
-    elemento->QueryFloatAttribute("Y",&(resultado->y));
-    elemento->QueryFloatAttribute("Z",&(resultado->z));
-    std::cout<< "X: " <<resultado->x << " Y: " << resultado->y << " Z: " << resultado->z <<std::endl;
-    structure->insertTranslate(resultado);
+    elemento->QueryFloatAttribute("X",&(transl->x));
+    elemento->QueryFloatAttribute("Y",&(transl->y));
+    elemento->QueryFloatAttribute("Z",&(transl->z));
 }
 
-void parserScale(tinyxml2::XMLElement* elemento,Structure* structure) {
+void parserScale(tinyxml2::XMLElement* elemento,scales* scale) {
 
 
-    scales* resultado = new scales();
+    elemento->QueryFloatAttribute("X",&(scale->x));
+    elemento->QueryFloatAttribute("Y",&(scale->y));
+    elemento->QueryFloatAttribute("Z",&(scale->z));
 
-    float x=0;
-    float y=0;
-    float z=0;
-
-    elemento->QueryFloatAttribute("X",&x);
-    elemento->QueryFloatAttribute("Y",&y);
-    elemento->QueryFloatAttribute("Z",&z);
-
-    if(x==0) x=1;
-    if(y==0) y=1;
-    if(z==0) z=1;
-
-    structure->insertScale(resultado);
+    if(scale->x==0) scale->x=1;
+    if(scale->y==0) scale->y=1;
+    if(scale->z==0) scale->z=1;
 
 }
 
 
-
-
-
-void parserElementos(tinyxml2::XMLElement* elemento,Structure* structure) {
+std::vector<Structure*> parserElementos(tinyxml2::XMLElement* elemento) {
     tinyxml2::XMLElement* atual = elemento;
 
 
+
     if(!(strcmp(elemento->Name(),"models"))) {
-        std::cout<<"chegou ao if models"<<std::endl;
-        parserFiguras(elemento,structure);
+        std::vector<vertices*> coords;
+        Structure* temp = new Structure();
+
+        coords=parserFiguras(elemento);
+
+        temp->insertCoords(coords);
+
+        if(achouT==1) {
+            temp->insertTranslate(translacao);
+            achouT=0;
+        }
+        if(achouS==1) {
+            temp->insertScale(escala);
+            achouS=0;
+        }
+        if(achouR==1) {
+            temp->insertRotacao(rotacao);
+            achouR=0;
+        }
+
+        estrut.push_back(temp);
+
+
+        i++;
     }
     else if (!(strcmp(elemento->Name(),"group"))){
+
         std::cout<<"chegou ao if group"<<std::endl;
         elemento = elemento->FirstChildElement();
-        parserElementos(elemento,structure);
+        parserElementos(elemento);
     }
     else if (!(strcmp(elemento->Name(),"translate"))) {
         std::cout<<"chegou ao if translate"<<std::endl;
-        parserTranslate(elemento,structure);
+        achouT=1;
+        parserTranslate(elemento,translacao);
     }
     else if(!(strcmp(elemento->Name(),"rotate"))) {
         std::cout<<"chegou ao if rotate"<<std::endl;
-        parserRotation(elemento,structure);
+        parserRotation(elemento,rotacao);
+        achouR=1;
     }
     else if(!(strcmp(elemento->Name(),"scale"))) {
-        std::cout<<"chegou ao if scale"<<std::endl;
+        achouS=1;
+        parserScale(elemento,escala);
     }
-
 
     atual = atual->NextSiblingElement();
     if(atual) {
-        parserElementos(atual,structure);
+        parserElementos(atual);
     }
+
+
+
+    return estrut;
 }
 
 
 // Função que recebe o caminho de um ficheiro XML e depois vai ler esse mesmo ficheiro utilizando o parser tinyxml2.
-void lerXML(std::string caminho, Structure* structure) {
+std::vector<Structure*> lerXML(std::string caminho) {
+    std::vector<Structure*> structure;
     tinyxml2::XMLDocument doc;
     tinyxml2::XMLElement *elem;
     std::cout<<"A LER O XML!"<<std::endl;
 
     if(!(doc.LoadFile(caminho.c_str()))) {
         elem = doc.FirstChildElement("scene")->FirstChildElement();
-        parserElementos(elem,structure);
+        structure = parserElementos(elem);
     }
 
     else {
         std::cout << "Bip bip! Erro xml! Não consegui encontrar o ficheiro :(" << std::endl;
     }
+
+
+    return structure;
 }
 

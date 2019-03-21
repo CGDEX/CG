@@ -6,17 +6,20 @@ Structure::Structure(){
 
 
 void Structure::insertRotacao(rotations* coords) {
-    rotacoes.push_back(coords);
+    rotacao=coords;
 }
 
 void Structure::insertTranslate(translations *coords){
-    translacoes.push_back(coords);
+    translacao=coords;
 }
 
 void Structure::insertScale(scales* coords){
-    escalas.push_back(coords);
+    escala=coords;
 }
 
+void Structure::insertCoords(std::vector<vertices*> coords){
+    coordenadas=coords;
+}
 
 void Structure::setCoordenadas(std::vector<vertices*> coords) {
     coordenadas.insert(coordenadas.end(),coords.begin(),coords.end());
