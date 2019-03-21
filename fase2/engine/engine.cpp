@@ -11,6 +11,37 @@ float translate_x, translate_y, translate_z;
 float eixo_x, eixo_y, eixo_z;
 int modo_desenho = GL_LINE;
 
+int centerX, centerY;
+
+float pos_x = 30;
+float pos_y = 5;
+float pos_z = 10;
+
+float dir_x = 0;
+float dir_y = 0;
+float dir_z = 0;
+
+float h_angle;
+float v_angle;
+float speed = 0.2;
+float rotSpeed = 0.00175;
+float tilt = 0;
+
+bool foward = false;
+bool backward = false;
+bool strafe_left = false;
+bool strafe_right = false;
+bool turn_left = false;
+bool turn_right = false;
+bool roll = false;
+int current_roll;
+
+bool mouseCaptured = true;
+bool warping = false;
+
+bool fps_cam = false;
+int window;
+
 Structure* structure = new Structure();
 std::vector<Structure*> estrutura;
 
@@ -100,9 +131,111 @@ void letrasTeclado(unsigned char key, int x, int y){
     glutPostRedisplay();
 }
 
+/* ************ */
+/* FPS CAM CALC */
+/* ************ */
+
+void move_foward_f() {
+	pos_x += dir_x * speed;
+	pos_y += dir_y * speed;
+	pos_z += dir_z * speed;
+}
+
+void move_back_f() {
+	pos_x -= dir_x * speed;
+	pos_y -= dir_y * speed;
+	pos_z -= dir_z * speed;
+}
+
+void move_left_f() {
+	pos_x += dir_z * speed;
+	pos_z -= dir_x * speed;
+}
+
+void move_right_f() {
+	pos_x -= dir_z * speed;
+	pos_z += dir_x * speed;
+}
+
+/* ************ */
+/* TRD CAM CALC*/
+/* ************ */
+
+void move_foward_t() {
+	float xrot, yrot;
+	yrot = (v_angle / 180.0f * M_PI);
+	xrot = (h_angle / 180.0f * M_PI);
+	pos_x += (sin(yrot))*speed;
+	pos_z -= (cos(yrot))*speed;
+	pos_y -= (sin(xrot))*speed;
+}
+
+void move_back_t() {
+	float xrot, yrot;
+	yrot = (v_angle / 180.0f * M_PI);
+	xrot = (h_angle / 180.0f * M_PI);
+	pos_x -= (sin(yrot))*speed;
+	pos_z += (cos(yrot))*speed;
+	pos_y += (sin(xrot))*speed;
+}
+
+void move_left_t() {
+	float yrot;
+	yrot = (v_angle / 180.0f * M_PI);
+	pos_x -= (cos(yrot)) * speed;
+	pos_z -= (sin(yrot)) * speed;
+}
+
+void move_right_t() {
+	float yrot;
+	yrot = (v_angle / 180.0f * M_PI);
+	pos_x += (cos(yrot)) * speed;
+	pos_z += (sin(yrot)) * speed;
+}
+
+void turnLeft() {
+	v_angle -= 1;
+	if (v_angle < 360) v_angle += 360;
+}
+
+void turnRight() {
+	v_angle += 1;
+	if (v_angle > 360) v_angle -= 360;
+}
+
+void camera() {
+	centerX = glutGet(GLUT_WINDOW_WIDTH) / 2;
+	centerY = glutGet(GLUT_WINDOW_HEIGHT) / 2;
 
 
+	if (fps_cam) {
+		if (foward) move_foward_f();		
+			if (backward) move_back_f();		
+				if (strafe_left) move_left_f();				
+					if (strafe_right) move_right_f();		
+						if (turn_left) turnLeft();		
+							if (turn_right) turnRight();
 
+		gluLookAt(pos_x, pos_y, pos_z,
+			pos_x + dir_x, pos_y + dir_y, pos_z + dir_z,
+			0.0f, 1.0f, 0.0f);
+	}
+
+	else {
+		if (foward) move_foward_t();
+			if (backward) move_back_t();
+				if (strafe_left) move_left_t();
+					if (strafe_right) move_right_t();
+						if (turn_left) turnLeft();
+							if (turn_right) turnRight();
+
+		glTranslatef(0, centerY / 1000 - 0.7, -centerX / 225);
+
+		glRotatef(h_angle, 1, 0, 0);
+		glRotatef(v_angle, 0, 1, 0);
+		glTranslatef(-pos_x, -pos_y, -pos_z);
+	}
+}
 
 
 
@@ -110,11 +243,8 @@ void renderScene(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glLoadIdentity();
-    gluLookAt(camX, camY, camZ,
-              0.0, 0.0, 0.0,
-              0.0f, 1.0f, 0.0f);
 
-
+	camera();
 
     std::vector<rotations*> roots = structure->getRotacoes();
     std::vector<scales*> escalas = structure->getEscalas();
@@ -128,7 +258,6 @@ void renderScene(void) {
 
     glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
     glBegin(GL_TRIANGLES);
-
 
 
 
