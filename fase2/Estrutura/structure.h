@@ -4,35 +4,27 @@
 #include "vertice.h"
 #include "rotation.h"
 #include "translate.h"
+#include "Transformacoes.h"
 #include "scale.h"
 
 class Structure {
 
-    std::vector<rotations*> rotacoes;
-    std::vector<translations*> translacoes;
-    std::vector<scales*> escalas;
-
-    // TUDO MAL EM CIMA
-    std::vector<vertices*> coordenadas;
-    translations* translacao;
-    scales* escala;
-    rotations* rotacao;
-
-
-
+    std::vector<Transformacoes*> transformacoes;
+    std::vector<Structure*> proximo;
+    std::vector<vertices*> coords;
 
 
 public:
     Structure();
-    void insertRotacao(rotations* coords);
-    void insertCoords(std::vector<vertices*> coords);
-    void insertScale(scales* escala);
-    void insertTranslate(translations* coords);
-    void setCoordenadas(std::vector<vertices*> coords);
-    std::vector<vertices*> getCoordenadas();
-    std::vector<rotations*> getRotacoes();
-    std::vector<translations*> getTranslacoes();
-    std::vector<scales*> getEscalas();
+    void insereNext(Structure* next);
+    void insereTranslacao(Transformacoes* transl);
+    void insereRotacao(Transformacoes* rot);
+    void insereEscala(Transformacoes* escala);
+    void insereCoords(std::vector<vertices*> coordenadas);
+    std::vector<Transformacoes*> getTransforms() ;
+    std::vector<Structure*> getNext();
+    std::vector<vertices*> getCoords();
+
 };
 
 

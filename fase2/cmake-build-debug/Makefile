@@ -136,6 +136,33 @@ generator/fast:
 	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
+Estrutura/Transformacoes.o: Estrutura/Transformacoes.cpp.o
+
+.PHONY : Estrutura/Transformacoes.o
+
+# target to build an object file
+Estrutura/Transformacoes.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o
+.PHONY : Estrutura/Transformacoes.cpp.o
+
+Estrutura/Transformacoes.i: Estrutura/Transformacoes.cpp.i
+
+.PHONY : Estrutura/Transformacoes.i
+
+# target to preprocess a source file
+Estrutura/Transformacoes.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.i
+.PHONY : Estrutura/Transformacoes.cpp.i
+
+Estrutura/Transformacoes.s: Estrutura/Transformacoes.cpp.s
+
+.PHONY : Estrutura/Transformacoes.s
+
+# target to generate assembly for a file
+Estrutura/Transformacoes.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.s
+.PHONY : Estrutura/Transformacoes.cpp.s
+
 Estrutura/structure.o: Estrutura/structure.cpp.o
 
 .PHONY : Estrutura/structure.o
@@ -254,6 +281,9 @@ help:
 	@echo "... engine"
 	@echo "... rebuild_cache"
 	@echo "... generator"
+	@echo "... Estrutura/Transformacoes.o"
+	@echo "... Estrutura/Transformacoes.i"
+	@echo "... Estrutura/Transformacoes.s"
 	@echo "... Estrutura/structure.o"
 	@echo "... Estrutura/structure.i"
 	@echo "... Estrutura/structure.s"

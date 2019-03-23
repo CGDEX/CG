@@ -6,6 +6,7 @@ struct rotations {
     float x;
     float y;
     float z;
+    bool boolean;
 };
 
 #endif //GENERATOR_ROTATION_H

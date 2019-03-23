@@ -5,39 +5,35 @@ Structure::Structure(){
 }
 
 
-void Structure::insertRotacao(rotations* coords) {
-    rotacao=coords;
+void Structure::insereNext(Structure* next) {
+    proximo.push_back(next);
 }
 
-void Structure::insertTranslate(translations *coords){
-    translacao=coords;
+void Structure::insereTranslacao(Transformacoes* transl) {
+    transformacoes.push_back(transl);
 }
 
-void Structure::insertScale(scales* coords){
-    escala=coords;
+void Structure::insereRotacao(Transformacoes* rot) {
+    transformacoes.push_back(rot);
 }
 
-void Structure::insertCoords(std::vector<vertices*> coords){
-    coordenadas=coords;
+void Structure::insereEscala(Transformacoes* escala) {
+    transformacoes.push_back(escala);
 }
 
-void Structure::setCoordenadas(std::vector<vertices*> coords) {
-    coordenadas.insert(coordenadas.end(),coords.begin(),coords.end());
+void Structure::insereCoords(std::vector<vertices*> coordenadas) {
+    coords = coordenadas;
+}
+
+std::vector<Transformacoes*> Structure::getTransforms() {
+    return transformacoes;
 }
 
 
-std::vector<vertices*> Structure::getCoordenadas() {
-    return coordenadas;
+std::vector<vertices*> Structure::getCoords() {
+    return coords;
 }
 
-std::vector<rotations*> Structure::getRotacoes() {
-    return rotacoes;
-}
-
-std::vector<scales*> Structure::getEscalas() {
-    return escalas;
-}
-
-std::vector<translations*> Structure::getTranslacoes(){
-    return translacoes;
+std::vector<Structure*> Structure::getNext() {
+    return proximo;
 }

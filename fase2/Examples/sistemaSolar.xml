@@ -1,0 +1,19 @@
+<scene>
+    <!-- SUN  -->
+    <group>
+        <scale X='0.695' Y='0.695' Z='0.695' />
+        <colour R='251' G='119' B='9' />
+        <models>
+            <model file='sphere.3d'/>
+        </models>
+    </group>
+    <group>
+        <translate X='5' />
+        <scale X='0.17625' Y='0.17625' Z='0.17625'/>
+        <colour R='219' G='170' B='0' />
+        <models>
+            <model file='sphere.3d' />
+        </models>
+    </group>
+
+</scene>
