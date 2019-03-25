@@ -23,13 +23,13 @@ std::vector<Vertices*> lerFicheiro(std::string caminho) {
             Vertices* vertice = new Vertices();
 
 
-            vertice->insereX(std::stof(linha,&pos));
+            vertice->insereX1(std::stof(linha,&pos));
 
             linha.erase(0,pos+1);
-            vertice->insereY(std::stof(linha,&pos));
+            vertice->insereY1(std::stof(linha,&pos));
 
             linha.erase(0,pos+1);
-            vertice->insereZ(std::stof(linha,&pos));
+            vertice->insereZ1(std::stof(linha,&pos));
 
             verts.push_back(vertice);
         }

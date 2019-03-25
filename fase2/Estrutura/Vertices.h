@@ -4,20 +4,20 @@
 
 
 class Vertices {
-    float x;
-    float y;
-    float z;
+    float vertice_x;
+    float vertice_y;
+    float vertice_z;
 
 
 public:
     Vertices();
     Vertices(float x, float y, float z);
-    float getX();
-    float getY();
-    float getZ();
-    void insereX(float xx);
-    void insereY(float yy);
-    void insereZ(float zz);
+    float getX1();
+    float getY1();
+    float getZ1();
+    void insereX1(float xx);
+    void insereY1(float yy);
+    void insereZ1(float zz);
 
 };
 

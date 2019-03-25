@@ -1,62 +1,75 @@
-#include "../Estrutura/Vertices.h"
+#include "../Estrutura/estrutura.h"
 #include <algorithm>
 #include <vector>
 #include <math.h>
 
 
 
-std::vector<Vertices*> createTorus(float distancia, float raio, float slices, float stacks) {
-    std::vector<Vertices*> resultado;
+std::vector<vertices> createTorus(float distance, float radius, int slices, int stacks) {
+    std::vector<vertices> result;
 
-    float alpha = 0;
     float theta = 0;
+    float phi = 0;
     float desl1 = (2*M_PI)/slices;
     float desl2 = (2*M_PI)/stacks;
 
 
-    Vertices* coordenadas1 = new Vertices();
-    Vertices* coordenadas2 = new Vertices();
-    Vertices* coordenadas3 = new Vertices();
-    Vertices* coordenadas4 = new Vertices();
-    Vertices* coordenadas5 = new Vertices();
-    Vertices* coordenadas6 = new Vertices();
+
+    vertices coordenadas1;
+    vertices coordenadas2;
+    vertices coordenadas3;
+    vertices coordenadas4;
+    vertices coordenadas5;
+    vertices coordenadas6;
+
 
 
 
     for (int i=0;i< slices; i++) {
-        alpha = i*desl1;
-
         for(int j=0; j<stacks; j++) {
-            theta = j*desl2;
+
+            
+            coordenadas1.x = cos(theta)*(distance + radius * cos(phi));
+            coordenadas1.y= sin(theta)*(distance + radius * cos(phi));
+            coordenadas1.z= radius*sin(phi);
+            result.push_back(coordenadas1);
 
 
-            coordenadas1->insereX((raio+distancia*cos(theta))*cos(alpha));
-            coordenadas1->insereY(distancia*sin(theta));
-            coordenadas1->insereZ((raio+distancia*cos(theta))*sin(alpha));
-            resultado.push_back(coordenadas1);
 
-            coordenadas2->insereX((raio+distancia*cos(theta))*cos(alpha+desl1));
-            coordenadas2->insereY(distancia*sin(theta));
-            coordenadas2->insereZ((raio+distancia*cos(theta))*sin(alpha+desl1));
-            resultado.push_back(coordenadas2);
+            coordenadas2.x = cos(theta + desl1)*(distance + radius * cos(phi));
+            coordenadas2.y = sin(theta + desl1)*(distance + radius * cos(phi));
+            coordenadas2.z = radius*sin(phi);
+            result.push_back(coordenadas2);
 
-            coordenadas3->insereX((raio+distancia*cos(theta+desl2))*cos(alpha+desl1));
-            coordenadas3->insereY(distancia*sin(theta+desl2));
-            coordenadas3->insereZ((raio+distancia*cos(theta+desl2))*sin(alpha+desl1));
-            resultado.push_back(coordenadas3);
 
-            coordenadas4 = coordenadas1;
-            resultado.push_back(coordenadas4);
+            coordenadas3.x = cos(theta + desl1)*(distance + radius * cos(phi + desl2));
+            coordenadas3.y = sin(theta+desl1)*(distance + radius * cos(phi+desl2));
+            coordenadas3.z = radius*sin(phi+desl2);
+            result.push_back(coordenadas3);
 
-            coordenadas5 = coordenadas3;
-            resultado.push_back(coordenadas5);
 
-            coordenadas6->insereX((raio+distancia*cos(theta+desl2))*cos(alpha));
-            coordenadas6->insereY(distancia*sin(theta+desl2));
-            coordenadas6->insereZ((raio+distancia*cos(theta+desl2))*sin(alpha));
-            resultado.push_back(coordenadas6);
+            coordenadas4.x = cos(theta + desl1)*(distance + radius * cos(phi + desl2));
+            coordenadas4.y = sin(theta+desl1)*(distance + radius * cos(phi+desl2));
+            coordenadas4.z = radius*sin(phi+desl2);
+            result.push_back(coordenadas4);
 
+            coordenadas5.x =  cos(theta)*(distance + radius * cos(phi + desl2));
+            coordenadas5.y =  sin(theta)*(distance + radius * cos(phi + desl2));
+            coordenadas5.z =  radius*sin(phi + desl2);
+            result.push_back(coordenadas5);
+
+            coordenadas6.x =  cos(theta)*(distance + radius * cos(phi));
+            coordenadas6.y=   sin(theta)*(distance + radius * cos(phi));
+            coordenadas6.z =  radius*sin(phi);
+            result.push_back(coordenadas6);
+            phi = desl2 * (j + 1);
         }
+        theta = desl1 * (i + 1);
     }
-    return resultado;
+
+
+
+
+
+    return result;
 }

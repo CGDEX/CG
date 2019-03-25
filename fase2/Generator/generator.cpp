@@ -12,11 +12,11 @@
 #include "./cilindro.cpp"
 #include "./torus.cpp"
 #include "../Estrutura/Vertices.h"
-std::vector<Vertices*> dados;
+std::vector<vertices> dados;
 
 
 // FUNÇÕES
-void escreverFicheiro(std::string, std::vector<Vertices*> dados);
+void escreverFicheiro(std::string, std::vector<vertices> dados);
 void imprimeMenuHelp();
 
 int main(int argc, char** argv) {
@@ -109,20 +109,17 @@ void imprimeMenuHelp() {
 
 
 
-
-void escreverFicheiro(std::string path, std::vector<Vertices*> coordenadas) {
+void escreverFicheiro(std::string path, std::vector<vertices> coordenadas) {
 
 
     std::ofstream file(path);
 
-    std::vector<Vertices*>::iterator it;
+    std::vector<vertices>::iterator it;
+    for (it=coordenadas.begin();it!=coordenadas.end();it++) {
 
-    for (int i=0;i<coordenadas.size();i++) {
-
-        file << coordenadas[i]->getX() << "," << coordenadas[i]->getY()<< "," << coordenadas[i]->getZ()<< std::endl;
+        file << it->x << "," << it->y << "," << it->z << std::endl;
     }
 
     file.close();
 }
-
 

@@ -295,14 +295,14 @@ void renderScene(void) {
         glTranslatef(transl->getX(),transl->getY(),transl->getZ());
         glScalef(escala->getXE(),escala->getYE(),escala->getZE());
         glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
-        std::cout<<"Cores" << cor->getR1()<< cor->getG1() << " " << cor->getB1() <<std::endl;
+
         glBegin(GL_TRIANGLES);
 
 
         std::vector<Vertices*> verts = groups[i]->getVertices();
         for(j=0;j<verts.size();j++) {
 
-            glVertex3f(verts[j]->getX(),verts[j]->getY(),verts[j]->getZ());
+            glVertex3f(verts[j]->getX1(),verts[j]->getY1(),verts[j]->getZ1());
         }
 
         glEnd();

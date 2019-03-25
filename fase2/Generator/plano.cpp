@@ -1,50 +1,49 @@
-#include "../Estrutura/Vertices.h"
+#include "../Estrutura/estrutura.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
 
 
+// Função que cria um vector com as coordenadas de vários pontos para criar um plano
+std::vector<vertices> plano (float lado) {
 
-std::vector<Vertices*> plano (float lado) {
-
-    std::vector<Vertices*> resultado;
+    std::vector<vertices> resultado;
 
     float tamanho = lado/2;
-    Vertices* coordenadas = new Vertices();
+    vertices coordenadas;
 
 
     // TRIANGULO 1
-    coordenadas->insereX(-tamanho);
-    coordenadas->insereY(0);
-    coordenadas->insereZ(-tamanho);
+    coordenadas.x = -tamanho;
+    coordenadas.y = 0;
+    coordenadas.z = -tamanho;
     resultado.push_back(coordenadas);
 
-    coordenadas->insereX(-tamanho);
-    coordenadas->insereY(0);
-    coordenadas->insereZ(tamanho);
+    coordenadas.x = -tamanho;
+    coordenadas.y = 0;
+    coordenadas.z = tamanho;
     resultado.push_back(coordenadas);
 
-    coordenadas->insereX(tamanho);
-    coordenadas->insereY(0);
-    coordenadas->insereZ(tamanho);
+    coordenadas.x = tamanho;
+    coordenadas.y = 0;
+    coordenadas.z = tamanho;
     resultado.push_back(coordenadas);
 
 
-
-    //TRIANGULO 2
-    coordenadas->insereX(-tamanho);
-    coordenadas->insereY(0);
-    coordenadas->insereZ(-tamanho);
+    // TRIANGULO 2
+    coordenadas.x = -tamanho;
+    coordenadas.y = 0;
+    coordenadas.z = -tamanho;
     resultado.push_back(coordenadas);
 
-    coordenadas->insereX(tamanho);
-    coordenadas->insereY(0);
-    coordenadas->insereZ(tamanho);
+    coordenadas.x = tamanho;
+    coordenadas.y = 0;
+    coordenadas.z = tamanho;
     resultado.push_back(coordenadas);
 
-    coordenadas->insereX(tamanho);
-    coordenadas->insereY(0);
-    coordenadas->insereZ(-tamanho);
+    coordenadas.x = tamanho;
+    coordenadas.y = 0;
+    coordenadas.z = -tamanho;
     resultado.push_back(coordenadas);
 
 

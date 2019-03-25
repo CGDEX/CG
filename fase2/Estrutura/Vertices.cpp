@@ -10,31 +10,31 @@ Vertices::Vertices() {
 
 }
 Vertices::Vertices(float xx, float yy, float zz){
-    x=xx;
-    x=yy;
-    z=zz;
+    vertice_x=xx;
+    vertice_y=yy;
+    vertice_z=zz;
 }
 
 
-float Vertices::getX() {
-    return x;
+float Vertices::getX1() {
+    return vertice_x;
 }
-float Vertices::getY() {
-    return y;
+float Vertices::getY1() {
+    return vertice_y;
 }
-float Vertices::getZ() {
-    return z;
-}
-
-
-void Vertices::insereX(float xx) {
-    x=xx;
+float Vertices::getZ1() {
+    return vertice_z;
 }
 
-void Vertices::insereY(float yy) {
-    y=yy;
+
+void Vertices::insereX1(float xx) {
+    vertice_x=xx;
 }
 
-void Vertices::insereZ(float zz) {
-    z=zz;
+void Vertices::insereY1(float yy) {
+    vertice_y=yy;
+}
+
+void Vertices::insereZ1(float zz) {
+    vertice_z=zz;
 }
