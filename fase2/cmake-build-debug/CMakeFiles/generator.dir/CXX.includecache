@@ -6,29 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/carlos/CLionProjects/fase2/Estrutura/vertice.h
+/home/carlos/CLionProjects/newFase2/Estrutura/Vertices.h
 
-/home/carlos/CLionProjects/fase2/Generator/./box.cpp
-../Estrutura/vertice.h
-/home/carlos/CLionProjects/fase2/Generator/Estrutura/vertice.h
+/home/carlos/CLionProjects/newFase2/Generator/./box.cpp
+../Estrutura/Vertices.h
+/home/carlos/CLionProjects/newFase2/Generator/Estrutura/Vertices.h
 algorithm
 -
 vector
 -
 
-/home/carlos/CLionProjects/fase2/Generator/./cilindro.cpp
-../Estrutura/vertice.h
-/home/carlos/CLionProjects/fase2/Generator/Estrutura/vertice.h
-algorithm
--
-vector
--
-math.h
--
-
-/home/carlos/CLionProjects/fase2/Generator/./cone.cpp
-../Estrutura/vertice.h
-/home/carlos/CLionProjects/fase2/Generator/Estrutura/vertice.h
+/home/carlos/CLionProjects/newFase2/Generator/./cilindro.cpp
+../Estrutura/Vertices.h
+/home/carlos/CLionProjects/newFase2/Generator/Estrutura/Vertices.h
 algorithm
 -
 vector
@@ -36,9 +26,19 @@ vector
 math.h
 -
 
-/home/carlos/CLionProjects/fase2/Generator/./plano.cpp
-../Estrutura/vertice.h
-/home/carlos/CLionProjects/fase2/Generator/Estrutura/vertice.h
+/home/carlos/CLionProjects/newFase2/Generator/./cone.cpp
+../Estrutura/Vertices.h
+/home/carlos/CLionProjects/newFase2/Generator/Estrutura/Vertices.h
+algorithm
+-
+vector
+-
+math.h
+-
+
+/home/carlos/CLionProjects/newFase2/Generator/./plano.cpp
+../Estrutura/Vertices.h
+/home/carlos/CLionProjects/newFase2/Generator/Estrutura/Vertices.h
 stdio.h
 -
 stdlib.h
@@ -46,9 +46,9 @@ stdlib.h
 vector
 -
 
-/home/carlos/CLionProjects/fase2/Generator/./sphere.cpp
-../Estrutura/vertice.h
-/home/carlos/CLionProjects/fase2/Generator/Estrutura/vertice.h
+/home/carlos/CLionProjects/newFase2/Generator/./sphere.cpp
+../Estrutura/Vertices.h
+/home/carlos/CLionProjects/newFase2/Generator/Estrutura/Vertices.h
 algorithm
 -
 vector
@@ -56,7 +56,17 @@ vector
 math.h
 -
 
-/home/carlos/CLionProjects/fase2/Generator/generator.cpp
+/home/carlos/CLionProjects/newFase2/Generator/./torus.cpp
+../Estrutura/Vertices.h
+/home/carlos/CLionProjects/newFase2/Generator/Estrutura/Vertices.h
+algorithm
+-
+vector
+-
+math.h
+-
+
+/home/carlos/CLionProjects/newFase2/Generator/generator.cpp
 stdio.h
 -
 string.h
@@ -71,16 +81,18 @@ stdlib.h
 -
 algorithm
 -
-../Estrutura/vertice.h
-/home/carlos/CLionProjects/fase2/Estrutura/vertice.h
 ./cone.cpp
-/home/carlos/CLionProjects/fase2/Generator/./cone.cpp
+/home/carlos/CLionProjects/newFase2/Generator/./cone.cpp
 ./box.cpp
-/home/carlos/CLionProjects/fase2/Generator/./box.cpp
+/home/carlos/CLionProjects/newFase2/Generator/./box.cpp
 ./plano.cpp
-/home/carlos/CLionProjects/fase2/Generator/./plano.cpp
+/home/carlos/CLionProjects/newFase2/Generator/./plano.cpp
 ./sphere.cpp
-/home/carlos/CLionProjects/fase2/Generator/./sphere.cpp
+/home/carlos/CLionProjects/newFase2/Generator/./sphere.cpp
 ./cilindro.cpp
-/home/carlos/CLionProjects/fase2/Generator/./cilindro.cpp
+/home/carlos/CLionProjects/newFase2/Generator/./cilindro.cpp
+./torus.cpp
+/home/carlos/CLionProjects/newFase2/Generator/./torus.cpp
+../Estrutura/Vertices.h
+/home/carlos/CLionProjects/newFase2/Estrutura/Vertices.h
 

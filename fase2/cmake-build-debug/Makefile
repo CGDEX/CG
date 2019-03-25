@@ -48,10 +48,10 @@ RM = /snap/clion/61/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carlos/CLionProjects/fase2
+CMAKE_SOURCE_DIR = /home/carlos/CLionProjects/newFase2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carlos/CLionProjects/fase2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/carlos/CLionProjects/newFase2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles /home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles /home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -136,59 +136,197 @@ generator/fast:
 	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
-Estrutura/Transformacoes.o: Estrutura/Transformacoes.cpp.o
+Estrutura/Cor.o: Estrutura/Cor.cpp.o
 
-.PHONY : Estrutura/Transformacoes.o
-
-# target to build an object file
-Estrutura/Transformacoes.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o
-.PHONY : Estrutura/Transformacoes.cpp.o
-
-Estrutura/Transformacoes.i: Estrutura/Transformacoes.cpp.i
-
-.PHONY : Estrutura/Transformacoes.i
-
-# target to preprocess a source file
-Estrutura/Transformacoes.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.i
-.PHONY : Estrutura/Transformacoes.cpp.i
-
-Estrutura/Transformacoes.s: Estrutura/Transformacoes.cpp.s
-
-.PHONY : Estrutura/Transformacoes.s
-
-# target to generate assembly for a file
-Estrutura/Transformacoes.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.s
-.PHONY : Estrutura/Transformacoes.cpp.s
-
-Estrutura/structure.o: Estrutura/structure.cpp.o
-
-.PHONY : Estrutura/structure.o
+.PHONY : Estrutura/Cor.o
 
 # target to build an object file
-Estrutura/structure.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/structure.cpp.o
-.PHONY : Estrutura/structure.cpp.o
+Estrutura/Cor.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Cor.cpp.o
+.PHONY : Estrutura/Cor.cpp.o
 
-Estrutura/structure.i: Estrutura/structure.cpp.i
+Estrutura/Cor.i: Estrutura/Cor.cpp.i
 
-.PHONY : Estrutura/structure.i
+.PHONY : Estrutura/Cor.i
 
 # target to preprocess a source file
-Estrutura/structure.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/structure.cpp.i
-.PHONY : Estrutura/structure.cpp.i
+Estrutura/Cor.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Cor.cpp.i
+.PHONY : Estrutura/Cor.cpp.i
 
-Estrutura/structure.s: Estrutura/structure.cpp.s
+Estrutura/Cor.s: Estrutura/Cor.cpp.s
 
-.PHONY : Estrutura/structure.s
+.PHONY : Estrutura/Cor.s
 
 # target to generate assembly for a file
-Estrutura/structure.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/structure.cpp.s
-.PHONY : Estrutura/structure.cpp.s
+Estrutura/Cor.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Cor.cpp.s
+.PHONY : Estrutura/Cor.cpp.s
+
+Estrutura/Escala.o: Estrutura/Escala.cpp.o
+
+.PHONY : Estrutura/Escala.o
+
+# target to build an object file
+Estrutura/Escala.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Escala.cpp.o
+.PHONY : Estrutura/Escala.cpp.o
+
+Estrutura/Escala.i: Estrutura/Escala.cpp.i
+
+.PHONY : Estrutura/Escala.i
+
+# target to preprocess a source file
+Estrutura/Escala.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Escala.cpp.i
+.PHONY : Estrutura/Escala.cpp.i
+
+Estrutura/Escala.s: Estrutura/Escala.cpp.s
+
+.PHONY : Estrutura/Escala.s
+
+# target to generate assembly for a file
+Estrutura/Escala.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Escala.cpp.s
+.PHONY : Estrutura/Escala.cpp.s
+
+Estrutura/Group.o: Estrutura/Group.cpp.o
+
+.PHONY : Estrutura/Group.o
+
+# target to build an object file
+Estrutura/Group.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Group.cpp.o
+.PHONY : Estrutura/Group.cpp.o
+
+Estrutura/Group.i: Estrutura/Group.cpp.i
+
+.PHONY : Estrutura/Group.i
+
+# target to preprocess a source file
+Estrutura/Group.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Group.cpp.i
+.PHONY : Estrutura/Group.cpp.i
+
+Estrutura/Group.s: Estrutura/Group.cpp.s
+
+.PHONY : Estrutura/Group.s
+
+# target to generate assembly for a file
+Estrutura/Group.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Group.cpp.s
+.PHONY : Estrutura/Group.cpp.s
+
+Estrutura/Rotacao.o: Estrutura/Rotacao.cpp.o
+
+.PHONY : Estrutura/Rotacao.o
+
+# target to build an object file
+Estrutura/Rotacao.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o
+.PHONY : Estrutura/Rotacao.cpp.o
+
+Estrutura/Rotacao.i: Estrutura/Rotacao.cpp.i
+
+.PHONY : Estrutura/Rotacao.i
+
+# target to preprocess a source file
+Estrutura/Rotacao.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.i
+.PHONY : Estrutura/Rotacao.cpp.i
+
+Estrutura/Rotacao.s: Estrutura/Rotacao.cpp.s
+
+.PHONY : Estrutura/Rotacao.s
+
+# target to generate assembly for a file
+Estrutura/Rotacao.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.s
+.PHONY : Estrutura/Rotacao.cpp.s
+
+Estrutura/Transformacao.o: Estrutura/Transformacao.cpp.o
+
+.PHONY : Estrutura/Transformacao.o
+
+# target to build an object file
+Estrutura/Transformacao.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o
+.PHONY : Estrutura/Transformacao.cpp.o
+
+Estrutura/Transformacao.i: Estrutura/Transformacao.cpp.i
+
+.PHONY : Estrutura/Transformacao.i
+
+# target to preprocess a source file
+Estrutura/Transformacao.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.i
+.PHONY : Estrutura/Transformacao.cpp.i
+
+Estrutura/Transformacao.s: Estrutura/Transformacao.cpp.s
+
+.PHONY : Estrutura/Transformacao.s
+
+# target to generate assembly for a file
+Estrutura/Transformacao.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.s
+.PHONY : Estrutura/Transformacao.cpp.s
+
+Estrutura/Translacao.o: Estrutura/Translacao.cpp.o
+
+.PHONY : Estrutura/Translacao.o
+
+# target to build an object file
+Estrutura/Translacao.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o
+.PHONY : Estrutura/Translacao.cpp.o
+
+Estrutura/Translacao.i: Estrutura/Translacao.cpp.i
+
+.PHONY : Estrutura/Translacao.i
+
+# target to preprocess a source file
+Estrutura/Translacao.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Translacao.cpp.i
+.PHONY : Estrutura/Translacao.cpp.i
+
+Estrutura/Translacao.s: Estrutura/Translacao.cpp.s
+
+.PHONY : Estrutura/Translacao.s
+
+# target to generate assembly for a file
+Estrutura/Translacao.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Translacao.cpp.s
+.PHONY : Estrutura/Translacao.cpp.s
+
+Estrutura/Vertices.o: Estrutura/Vertices.cpp.o
+
+.PHONY : Estrutura/Vertices.o
+
+# target to build an object file
+Estrutura/Vertices.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/Vertices.cpp.o
+.PHONY : Estrutura/Vertices.cpp.o
+
+Estrutura/Vertices.i: Estrutura/Vertices.cpp.i
+
+.PHONY : Estrutura/Vertices.i
+
+# target to preprocess a source file
+Estrutura/Vertices.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Vertices.cpp.i
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/Vertices.cpp.i
+.PHONY : Estrutura/Vertices.cpp.i
+
+Estrutura/Vertices.s: Estrutura/Vertices.cpp.s
+
+.PHONY : Estrutura/Vertices.s
+
+# target to generate assembly for a file
+Estrutura/Vertices.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/Vertices.cpp.s
+	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/Vertices.cpp.s
+.PHONY : Estrutura/Vertices.cpp.s
 
 Generator/generator.o: Generator/generator.cpp.o
 
@@ -281,12 +419,27 @@ help:
 	@echo "... engine"
 	@echo "... rebuild_cache"
 	@echo "... generator"
-	@echo "... Estrutura/Transformacoes.o"
-	@echo "... Estrutura/Transformacoes.i"
-	@echo "... Estrutura/Transformacoes.s"
-	@echo "... Estrutura/structure.o"
-	@echo "... Estrutura/structure.i"
-	@echo "... Estrutura/structure.s"
+	@echo "... Estrutura/Cor.o"
+	@echo "... Estrutura/Cor.i"
+	@echo "... Estrutura/Cor.s"
+	@echo "... Estrutura/Escala.o"
+	@echo "... Estrutura/Escala.i"
+	@echo "... Estrutura/Escala.s"
+	@echo "... Estrutura/Group.o"
+	@echo "... Estrutura/Group.i"
+	@echo "... Estrutura/Group.s"
+	@echo "... Estrutura/Rotacao.o"
+	@echo "... Estrutura/Rotacao.i"
+	@echo "... Estrutura/Rotacao.s"
+	@echo "... Estrutura/Transformacao.o"
+	@echo "... Estrutura/Transformacao.i"
+	@echo "... Estrutura/Transformacao.s"
+	@echo "... Estrutura/Translacao.o"
+	@echo "... Estrutura/Translacao.i"
+	@echo "... Estrutura/Translacao.s"
+	@echo "... Estrutura/Vertices.o"
+	@echo "... Estrutura/Vertices.i"
+	@echo "... Estrutura/Vertices.s"
 	@echo "... Generator/generator.o"
 	@echo "... Generator/generator.i"
 	@echo "... Generator/generator.s"

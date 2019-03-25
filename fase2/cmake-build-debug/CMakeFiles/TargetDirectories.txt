@@ -1,4 +1,4 @@
-/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir
-/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/generator.dir
+/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir
+/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/generator.dir

@@ -43,10 +43,10 @@ RM = /snap/clion/61/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/carlos/CLionProjects/fase2
+CMAKE_SOURCE_DIR = /home/carlos/CLionProjects/newFase2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/carlos/CLionProjects/fase2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/carlos/CLionProjects/newFase2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/engine.dir/depend.make
@@ -59,77 +59,152 @@ include CMakeFiles/engine.dir/flags.make
 
 CMakeFiles/engine.dir/engine/engine.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/engine/engine.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/engine/engine.cpp.o -c /home/carlos/CLionProjects/fase2/engine/engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/engine/engine.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/engine/engine.cpp.o -c /home/carlos/CLionProjects/newFase2/engine/engine.cpp
 
 CMakeFiles/engine.dir/engine/engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/fase2/engine/engine.cpp > CMakeFiles/engine.dir/engine/engine.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/engine/engine.cpp > CMakeFiles/engine.dir/engine/engine.cpp.i
 
 CMakeFiles/engine.dir/engine/engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/fase2/engine/engine.cpp -o CMakeFiles/engine.dir/engine/engine.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/engine/engine.cpp -o CMakeFiles/engine.dir/engine/engine.cpp.s
 
 CMakeFiles/engine.dir/engine/tinyxml2.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/engine/tinyxml2.cpp.o: ../engine/tinyxml2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/engine/tinyxml2.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/engine/tinyxml2.cpp.o -c /home/carlos/CLionProjects/fase2/engine/tinyxml2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/engine/tinyxml2.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/engine/tinyxml2.cpp.o -c /home/carlos/CLionProjects/newFase2/engine/tinyxml2.cpp
 
 CMakeFiles/engine.dir/engine/tinyxml2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/tinyxml2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/fase2/engine/tinyxml2.cpp > CMakeFiles/engine.dir/engine/tinyxml2.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/engine/tinyxml2.cpp > CMakeFiles/engine.dir/engine/tinyxml2.cpp.i
 
 CMakeFiles/engine.dir/engine/tinyxml2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/tinyxml2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/fase2/engine/tinyxml2.cpp -o CMakeFiles/engine.dir/engine/tinyxml2.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/engine/tinyxml2.cpp -o CMakeFiles/engine.dir/engine/tinyxml2.cpp.s
 
-CMakeFiles/engine.dir/Estrutura/structure.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/Estrutura/structure.cpp.o: ../Estrutura/structure.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/Estrutura/structure.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/structure.cpp.o -c /home/carlos/CLionProjects/fase2/Estrutura/structure.cpp
+CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o: ../Estrutura/Rotacao.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o -c /home/carlos/CLionProjects/newFase2/Estrutura/Rotacao.cpp
 
-CMakeFiles/engine.dir/Estrutura/structure.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/structure.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/fase2/Estrutura/structure.cpp > CMakeFiles/engine.dir/Estrutura/structure.cpp.i
+CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/Estrutura/Rotacao.cpp > CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.i
 
-CMakeFiles/engine.dir/Estrutura/structure.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/structure.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/fase2/Estrutura/structure.cpp -o CMakeFiles/engine.dir/Estrutura/structure.cpp.s
+CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/Estrutura/Rotacao.cpp -o CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.s
 
-CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o: ../Estrutura/Transformacoes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o -c /home/carlos/CLionProjects/fase2/Estrutura/Transformacoes.cpp
+CMakeFiles/engine.dir/Estrutura/Cor.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Estrutura/Cor.cpp.o: ../Estrutura/Cor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/Estrutura/Cor.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Cor.cpp.o -c /home/carlos/CLionProjects/newFase2/Estrutura/Cor.cpp
 
-CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/fase2/Estrutura/Transformacoes.cpp > CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.i
+CMakeFiles/engine.dir/Estrutura/Cor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Cor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/Estrutura/Cor.cpp > CMakeFiles/engine.dir/Estrutura/Cor.cpp.i
 
-CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/fase2/Estrutura/Transformacoes.cpp -o CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.s
+CMakeFiles/engine.dir/Estrutura/Cor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Cor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/Estrutura/Cor.cpp -o CMakeFiles/engine.dir/Estrutura/Cor.cpp.s
+
+CMakeFiles/engine.dir/Estrutura/Escala.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Estrutura/Escala.cpp.o: ../Estrutura/Escala.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/Estrutura/Escala.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Escala.cpp.o -c /home/carlos/CLionProjects/newFase2/Estrutura/Escala.cpp
+
+CMakeFiles/engine.dir/Estrutura/Escala.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Escala.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/Estrutura/Escala.cpp > CMakeFiles/engine.dir/Estrutura/Escala.cpp.i
+
+CMakeFiles/engine.dir/Estrutura/Escala.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Escala.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/Estrutura/Escala.cpp -o CMakeFiles/engine.dir/Estrutura/Escala.cpp.s
+
+CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o: ../Estrutura/Translacao.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o -c /home/carlos/CLionProjects/newFase2/Estrutura/Translacao.cpp
+
+CMakeFiles/engine.dir/Estrutura/Translacao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Translacao.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/Estrutura/Translacao.cpp > CMakeFiles/engine.dir/Estrutura/Translacao.cpp.i
+
+CMakeFiles/engine.dir/Estrutura/Translacao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Translacao.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/Estrutura/Translacao.cpp -o CMakeFiles/engine.dir/Estrutura/Translacao.cpp.s
+
+CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o: ../Estrutura/Transformacao.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o -c /home/carlos/CLionProjects/newFase2/Estrutura/Transformacao.cpp
+
+CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/Estrutura/Transformacao.cpp > CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.i
+
+CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/Estrutura/Transformacao.cpp -o CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.s
+
+CMakeFiles/engine.dir/Estrutura/Group.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Estrutura/Group.cpp.o: ../Estrutura/Group.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/Estrutura/Group.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Group.cpp.o -c /home/carlos/CLionProjects/newFase2/Estrutura/Group.cpp
+
+CMakeFiles/engine.dir/Estrutura/Group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Group.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/Estrutura/Group.cpp > CMakeFiles/engine.dir/Estrutura/Group.cpp.i
+
+CMakeFiles/engine.dir/Estrutura/Group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Group.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/Estrutura/Group.cpp -o CMakeFiles/engine.dir/Estrutura/Group.cpp.s
+
+CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o: ../Estrutura/Vertices.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o -c /home/carlos/CLionProjects/newFase2/Estrutura/Vertices.cpp
+
+CMakeFiles/engine.dir/Estrutura/Vertices.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Estrutura/Vertices.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/carlos/CLionProjects/newFase2/Estrutura/Vertices.cpp > CMakeFiles/engine.dir/Estrutura/Vertices.cpp.i
+
+CMakeFiles/engine.dir/Estrutura/Vertices.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Estrutura/Vertices.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/carlos/CLionProjects/newFase2/Estrutura/Vertices.cpp -o CMakeFiles/engine.dir/Estrutura/Vertices.cpp.s
 
 # Object files for target engine
 engine_OBJECTS = \
 "CMakeFiles/engine.dir/engine/engine.cpp.o" \
 "CMakeFiles/engine.dir/engine/tinyxml2.cpp.o" \
-"CMakeFiles/engine.dir/Estrutura/structure.cpp.o" \
-"CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o"
+"CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o" \
+"CMakeFiles/engine.dir/Estrutura/Cor.cpp.o" \
+"CMakeFiles/engine.dir/Estrutura/Escala.cpp.o" \
+"CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o" \
+"CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o" \
+"CMakeFiles/engine.dir/Estrutura/Group.cpp.o" \
+"CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o"
 
 # External object files for target engine
 engine_EXTERNAL_OBJECTS =
 
 engine: CMakeFiles/engine.dir/engine/engine.cpp.o
 engine: CMakeFiles/engine.dir/engine/tinyxml2.cpp.o
-engine: CMakeFiles/engine.dir/Estrutura/structure.cpp.o
-engine: CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o
+engine: CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o
+engine: CMakeFiles/engine.dir/Estrutura/Cor.cpp.o
+engine: CMakeFiles/engine.dir/Estrutura/Escala.cpp.o
+engine: CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o
+engine: CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o
+engine: CMakeFiles/engine.dir/Estrutura/Group.cpp.o
+engine: CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o
 engine: CMakeFiles/engine.dir/build.make
 engine: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 engine: /usr/lib/x86_64-linux-gnu/libGLX.so
 engine: /usr/lib/x86_64-linux-gnu/libGLU.so
 engine: /usr/lib/x86_64-linux-gnu/libglut.so
 engine: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -142,6 +217,6 @@ CMakeFiles/engine.dir/clean:
 .PHONY : CMakeFiles/engine.dir/clean
 
 CMakeFiles/engine.dir/depend:
-	cd /home/carlos/CLionProjects/fase2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlos/CLionProjects/fase2 /home/carlos/CLionProjects/fase2 /home/carlos/CLionProjects/fase2/cmake-build-debug /home/carlos/CLionProjects/fase2/cmake-build-debug /home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/carlos/CLionProjects/newFase2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/carlos/CLionProjects/newFase2 /home/carlos/CLionProjects/newFase2 /home/carlos/CLionProjects/newFase2/cmake-build-debug /home/carlos/CLionProjects/newFase2/cmake-build-debug /home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/engine.dir/depend
 

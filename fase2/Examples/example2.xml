@@ -1,7 +1,7 @@
 <scene>
     <group>
         <translate X='5' Y='0' Z='2' />
-        <rotate angle='90' axisX='10' axisY='1' axisZ='0' />
+        <rotate angle='90' axisX='15' axisY='1' axisZ='0' />
         <models>
             <model file="sphere.3d" />
         </models>

@@ -7,9 +7,12 @@
 #include "./parser.cpp"
 
 
-int centerX, centerY;
+std::vector<Group*> groups;
 
-float pos_x = 10;
+int centerX, centerY;
+int window;
+
+float pos_x = 30;
 float pos_y = 5;
 float pos_z = 10;
 
@@ -30,16 +33,13 @@ bool mexe_direita = false;
 
 bool fps_cam = false;
 
-float camX = 10, camY = 5, camZ = 10;
 
 
 int modo_desenho = GL_LINE;
 
-Structure* structure = new Structure();
 
-
-
-
+void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf);
+void lerXML(std::string caminho);
 
 void changeSize(int w, int h) {
 
@@ -54,24 +54,6 @@ void changeSize(int w, int h) {
     glMatrixMode(GL_MODELVIEW);
 }
 
-
-void tecladoSpecial(int key_code, int x , int y){
-    switch(key_code){
-        case GLUT_KEY_UP:
-            camY+=1;
-            break;
-        case GLUT_KEY_DOWN:
-            camY-=1;
-            break;
-        case GLUT_KEY_LEFT:
-            camX-=1;
-            break;
-        case GLUT_KEY_RIGHT:
-            camX+=1;
-            break;
-    }
-    glutPostRedisplay();
-}
 
 void letrasTeclado(unsigned char key, int x, int y){
     switch (key) {
@@ -96,6 +78,25 @@ void letrasTeclado(unsigned char key, int x, int y){
             tras = true;
             break;
 
+
+        case 'e':
+        case 'E':
+            if(!fps_cam) {
+                mexe_direita= true;
+                break;
+            }
+            else break;
+
+        case 'q':
+        case 'Q':
+            if(!fps_cam) {
+                mexe_esquerda = true;
+                break;
+            }
+            else break;
+
+
+
         case 'p':
         case 'P':
             modo_desenho = GL_POINT;
@@ -117,12 +118,17 @@ void letrasTeclado(unsigned char key, int x, int y){
             break;
 
         case '-':
-            gluLookAt(camX += 0.5, camY += 0.5, camZ += 0.5, 0.0, 0.0, 0.0, 0.0f, 1.0f, 0.0f);
+            speed -= 0.5;
             break;
 
         case '+':
-            gluLookAt(camX -= 0.5, camY -= 0.5, camZ -= 0.5, 0.0, 0.0, 0.0, 0.0f, 1.0f, 0.0f);
+            speed += 0.5;
+            if (speed<0) speed=0;
             break;
+
+        case 27:
+            glutDestroyWindow(window);
+            exit(0);
 
     }
 
@@ -152,12 +158,12 @@ void letrasTecladoRelease(unsigned char key, int x, int y){
             break;
 
         case 'q':
-            esquerda = false;
+            mexe_esquerda= false;
 
             break;
 
         case 'e':
-            direita = false;
+            mexe_direita = false;
 
             break;
     }
@@ -185,9 +191,7 @@ void move_right_f() {
     pos_z += dir_x * speed;
 }
 
-/* ************ */
-/* TRD CAM CALC*/
-/* ************ */
+
 
 void move_frente_t() {
     float xrot, yrot;
@@ -233,7 +237,7 @@ void turnRight() {
 
 void camera() {
     centerX = 0;
-    centerY = 0;
+    centerY = 0 ;
 
 
     if (fps_cam) {
@@ -267,42 +271,45 @@ void camera() {
 
 
 
+
 void renderScene(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glLoadIdentity();
 
     camera();
-
-
-
-
-    glColor3f(1,1,1);
-
-
-
     glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
+    int i,j;
 
 
-    for (Structure* test : structure->getNext()) {
-        std::vector<Transformacoes*> transf = test->getTransforms();
-        for(int k=0;k<transf.size();k++) {
-            std :: cout << k << std::endl;
-            std::cout << transf[k]->getX() << std::endl;
-            transf[k]->aplicaEfeito2();
-        }
+
+    for(i=0;i<groups.size();i++) {
+        glPushMatrix();
+        Rotacao* rotacao = groups[i]->getTransformacoes()->getRotacao();
+        Escala* escala = groups[i]->getTransformacoes()->getEscala();
+        Cor* cor = groups[i]->getTransformacoes()->getCor();
+        Translacao* transl = groups[i]->getTransformacoes()->getTranslacao();
+
+
+        glRotatef(rotacao->getAngulo(),rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
+        glTranslatef(transl->getX(),transl->getY(),transl->getZ());
+        glScalef(escala->getXE(),escala->getYE(),escala->getZE());
+        glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
+        std::cout<<"Cores" << cor->getR1()<< cor->getG1() << " " << cor->getB1() <<std::endl;
         glBegin(GL_TRIANGLES);
-        for (int k=0;k<test->getCoords().size();k++) {
 
-            glVertex3f(test->getCoords()[k]->x,test->getCoords()[k]->y,test->getCoords()[k]->z);
 
+        std::vector<Vertices*> verts = groups[i]->getVertices();
+        for(j=0;j<verts.size();j++) {
+
+            glVertex3f(verts[j]->getX(),verts[j]->getY(),verts[j]->getZ());
         }
+
         glEnd();
+        glPopMatrix();
+
+
     }
-
-
-
-
 
 
     glutSwapBuffers();
@@ -316,15 +323,16 @@ int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DEPTH|GLUT_DOUBLE|GLUT_RGBA);
     glutInitWindowPosition(100,100);
-    glutInitWindowSize(800,800);
-    glutCreateWindow("CG-BOT's engine");
+    glutInitWindowSize(1080,720);
+    window = glutCreateWindow("CG-BOT's engine");
 
     if(argc < 2){
         std::cout << "Bip bip! Não recebi nenhuma directoria do ficheiro xml! " << std::endl;
         return 0;
     }
 
-    else lerXML(argv[1],structure);
+    else lerXML(argv[1]);
+
 
 
 
@@ -332,6 +340,7 @@ int main(int argc, char** argv) {
     glutDisplayFunc(renderScene);
     glutReshapeFunc(changeSize);
 
+    glutIdleFunc(renderScene);
     glutKeyboardFunc(letrasTeclado);
     glutKeyboardUpFunc(letrasTecladoRelease);
     glEnable(GL_DEPTH_TEST);
@@ -340,4 +349,126 @@ int main(int argc, char** argv) {
     glutMainLoop();
 
     return 1;
+}
+
+
+
+
+void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf) {
+
+
+
+    Transformacao* transform = new Transformacao();
+    Translacao* translacao = new Translacao();
+    Rotacao* rotacao = new Rotacao();
+    Escala* escala = new Escala();
+    Cor* cor = new Cor();
+
+    if((strcmp(elemento->FirstChildElement()->Value(),"grupo"))==0) {
+        elemento = elemento->FirstChildElement();
+    }
+
+    tinyxml2::XMLElement* atual;
+
+
+    for(atual=elemento->FirstChildElement(); (strcmp(atual->Value(),"models"))!=0; atual = atual->NextSiblingElement()) {
+
+        if((strcmp(atual->Value(),"translate"))==0) {
+            translacao = parserTranslate(atual);
+            achouT=1;
+        }
+
+        if((strcmp(atual->Value(),"rotate"))==0) {
+            rotacao = parserRotation(atual);
+            achouR=1;
+        }
+
+
+        if((strcmp(atual->Value(),"scale"))==0) {
+            escala = parserScale(atual);
+            achouS=1;
+        }
+
+        if((strcmp(atual->Value(),"color"))==0) {
+            cor = parserColor(atual);
+            achouC=1;
+        }
+    }
+
+
+    if(achouS==1) transform->insereEscala(escala);
+    else {
+        escala->insereXE(1);escala->insereYE(1);escala->insereZE(1);
+        transform->insereEscala(escala);
+    }
+    if(achouC==1) transform->insereCor(cor);
+    else {
+        cor->insereR1(1);cor->insereG1(1);cor->insereB1(1);
+        transform->insereCor(cor);
+    }
+    if(achouR==1) transform->insereRotacao(rotacao);
+    else {
+        rotacao->insereAngulo(0);rotacao->insereX(0);rotacao->insereY(0);rotacao->insereZ(0);
+        transform->insereRotacao(rotacao);
+    }
+    if(achouT==1) transform->insereTranslacao(translacao);
+    else {
+        translacao->insereX(0);translacao->insereY(0);translacao->insereZ(0);
+        transform->insereTranslacao(translacao);
+    }
+
+    achouT=achouS=achouR=achouC=0;
+
+
+
+    tinyxml2::XMLElement* modelo;
+    for(modelo=elemento->FirstChildElement("models")->FirstChildElement("model");modelo;modelo=modelo->NextSiblingElement("model")) {
+
+        Group* grupo = new Group();
+        std::vector<Vertices*> verts;
+        std::string caminho3D= "../Files3D/";
+        caminho3D.append(modelo->Attribute("file"));
+        verts = lerFicheiro(caminho3D);
+
+
+
+        grupo->insereVerts(verts);
+        grupo->insereTransformacoes(transform);
+
+        groups.push_back(grupo);
+
+    }
+
+    if (elemento->FirstChildElement("group")) {
+
+        parserElementos(elemento->FirstChildElement("group"),transform);
+    }
+    if (elemento->NextSiblingElement("group")) {
+
+        parserElementos(elemento->NextSiblingElement("group"),transf);
+    }
+
+}
+
+
+// Função que recebe o caminho de um ficheiro XML e depois vai ler esse mesmo ficheiro utilizando o parser tinyxml2.
+void lerXML(std::string caminho) {
+
+    tinyxml2::XMLDocument doc;
+    tinyxml2::XMLElement *elem;
+
+
+    if(!(doc.LoadFile(caminho.c_str()))) {
+        elem = doc.FirstChildElement("scene")->FirstChildElement("group");
+        Transformacao* transform = new Transformacao();
+        Escala* esc = new Escala(1,1,1);
+        transform->insereEscala(esc);
+        parserElementos(elem,transform);
+    }
+
+    else {
+        std::cout << "Bip bip! Erro xml! Não consegui encontrar o ficheiro :(" << std::endl;
+    }
+
+
 }

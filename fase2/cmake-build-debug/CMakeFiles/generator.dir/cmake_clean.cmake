@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/generator.dir/Generator/generator.cpp.o"
+  "CMakeFiles/generator.dir/Estrutura/Vertices.cpp.o"
   "generator.pdb"
   "generator"
 )

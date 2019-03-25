@@ -1,49 +1,50 @@
-#include "../Estrutura/vertice.h"
+#include "../Estrutura/Vertices.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <vector>
 
 
 
-std::vector<vertices> plano (float lado) {
+std::vector<Vertices*> plano (float lado) {
 
-    std::vector<vertices> resultado;
+    std::vector<Vertices*> resultado;
 
     float tamanho = lado/2;
-    vertices coordenadas;
+    Vertices* coordenadas = new Vertices();
 
 
     // TRIANGULO 1
-    coordenadas.x = -tamanho;
-    coordenadas.y = 0;
-    coordenadas.z = -tamanho;
+    coordenadas->insereX(-tamanho);
+    coordenadas->insereY(0);
+    coordenadas->insereZ(-tamanho);
     resultado.push_back(coordenadas);
 
-    coordenadas.x = -tamanho;
-    coordenadas.y = 0;
-    coordenadas.z = tamanho;
+    coordenadas->insereX(-tamanho);
+    coordenadas->insereY(0);
+    coordenadas->insereZ(tamanho);
     resultado.push_back(coordenadas);
 
-    coordenadas.x = tamanho;
-    coordenadas.y = 0;
-    coordenadas.z = tamanho;
+    coordenadas->insereX(tamanho);
+    coordenadas->insereY(0);
+    coordenadas->insereZ(tamanho);
     resultado.push_back(coordenadas);
 
 
-    // TRIANGULO 2
-    coordenadas.x = -tamanho;
-    coordenadas.y = 0;
-    coordenadas.z = -tamanho;
+
+    //TRIANGULO 2
+    coordenadas->insereX(-tamanho);
+    coordenadas->insereY(0);
+    coordenadas->insereZ(-tamanho);
     resultado.push_back(coordenadas);
 
-    coordenadas.x = tamanho;
-    coordenadas.y = 0;
-    coordenadas.z = tamanho;
+    coordenadas->insereX(tamanho);
+    coordenadas->insereY(0);
+    coordenadas->insereZ(tamanho);
     resultado.push_back(coordenadas);
 
-    coordenadas.x = tamanho;
-    coordenadas.y = 0;
-    coordenadas.z = -tamanho;
+    coordenadas->insereX(tamanho);
+    coordenadas->insereY(0);
+    coordenadas->insereZ(-tamanho);
     resultado.push_back(coordenadas);
 
 

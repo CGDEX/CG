@@ -5,17 +5,18 @@
 #include <GL/glut.h>
 #include <stdlib.h>
 #include <algorithm>
-#include "../Estrutura/vertice.h"
 #include "./cone.cpp"
 #include "./box.cpp"
 #include "./plano.cpp"
 #include "./sphere.cpp"
 #include "./cilindro.cpp"
-std::vector<vertices> dados;
+#include "./torus.cpp"
+#include "../Estrutura/Vertices.h"
+std::vector<Vertices*> dados;
 
 
 // FUNÇÕES
-void escreverFicheiro(std::string, std::vector<vertices> dados);
+void escreverFicheiro(std::string, std::vector<Vertices*> dados);
 void imprimeMenuHelp();
 
 int main(int argc, char** argv) {
@@ -49,6 +50,15 @@ int main(int argc, char** argv) {
         dados = cilindro (atof(argv[2]),atof(argv[3]),atof(argv[4]));
         escreverFicheiro("../Files3D/cilindro.3d",dados);
         std::cout << "Ficheiro cilindro.3d escrito com sucesso"<< std::endl;
+    }else if(!(strcmp(argv[1],"torus"))) {
+        dados = createTorus(atof(argv[2]),atof(argv[3]),atof(argv[4]),atof(argv[5]));
+        escreverFicheiro("../Files3D/torus.3d",dados);
+        std::cout <<"Ficheiro torus.3d escrito com sucesso" << std::endl;
+    } else if(!(strcmp(argv[1],"orbit"))) {
+        std::cout << "dsadsad" << std::endl;
+        dados = createTorus(atof(argv[2]),atof(argv[3]),atof(argv[4]),atof(argv[5]));
+        escreverFicheiro("../Files3D/orbita.3d",dados);
+        std::cout<<"Ficheiro orbita.3d escrito com sucesso" <<std::endl;
     }
         else {
             std::cout << "Bip bip! Erro 404!"<< std::endl;
@@ -100,29 +110,19 @@ void imprimeMenuHelp() {
 
 
 
-void escreverFicheiro(std::string path, std::vector<vertices> coordenadas) {
+void escreverFicheiro(std::string path, std::vector<Vertices*> coordenadas) {
 
 
     std::ofstream file(path);
 
-    std::vector<vertices>::iterator it;
-    for (it=coordenadas.begin();it!=coordenadas.end();it++) {
+    std::vector<Vertices*>::iterator it;
 
-        file << it->x << "," << it->y << "," << it->z << std::endl;
+    for (int i=0;i<coordenadas.size();i++) {
+
+        file << coordenadas[i]->getX() << "," << coordenadas[i]->getY()<< "," << coordenadas[i]->getZ()<< std::endl;
     }
 
     file.close();
 }
-
-// Verificar depois se funciona
-vertices criaVertice(float x, float y, float z) {
-    vertices coordenada;
-    coordenada.x = x;
-    coordenada.y = y;
-    coordenada.z = z;
-
-    return coordenada;
-}
-
 
 

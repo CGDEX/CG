@@ -1,8 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/engine/engine.cpp.o"
   "CMakeFiles/engine.dir/engine/tinyxml2.cpp.o"
-  "CMakeFiles/engine.dir/Estrutura/structure.cpp.o"
-  "CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o"
+  "CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o"
+  "CMakeFiles/engine.dir/Estrutura/Cor.cpp.o"
+  "CMakeFiles/engine.dir/Estrutura/Escala.cpp.o"
+  "CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o"
+  "CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o"
+  "CMakeFiles/engine.dir/Estrutura/Group.cpp.o"
+  "CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o"
   "engine.pdb"
   "engine"
 )

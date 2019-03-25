@@ -4,10 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/carlos/CLionProjects/fase2/Estrutura/Transformacoes.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Transformacoes.cpp.o"
-  "/home/carlos/CLionProjects/fase2/Estrutura/structure.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/structure.cpp.o"
-  "/home/carlos/CLionProjects/fase2/engine/engine.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/engine/engine.cpp.o"
-  "/home/carlos/CLionProjects/fase2/engine/tinyxml2.cpp" "/home/carlos/CLionProjects/fase2/cmake-build-debug/CMakeFiles/engine.dir/engine/tinyxml2.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/Estrutura/Cor.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Cor.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/Estrutura/Escala.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Escala.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/Estrutura/Group.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Group.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/Estrutura/Rotacao.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Rotacao.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/Estrutura/Transformacao.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/Estrutura/Translacao.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/Estrutura/Vertices.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/engine/engine.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/engine/engine.cpp.o"
+  "/home/carlos/CLionProjects/newFase2/engine/tinyxml2.cpp" "/home/carlos/CLionProjects/newFase2/cmake-build-debug/CMakeFiles/engine.dir/engine/tinyxml2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

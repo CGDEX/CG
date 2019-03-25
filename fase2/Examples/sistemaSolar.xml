@@ -1,19 +1,93 @@
 <scene>
+
     <!-- SUN  -->
     <group>
-        <scale X='0.695' Y='0.695' Z='0.695' />
-        <colour R='251' G='119' B='9' />
+        <scale X='3' Y='3' Z='3' />
+        <color R='255' G='202' B='51' />
         <models>
             <model file='sphere.3d'/>
         </models>
     </group>
+    <!-- MERCURY -->
     <group>
-        <translate X='5' />
-        <scale X='0.17625' Y='0.17625' Z='0.17625'/>
-        <colour R='219' G='170' B='0' />
+        <translate X='3' />
+        <scale X='1' Y='1' Z='1'/>
+        <color R='150' G='147' B='138' />
         <models>
             <model file='sphere.3d' />
         </models>
     </group>
+    <!-- VENUS -->
+    <group>
+        <translate X='8' />
+        <scale X='1' Y='1' Z='1'/>
+        <color R='255' G='87' B='51' />
+        <models>
+            <model file='sphere.3d' />
+        </models>
+    </group>
+    <!-- Earth -->
+    <group>
+        <translate X='13' />
+        <scale X='1' Y='1' Z='1'/>
+        <color R='0' G='191' B='255' />
+        <models>
+            <model file='sphere.3d' />
+        </models>
+        <!-- moon -->
+        <group>
+            <translate X='12' Y='0.5' Z='1' />
+            <scale X='0.15' Y='0.15' Z='0.15'/>
+            <color R='255' G='255' B='255' />
+            <models>
+                <model file='sphere.3d' />
+            </models>
+        </group>
+    </group>
 
+    <!-- Mars -->
+    <group>
+        <translate X='17' />
+        <scale X='1' Y='1' Z='1'/>
+        <color R='178' G='34' B='34' />
+        <models>
+            <model file='sphere.3d' />
+        </models>
+    </group>
+    <!-- Saturn -->
+    <group>
+        <translate X='22' />
+        <scale X='1' Y='1' Z='1'/>
+        <color R='150' G='70' B='34' />
+        <models>
+            <model file='sphere.3d' />
+        </models>
+
+    </group>
+
+    <!-- Uranus -->
+    <group>
+        <translate X='27' />
+        <scale X='1' Y='1' Z='1'/>
+        <color R='20' G='20' B='150' />
+        <models>
+            <model file='sphere.3d' />
+        </models>
+
+    </group>
+
+    <!-- Neptune -->
+    <group>
+        <translate X='31' />
+        <scale X='1' Y='1' Z='1'/>
+        <color R='20' G='20' B='255' />
+        <models>
+            <model file='sphere.3d' />
+        </models>
+
+    </group>
 </scene>
+
+
+
+
