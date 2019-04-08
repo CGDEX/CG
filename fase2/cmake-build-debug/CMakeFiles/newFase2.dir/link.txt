@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/newFase2.dir/main.cpp.o  -o newFase2 

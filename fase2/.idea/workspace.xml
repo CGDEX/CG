@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="generator" targetName="generator" />
-      <config projectName="generator" targetName="engine" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -20,9 +17,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Generator/torus.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -90,10 +96,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="293" />
-    <option name="y" value="47" />
+    <option name="x" value="291" />
+    <option name="y" value="45" />
     <option name="width" value="1400" />
-    <option name="height" value="902" />
+    <option name="height" value="904" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -101,22 +107,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="newFase2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="newFase2" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,29 +127,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.engine">
-    <configuration name="engine" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" PROGRAM_PARAMS="../Examples/sistemaSolar.xml" PASS_PARENT_ENVS_2="true" PROJECT_NAME="generator" TARGET_NAME="engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="generator" RUN_TARGET_NAME="engine">
+  <component name="RunManager">
+    <configuration name="engine" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" PROGRAM_PARAMS="../Examples/sistemaSolar.xml" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="engine">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="generator" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="generator" TARGET_NAME="generator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="generator" RUN_TARGET_NAME="generator">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.engine" />
-      <item itemvalue="Application.generator" />
-    </list>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="944" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1925844" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19798657" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="CMake" order="0" weight="0.32925338" />
+      <window_info anchor="bottom" id="CMake" order="0" visible="true" weight="0.3282123" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5002767" side_tool="true" weight="0.32925338" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.57037944" />
@@ -177,13 +159,7 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/c++/7/bits/char_traits.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="324" column="7" lean-forward="true" selection-start-line="324" selection-start-column="7" selection-end-line="324" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/7/bits/char_traits.h" />
     <entry file="file://$PROJECT_DIR$/Estrutura/Cor.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -258,13 +234,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Examples/sistemaSolar2.xml" />
-    <entry file="file://$PROJECT_DIR$/Estrutura/Vertices.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Files3D/cilindro.3d">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -275,7 +244,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Estrutura/vertices.h" />
+    <entry file="file://$PROJECT_DIR$/Estrutura/Vertices.h" />
     <entry file="file://$PROJECT_DIR$/Estrutura/Transformacao.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -333,16 +302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Generator/torus.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="60" column="38" lean-forward="true" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Generator/sphere.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -373,13 +332,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Examples/example4.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/example4.xml" />
     <entry file="file://$PROJECT_DIR$/Generator/box.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -446,6 +399,13 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Generator/torus.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
         </state>
       </provider>
     </entry>
