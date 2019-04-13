@@ -287,7 +287,22 @@ void fps() {
     }
 }
 
+void renderCurva(std::vector<Vertices*> curva) {
+    float ponts[3];
+    int i;
 
+
+
+
+    glBegin(GL_LINE_LOOP);
+    for(i=0;i<curva.size();i++) {
+        ponts[0] = curva[i]->getX1();
+        ponts[1] = curva[i]->getY1();
+        ponts[2] = curva[i]->getZ1();
+        glVertex3fv(ponts);
+    }
+    glEnd();
+}
 
 
 void renderScene(void) {
@@ -298,7 +313,7 @@ void renderScene(void) {
     camera();
     glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
     int i,j;
-
+    float resultado[3];
 
 
     for(i=0;i<groups.size();i++) {
@@ -308,24 +323,36 @@ void renderScene(void) {
         Cor* cor = groups[i]->getTransformacoes()->getCor();
         Translacao* transl = groups[i]->getTransformacoes()->getTranslacao();
 
-
-        glRotatef(rotacao->getAngulo(),rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
-        glTranslatef(transl->getX(),transl->getY(),transl->getZ());
-        glScalef(escala->getXE(),escala->getYE(),escala->getZE());
-        glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
-
-        glBegin(GL_TRIANGLES);
-
-
-        std::vector<Vertices*> verts = groups[i]->getVertices();
-        for(j=0;j<verts.size();j++) {
-
-            glVertex3f(verts[j]->getX1(),verts[j]->getY1(),verts[j]->getZ1());
+        if(rotacao->getTempo()!=0 && rotacao->getXR()!=0 && rotacao->getYR()!=0 && rotacao->getZR()!=0) {
+            float t1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
+            float t2 = (t1*360) / (transl->getTempo()*1000);
+            glRotatef(t2,rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
         }
 
-        glEnd();
-        glPopMatrix();
+        if(transl->getTempo()!=0 && transl->getPontos().size()!=0) {
+            float t1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
+            float t2 = t1 / (transl->getTempo()*1000.0);
+            std::vector<Vertices*> pontos = transl->getPontos();
+            transl->curva();
+            renderCurva(transl->getPontos());
+            transl->getGlobalCatmullRomPoint(t2,resultado,pontos);
+             glTranslatef(resultado[0],resultado[1],resultado[2]);
 
+        }
+
+
+        // 1º verifica se os pontos são diferentes de 0, se forem então aplica a funçção scalef, senão passa a frente.
+        if(escala->getXE()!=0 && escala->getYE()!=0 && escala->getZE()!=0) {
+            glScalef(escala->getXE(),escala->getYE(),escala->getZE());
+        }
+
+
+        if(cor->getR1()!=0 && cor->getG1()!=0 && cor->getB1()!=0) {
+            glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
+        }
+
+
+        
 
     }
 
@@ -350,7 +377,6 @@ int main(int argc, char** argv) {
     }
 
     else lerXML(argv[1]);
-
 
 
 
@@ -431,8 +457,8 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf) {
     }
     if(achouT==1) transform->insereTranslacao(translacao);
     else {
-        translacao->insereX(0);translacao->insereY(0);translacao->insereZ(0);
-        transform->insereTranslacao(translacao);
+        Vertices* vertices = new Vertices();
+
     }
 
     achouT=achouS=achouR=achouC=0;
@@ -447,8 +473,6 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf) {
         std::string caminho3D= "../Files3D/";
         caminho3D.append(modelo->Attribute("file"));
         verts = lerFicheiro(caminho3D);
-
-
 
         grupo->insereVerts(verts);
         grupo->insereTransformacoes(transform);

@@ -25,9 +25,11 @@ CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o: ../Estrutura/Rotacao.h
 CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o: ../Estrutura/Transformacao.cpp
 CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o: ../Estrutura/Transformacao.h
 CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o: ../Estrutura/Translacao.h
+CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o: ../Estrutura/Vertices.h
 
 CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o: ../Estrutura/Translacao.cpp
 CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o: ../Estrutura/Translacao.h
+CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o: ../Estrutura/Vertices.h
 
 CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o: ../Estrutura/Vertices.cpp
 CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o: ../Estrutura/Vertices.h

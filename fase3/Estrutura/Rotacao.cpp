@@ -19,11 +19,17 @@ void Rotacao::insereY(float y) {
 void Rotacao::insereZ(float z) {
     zR = z;
 }
-void Rotacao::insereTempo(float tempo) {
-    timeR = tempo;
+void Rotacao::insereTempo(float t) {
+    timeR = t;
 }
+
+
 float Rotacao::getAngulo() {
     return angleR;
+}
+
+float Rotacao::getTempo(){
+    return timeR;
 }
 float Rotacao::getXR() {
     return xR;
