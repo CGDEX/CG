@@ -32,3 +32,7 @@ float Cor::getG1() {
 float Cor::getB1() {
     return bb;
 }
+
+bool Cor::vazioC() {
+    return (rr==0 && gg==0 && bb == 0);
+}

@@ -21,6 +21,7 @@ class Rotacao {
         float getXR();
         float getYR();
         float getZR();
+        bool vazioR();
 
 };
 

@@ -135,3 +135,7 @@ std::vector<Vertices*> Translacao::curva() {
     }
     return pontosC;
 }
+
+bool Translacao::vazioT() {
+    return (tempo==0 && pontosT.empty());
+}

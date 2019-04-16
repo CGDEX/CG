@@ -32,6 +32,7 @@ class Translacao {
         std::vector<Vertices*> curva();
         void getGlobalCatmullRomPoint(float gt, float *resultado, std::vector<Vertices*> verts);
         void getCatmullRomPoint(float t, int* indices, float* resultado, std::vector<Vertices*> pontosT);
+        bool vazioT();
         std::vector<Vertices*> getCurva();
 
     //float getX();

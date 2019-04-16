@@ -3,9 +3,9 @@
 #include <string>
 #include <fstream>
 #include <iostream>
-#include <GL/glut.h>
 #include "./parser.cpp"
-
+#include <GL/glew.h>
+#include <GL/glut.h>
 
 std::vector<Group*> groups;
 
@@ -39,7 +39,7 @@ int tempo2 = 0;
 int modo_desenho = GL_LINE;
 
 
-void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf);
+
 void lerXML(std::string caminho);
 
 void changeSize(int w, int h) {
@@ -292,8 +292,6 @@ void renderCurva(std::vector<Vertices*> curva) {
     int i;
 
 
-
-
     glBegin(GL_LINE_LOOP);
     for(i=0;i<curva.size();i++) {
         ponts[0] = curva[i]->getX1();
@@ -324,9 +322,9 @@ void renderScene(void) {
         Translacao* transl = groups[i]->getTransformacoes()->getTranslacao();
 
         if(rotacao->getTempo()!=0 && rotacao->getXR()!=0 && rotacao->getYR()!=0 && rotacao->getZR()!=0) {
-            float t1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
-            float t2 = (t1*360) / (transl->getTempo()*1000);
-            glRotatef(t2,rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
+            float r1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
+            float r2 = (r1*360) / (transl->getTempo()*1000);
+            glRotatef(r2,rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
         }
 
         if(transl->getTempo()!=0 && transl->getPontos().size()!=0) {
@@ -334,7 +332,7 @@ void renderScene(void) {
             float t2 = t1 / (transl->getTempo()*1000.0);
             std::vector<Vertices*> pontos = transl->getPontos();
             transl->curva();
-            renderCurva(transl->getPontos());
+            renderCurva(transl->getCurva());
             transl->getGlobalCatmullRomPoint(t2,resultado,pontos);
              glTranslatef(resultado[0],resultado[1],resultado[2]);
 
@@ -352,7 +350,44 @@ void renderScene(void) {
         }
 
 
-        
+// Parte dos filhos
+        if(groups[i]->getFilhos().size()!=0) {
+            std::vector<Group*> aux = groups[i]->getFilhos();
+
+            for(j=0;j<aux.size();j++) {
+                glPushMatrix();
+                Translacao* translacao = aux[j]->getTransformacoes()->getTranslacao();
+                if (!translacao->vazioT()) {
+                    float t3 = glutGet(GLUT_ELAPSED_TIME) % (int) (translacao->getTempo()*1000);
+                    float t4 = t3 / (translacao->getTempo()*1000);
+                    std::vector<Vertices*> vertices = translacao->getPontos();
+                    translacao->curva();
+                    renderCurva(translacao->getCurva());
+                    translacao->getGlobalCatmullRomPoint(t4,resultado,vertices);
+                    glTranslatef(resultado[0],resultado[1],resultado[2]);
+                }
+
+                Rotacao* rot = aux[j]->getTransformacoes()->getRotacao();
+                if(!rot->vazioR()) {
+                    float r3 = glutGet(GLUT_ELAPSED_TIME) % (int) (rot->getTempo()*1000);
+                    float r4 = (r3*360) / (rot->getTempo()*1000);
+                    glRotatef(r4,rot->getXR(),rot->getYR(),rot->getZR());
+                }
+
+                Escala* scale = aux[j]->getTransformacoes()->getEscala();
+                if(!scale->vazioE()) {
+                    glScalef(scale->getXE(),scale->getYE(),scale->getZE());
+                }
+
+                aux[j]->desenha();
+
+            }
+
+        }
+
+
+        glPopMatrix();
+
 
     }
 
@@ -370,6 +405,7 @@ int main(int argc, char** argv) {
     glutInitWindowPosition(100,100);
     glutInitWindowSize(1080,720);
     window = glutCreateWindow("CG-BOT's engine");
+    glewInit();
 
     if(argc < 2){
         std::cout << "Bip bip! Não recebi nenhuma directoria do ficheiro xml! " << std::endl;
@@ -378,18 +414,20 @@ int main(int argc, char** argv) {
 
     else lerXML(argv[1]);
 
-
-
+    std::cout<< " DISAJSODIJSOADJOSAJDOSAIJDSOJIO" << std::endl;
 
     glutDisplayFunc(renderScene);
     glutReshapeFunc(changeSize);
-
     glutIdleFunc(renderScene);
+
     glutKeyboardFunc(letrasTeclado);
     glutKeyboardUpFunc(letrasTecladoRelease);
+
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
 
+    glCullFace(GL_BACK);
+    glEnableClientState(GL_VERTEX_ARRAY);
     glutMainLoop();
 
     return 1;
@@ -398,9 +436,9 @@ int main(int argc, char** argv) {
 
 
 
-void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf) {
+void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::string identif) {
 
-
+    std::cout << "IDENTI: " << identif << std::endl;
 
     Transformacao* transform = new Transformacao();
     Translacao* translacao = new Translacao();
@@ -408,38 +446,43 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf) {
     Escala* escala = new Escala();
     Cor* cor = new Cor();
 
-    if((strcmp(elemento->FirstChildElement()->Value(),"grupo"))==0) {
+    if((strcmp(elemento->FirstChildElement()->Value(),"group"))==0) {
+        std::cout << " IF GRUPO " << std::endl;
         elemento = elemento->FirstChildElement();
     }
 
     tinyxml2::XMLElement* atual;
 
-
+    std::cout << " IF ANTES 1º FOR " << std::endl;
     for(atual=elemento->FirstChildElement(); (strcmp(atual->Value(),"models"))!=0; atual = atual->NextSiblingElement()) {
-
+        std::cout << atual->Name() << std::endl;
         if((strcmp(atual->Value(),"translate"))==0) {
+            std::cout << " IF TRANSLATE " << std::endl;
             translacao = parserTranslate(atual);
             achouT=1;
         }
 
+        if((strcmp(atual->Value(),"scale"))==0) {
+            std::cout << " IF SCALE" << std::endl;
+            escala = parserScale(atual);
+            achouS=1;
+        }
+
         if((strcmp(atual->Value(),"rotate"))==0) {
+            std::cout << " IF ROTATE" << std::endl;
             rotacao = parserRotation(atual);
             achouR=1;
         }
 
 
-        if((strcmp(atual->Value(),"scale"))==0) {
-            escala = parserScale(atual);
-            achouS=1;
-        }
-
         if((strcmp(atual->Value(),"color"))==0) {
+            std::cout << " IF COLOR" << std::endl;
             cor = parserColor(atual);
             achouC=1;
         }
     }
 
-
+    std::cout << " IFS PARA INSERIR" << std::endl;
     if(achouS==1) transform->insereEscala(escala);
     else {
         escala->insereXE(1);escala->insereYE(1);escala->insereZE(1);
@@ -457,38 +500,70 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf) {
     }
     if(achouT==1) transform->insereTranslacao(translacao);
     else {
-        Vertices* vertices = new Vertices();
+        Translacao* transl = new Translacao();
+        transform->insereTranslacao(transl);
 
     }
-
+    std::cout << " IF DEPOIS DE INSERIR" << std::endl;
     achouT=achouS=achouR=achouC=0;
 
 
 
-    tinyxml2::XMLElement* modelo;
-    for(modelo=elemento->FirstChildElement("models")->FirstChildElement("model");modelo;modelo=modelo->NextSiblingElement("model")) {
 
+    for(tinyxml2::XMLElement* modelo=elemento->FirstChildElement("models")->FirstChildElement("model");modelo;modelo=modelo->NextSiblingElement("model")) {
+        std::cout << " 2º FOR MODEL" << std::endl;
         Group* grupo = new Group();
+        grupo->insereNome(modelo->Attribute("file"));
+        std::cout<<grupo->getNome() <<std::endl;
         std::vector<Vertices*> verts;
         std::string caminho3D= "../Files3D/";
-        caminho3D.append(modelo->Attribute("file"));
+        caminho3D.append(grupo->getNome());
+
         verts = lerFicheiro(caminho3D);
 
+
         grupo->insereVerts(verts);
+
         grupo->insereTransformacoes(transform);
 
-        groups.push_back(grupo);
+        int tamanho = groups.size()-1;
+
+        if(identif=="filho") {
+            std::cout << " FILHO " << std::endl;
+            groups[tamanho]->insereFilho(grupo);
+        }
+        else if(identif=="pai") {
+            std::cout << " PAI" << std::endl;
+            groups[tamanho]->insereFilho(grupo);
+        }
+        else {
+            std::cout << "ULTIMO ELSE " << std::endl;
+            groups.push_back(grupo);
+        }
+
 
     }
+
+
+
 
     if (elemento->FirstChildElement("group")) {
-
-        parserElementos(elemento->FirstChildElement("group"),transform);
+        std::cout << "CASO 2" << std::endl;
+        parserElementos(elemento->FirstChildElement("group"),transform,"filho");
     }
-    if (elemento->NextSiblingElement("group")) {
 
-        parserElementos(elemento->NextSiblingElement("group"),transf);
+
+    if ( (identif=="filho" || identif=="pai") && elemento->NextSiblingElement("group"))  {
+        std::cout << "CASO 1" << std::endl;
+        parserElementos(elemento->NextSiblingElement("group"),transf,"pai");
     }
+
+
+    if ((identif!="filho" || identif!="pai") && elemento->NextSiblingElement("group")) {
+        std::cout << "CASO 3" << std::endl;
+        parserElementos(elemento->NextSiblingElement("group"),transf,"irmao");
+    }
+
 
 }
 
@@ -505,12 +580,14 @@ void lerXML(std::string caminho) {
         Transformacao* transform = new Transformacao();
         Escala* esc = new Escala(1,1,1);
         transform->insereEscala(esc);
-        parserElementos(elem,transform);
+        std::cout << " Chegou ao if carregar ficheiro " << std::endl;
+        parserElementos(elem,transform,"irmao");
+        std::cout<< " DISAJSODIJSOADJOSAJDOSAIJDSOJIOdIUAHIUDHWIUEQHIEWUHEIUWQHEIWUQHIUEHEUQHIEUWQHIEUWH" << std::endl;
     }
 
     else {
         std::cout << "Bip bip! Erro xml! Não consegui encontrar o ficheiro :(" << std::endl;
     }
 
-
+    std::cout<< " DOIWQJOQIDJOQIJDWQIOJOIWJDOSASADSADDSDSADSADSADSADSADISAJSODIJSOADJOSAJDOSAIJDSOJIO" << std::endl;
 }

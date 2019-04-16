@@ -34,3 +34,7 @@ float Escala::getYE() {
 float Escala::getZE() {
     return ze;
 }
+
+bool Escala::vazioE() {
+    return (xe==0 && ye==0 && ze==0);
+}

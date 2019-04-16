@@ -30,6 +30,7 @@ class Transformacao {
         Cor* getCor() {
             return cor;
         };
+        bool verificaVazio();
         void insereTranslacao(Translacao* t);
         void insereRotacao(Rotacao* r);
         void insereEscala (Escala* e);

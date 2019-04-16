@@ -53,8 +53,10 @@ fstream
 -
 iostream
 -
-GL/glut.h
--
 ./parser.cpp
 /home/carlos/CLionProjects/fase3/engine/./parser.cpp
+GL/glew.h
+-
+GL/glut.h
+-
 

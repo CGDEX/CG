@@ -40,3 +40,7 @@ float Rotacao::getYR() {
 float Rotacao::getZR() {
     return zR;
 }
+
+bool Rotacao::vazioR() {
+    return (timeR==0 && angleR==0 && xR==0 && yR==0 && zR==0);
+}

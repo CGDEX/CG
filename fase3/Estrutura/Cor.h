@@ -16,6 +16,8 @@ class Cor {
         float getR1();
         float getG1();
         float getB1();
+        bool vazioC();
+
 };
 
 

@@ -26,3 +26,6 @@ void Transformacao::insereEscala (Escala* e) {
 void Transformacao::insereCor (Cor* c) {
     cor = c;
 }
+bool Transformacao::verificaVazio() {
+    return (transl->vazioT() && rotacao->vazioR() && escala->vazioE() && cor->vazioC());
+}

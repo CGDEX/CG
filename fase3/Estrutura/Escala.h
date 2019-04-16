@@ -17,6 +17,7 @@ class Escala {
         void insereXE(float x);
         void insereYE(float y);
         void insereZE(float z);
+        bool vazioE();
 };
 
 
