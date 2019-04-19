@@ -1,7 +1,7 @@
 #include <GL/glew.h>
 #include <GL/glut.h>
 #include <GL/gl.h>
-#include "Group.h"
+#include "headers/Group.h"
 
 Group::Group(){
 
@@ -49,7 +49,7 @@ void Group::desenha() {
 void Group::VBO() {
     glEnableClientState(GL_VERTEX_ARRAY);
     float* vert = (float*) malloc(sizeof(float)*vertics.size()*3);
-    std::cout << nvertices << std::endl;
+
     for(int i=0;i<vertics.size();i++) {
 
         vert[nvertices] = vertics[i]->getX1();

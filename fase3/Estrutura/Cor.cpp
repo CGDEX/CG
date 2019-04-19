@@ -1,4 +1,4 @@
-#include "Cor.h"
+#include "headers/Cor.h"
 
 Cor::Cor() {
 

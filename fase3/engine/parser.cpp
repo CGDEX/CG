@@ -1,4 +1,4 @@
-#include "../Estrutura/Group.h"
+#include "../Estrutura/headers/Group.h"
 #include "tinyxml2.h"
 
 
@@ -10,7 +10,6 @@ int achouC = 0;
 // Função que recebe um string que é o caminho e vai ler o ficheiro e a medida que vai lendo o ficheiro vai meter na estrutura as coordenadas
 std::vector<Vertices*> lerFicheiro(std::string caminho) {
 
-    std::cout << " Chegou Ler Ficheiro" << std::endl;
     std::vector<Vertices*> verts;
     std::ifstream ficheiro(caminho);
     std::string linha;
@@ -36,7 +35,6 @@ std::vector<Vertices*> lerFicheiro(std::string caminho) {
             verts.push_back(vertice);
         }
     }
-    std::cout << " Chegou Ler Ficheiro FIM " << std::endl;
     return verts;
 }
 
@@ -45,7 +43,7 @@ std::vector<Vertices*> lerFicheiro(std::string caminho) {
 Rotacao* parserRotation(tinyxml2::XMLElement* elemento) {
     float angulo = 0, x = 0, y = 0, z = 0, tempo = 0;
 
-    std::cout << " Chegou Rotacao " << std::endl;
+
     elemento->QueryFloatAttribute("Time",&tempo);
     elemento->QueryFloatAttribute("angle",&angulo);
     elemento->QueryFloatAttribute("axisX",&x);
@@ -66,7 +64,7 @@ Rotacao* parserRotation(tinyxml2::XMLElement* elemento) {
 
 Cor* parserColor(tinyxml2::XMLElement* elemento) {
     float r = 0, g = 0, b = 0;
-    std::cout << " Chegou Cor " << std::endl;
+
     elemento->QueryFloatAttribute("R",&r);
     elemento->QueryFloatAttribute("G",&g);
     elemento->QueryFloatAttribute("B",&b);
@@ -87,7 +85,7 @@ Cor* parserColor(tinyxml2::XMLElement* elemento) {
 
 
 Translacao* parserTranslate(tinyxml2::XMLElement* elemento) {
-    std::cout << " Chegou Translate " << std::endl;
+
     float x = 0, y = 0, z = 0, time=0;
     Translacao* transl= new Translacao();
     std::vector<Vertices*> pontos;
@@ -115,7 +113,7 @@ Translacao* parserTranslate(tinyxml2::XMLElement* elemento) {
 }
 
 Escala* parserScale(tinyxml2::XMLElement* elemento) {
-    std::cout << " Chegou Scale " << std::endl;
+
     float x = 0, y = 0, z = 0;
 
     elemento->QueryFloatAttribute("X",&x);

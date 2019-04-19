@@ -1,4 +1,4 @@
-#include "../Estrutura/estrutura.h"
+#include "../Estrutura/headers/estrutura.h"
 #include <algorithm>
 #include <vector>
 #include <math.h>
@@ -21,7 +21,7 @@ std::vector<vertices> cone (float raio, float altura,  int slices, int stacks) {
     vertices coordenadas6;
 
     float a,novo_raio= 0;
-
+    a=0;
 
     for (int i=0;i<slices;i++) {
 

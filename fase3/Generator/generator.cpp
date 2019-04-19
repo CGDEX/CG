@@ -12,7 +12,7 @@
 #include "./cilindro.cpp"
 #include "./torus.cpp"
 #include "./bezier.cpp"
-#include "../Estrutura/Vertices.h"
+#include "../Estrutura/headers/Vertices.h"
 std::vector<vertices> dados;
 
 

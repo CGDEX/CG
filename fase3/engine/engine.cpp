@@ -4,57 +4,13 @@
 #include <fstream>
 #include <iostream>
 #include "./parser.cpp"
-#include <GL/glew.h>
-#include <GL/glut.h>
 
+#include "engine.h"
+#include "Camera/camera.cpp"
 std::vector<Group*> groups;
-
-int centerX, centerY;
-int window;
-
-float pos_x = 30;
-float pos_y = 5;
-float pos_z = 10;
-
-float dir_x = 0;
-float dir_y = 0;
-float dir_z = 0;
-
-float h_angle;
-float v_angle;
-float speed = 0.2;
-
-bool frente = false;
-bool tras = false;
-bool esquerda = false;
-bool direita = false;
-bool mexe_esquerda = false;
-bool mexe_direita = false;
-
-bool fps_cam = false;
-
-int frame = 0;
-int tempo2 = 0;
-
-int modo_desenho = GL_LINE;
-
 
 
 void lerXML(std::string caminho);
-
-void changeSize(int w, int h) {
-
-    if (h == 0) h = 1;
-
-    float ratio = w * 1.0f / h;
-
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glViewport(0, 0, w, h);
-    gluPerspective(45.0f, ratio, 1.0f, 1000.0f);
-    glMatrixMode(GL_MODELVIEW);
-}
-
 
 void letrasTeclado(unsigned char key, int x, int y){
     switch (key) {
@@ -170,105 +126,6 @@ void letrasTecladoRelease(unsigned char key, int x, int y){
     }
 }
 
-void move_frente_f() {
-    pos_x += dir_x * speed;
-    pos_y += dir_y * speed;
-    pos_z += dir_z * speed;
-}
-
-void move_tras_f() {
-    pos_x -= dir_x * speed;
-    pos_y -= dir_y * speed;
-    pos_z -= dir_z * speed;
-}
-
-void move_left_f() {
-    pos_x += dir_z * speed;
-    pos_z -= dir_x * speed;
-}
-
-void move_right_f() {
-    pos_x -= dir_z * speed;
-    pos_z += dir_x * speed;
-}
-
-
-
-void move_frente_t() {
-    float xrot, yrot;
-    yrot = (v_angle / 180.0f * M_PI);
-    xrot = (h_angle / 180.0f * M_PI);
-    pos_x += (sin(yrot))*speed;
-    pos_z -= (cos(yrot))*speed;
-    pos_y -= (sin(xrot))*speed;
-}
-
-void move_tras_t() {
-    float xrot, yrot;
-    yrot = (v_angle / 180.0f * M_PI);
-    xrot = (h_angle / 180.0f * M_PI);
-    pos_x -= (sin(yrot))*speed;
-    pos_z += (cos(yrot))*speed;
-    pos_y += (sin(xrot))*speed;
-}
-
-void move_left_t() {
-    float yrot;
-    yrot = (v_angle / 180.0f * M_PI);
-    pos_x -= (cos(yrot)) * speed;
-    pos_z -= (sin(yrot)) * speed;
-}
-
-void move_right_t() {
-    float yrot;
-    yrot = (v_angle / 180.0f * M_PI);
-    pos_x += (cos(yrot)) * speed;
-    pos_z += (sin(yrot)) * speed;
-}
-
-void turnLeft() {
-    v_angle -= 1;
-    if (v_angle < 360) v_angle += 360;
-}
-
-void turnRight() {
-    v_angle += 1;
-    if (v_angle > 360) v_angle -= 360;
-}
-
-void camera() {
-    centerX = 0;
-    centerY = 0 ;
-
-
-    if (fps_cam) {
-        if (frente) move_frente_f();
-        if (tras) move_tras_f();
-        if (esquerda) move_left_f();
-        if (direita) move_right_f();
-        if (mexe_esquerda) turnLeft();
-        if (mexe_direita) turnRight();
-
-        gluLookAt(pos_x, pos_y, pos_z,
-                  pos_x + dir_x, pos_y + dir_y, pos_z + dir_z,
-                  0.0f, 1.0f, 0.0f);
-    }
-
-    else {
-        if (frente) move_frente_t();
-        if (tras) move_tras_t();
-        if (esquerda) move_left_t();
-        if (direita) move_right_t();
-        if (mexe_esquerda) turnLeft();
-        if (mexe_direita) turnRight();
-
-        glTranslatef(0, centerY / 1000 - 0.7, -centerX / 225);
-
-        glRotatef(h_angle, 1, 0, 0);
-        glRotatef(v_angle, 0, 1, 0);
-        glTranslatef(-pos_x, -pos_y, -pos_z);
-    }
-}
 
 void fps() {
     float sec;
@@ -322,8 +179,6 @@ void renderScene(void) {
         Translacao* transl = groups[i]->getTransformacoes()->getTranslacao();
         Group* grupo = groups[i];
 
-
-
         if(transl->getTempo()!=0 && transl->getPontos().size()!=0) {
             float t1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
             float t2 = t1 / (transl->getTempo()*1000);
@@ -355,6 +210,7 @@ void renderScene(void) {
             std::vector<Group*> aux = groups[i]->getFilhos();
 
             for(j=0;j<aux.size();j++) {
+
                 glPushMatrix();
                 Translacao* translacao = aux[j]->getTransformacoes()->getTranslacao();
                 if (!translacao->vazioT()) {
@@ -401,15 +257,12 @@ void renderScene(void) {
 void setVBO() {
     glPolygonMode(GL_FRONT,modo_desenho);
 
-    for (size_t i = 0; i<groups.size();i++) {
-
-
+    for (int i = 0; i<groups.size();i++) {
         groups[i]->VBO();
-
         if(groups[i]->getFilhos().size()>0) {
             std::vector<Group*> sub = groups[i]->getFilhos();
 
-            for(size_t j=0; j<sub.size();j++) {
+            for(int j=0; j<sub.size();j++) {
                 sub[j]->VBO();
             }
             groups[i]->setFilho(sub);
@@ -458,7 +311,7 @@ int main(int argc, char** argv) {
 
 void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::string identif) {
 
-    std::cout << "IDENTI: " << identif << std::endl;
+    ;
 
     Transformacao* transform = new Transformacao();
     Translacao* translacao = new Translacao();
@@ -467,40 +320,40 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
     Cor* cor = new Cor();
 
     if((strcmp(elemento->FirstChildElement()->Value(),"group"))==0) {
-        std::cout << " IF GRUPO " << std::endl;
+
         elemento = elemento->FirstChildElement();
     }
 
     for( tinyxml2::XMLElement* atual=elemento->FirstChildElement(); (strcmp(atual->Value(),"models"))!=0; atual = atual->NextSiblingElement()) {
-        std::cout << atual->Name() << std::endl;
+
 
         if((strcmp(atual->Value(),"translate"))==0) {
-            std::cout << " IF TRANSLATE " << std::endl;
+
             translacao = parserTranslate(atual);
             achouT=1;
         }
 
         if((strcmp(atual->Value(),"scale"))==0) {
-            std::cout << " IF SCALE" << std::endl;
+
             escala = parserScale(atual);
             achouS=1;
         }
 
         if((strcmp(atual->Value(),"rotate"))==0) {
-            std::cout << " IF ROTATE" << std::endl;
+
             rotacao = parserRotation(atual);
             achouR=1;
         }
 
 
         if((strcmp(atual->Value(),"color"))==0) {
-            std::cout << " IF COLOR" << std::endl;
+
             cor = parserColor(atual);
             achouC=1;
         }
     }
 
-    std::cout << " IFS PARA INSERIR" << std::endl;
+
     if(achouS==1) transform->insereEscala(escala);
     else {
         escala->insereXE(1);escala->insereYE(1);escala->insereZE(1);
@@ -522,14 +375,11 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
         transform->insereTranslacao(transl);
 
     }
-    std::cout << " IF DEPOIS DE INSERIR" << std::endl;
+
     achouT=achouS=achouR=achouC=0;
 
-
-
-
     for(tinyxml2::XMLElement* modelo=elemento->FirstChildElement("models")->FirstChildElement("model");modelo;modelo=modelo->NextSiblingElement("model")) {
-        std::cout << " 2º FOR MODEL" << std::endl;
+
         Group* grupo = new Group();
         grupo->insereNome(modelo->Attribute("file"));
 
@@ -539,16 +389,13 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
 
         verts = lerFicheiro(caminho3D);
 
-
         grupo->insereVerts(verts);
         grupo->insereN(0);
         grupo->insereTransformacoes(transform);
 
-
-
         if(identif=="filho") {
             int pos = groups.size() - 1;
-            std::cout << " FILHO " << std::endl;
+
             groups[pos]->insereFilho(grupo);
         }
         else if(identif=="pai") {
@@ -556,31 +403,23 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
             groups[pos]->insereFilho(grupo);
         }
         else {
-            std::cout << "ULTIMO ELSE " << std::endl;
             groups.push_back(grupo);
         }
-
-
     }
 
-
     if (elemento->FirstChildElement("group")) {
-        std::cout << "CASO 2" << std::endl;
+
         parserElementos(elemento->FirstChildElement("group"),transform,"filho");
     }
 
-
     if ( (identif=="filho" || identif=="pai") && (elemento->NextSiblingElement("group"))) {
-        std::cout << "CASO 1" << std::endl;
         parserElementos(elemento->NextSiblingElement("group"),transf,"pai");
     }
 
-
     if ((identif!="filho" && identif!="pai") && (elemento->NextSiblingElement("group"))) {
-        std::cout << "CASO 3" << std::endl;
+
         parserElementos(elemento->NextSiblingElement("group"),transf,"irmao");
     }
-
 
 }
 

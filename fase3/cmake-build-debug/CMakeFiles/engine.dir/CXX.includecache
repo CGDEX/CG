@@ -7,8 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/carlos/Desktop/fase3/engine/./parser.cpp
-../Estrutura/Group.h
-/home/carlos/Desktop/fase3/engine/Estrutura/Group.h
+../Estrutura/headers/Group.h
+/home/carlos/Desktop/fase3/engine/Estrutura/headers/Group.h
 tinyxml2.h
 /home/carlos/Desktop/fase3/engine/./tinyxml2.h
 
@@ -42,6 +42,10 @@ android/log.h
 assert.h
 -
 
+/home/carlos/Desktop/fase3/engine/Camera/camera.cpp
+../engine.h
+/home/carlos/Desktop/fase3/engine/engine.h
+
 /home/carlos/Desktop/fase3/engine/engine.cpp
 math.h
 -
@@ -55,6 +59,14 @@ iostream
 -
 ./parser.cpp
 /home/carlos/Desktop/fase3/engine/./parser.cpp
+engine.h
+/home/carlos/Desktop/fase3/engine/engine.h
+Camera/camera.cpp
+/home/carlos/Desktop/fase3/engine/Camera/camera.cpp
+
+/home/carlos/Desktop/fase3/engine/engine.h
+vector
+-
 GL/glew.h
 -
 GL/glut.h
