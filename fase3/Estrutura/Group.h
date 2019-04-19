@@ -21,7 +21,7 @@ class Group {
 
     public:
         Group();
-
+        void setFilho(std::vector<Group*> g);
         void insereTransformacoes(Transformacao* t);
         void insereVerts(std::vector<Vertices*> vert);
         void insereFilho(Group* f);
@@ -31,6 +31,9 @@ class Group {
         std::vector<Group*> getFilhos();
         std::string getNome();
         void desenha();
+        void VBO();
+        void insereN(int n);
+
 
 
 };

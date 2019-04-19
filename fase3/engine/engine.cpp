@@ -320,6 +320,19 @@ void renderScene(void) {
         Escala* escala = groups[i]->getTransformacoes()->getEscala();
         Cor* cor = groups[i]->getTransformacoes()->getCor();
         Translacao* transl = groups[i]->getTransformacoes()->getTranslacao();
+        Group* grupo = groups[i];
+
+
+
+        if(transl->getTempo()!=0 && transl->getPontos().size()!=0) {
+            float t1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
+            float t2 = t1 / (transl->getTempo()*1000);
+            std::vector<Vertices*> pontos = transl->getPontos();
+            transl->curva();
+            renderCurva(transl->getCurva());
+            transl->getGlobalCatmullRomPoint(t2,resultado,pontos);
+            glTranslatef(resultado[0],resultado[1],resultado[2]);
+        }
 
         if(rotacao->getTempo()!=0 && rotacao->getXR()!=0 && rotacao->getYR()!=0 && rotacao->getZR()!=0) {
             float r1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
@@ -327,23 +340,10 @@ void renderScene(void) {
             glRotatef(r2,rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
         }
 
-        if(transl->getTempo()!=0 && transl->getPontos().size()!=0) {
-            float t1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
-            float t2 = t1 / (transl->getTempo()*1000.0);
-            std::vector<Vertices*> pontos = transl->getPontos();
-            transl->curva();
-            renderCurva(transl->getCurva());
-            transl->getGlobalCatmullRomPoint(t2,resultado,pontos);
-             glTranslatef(resultado[0],resultado[1],resultado[2]);
-
-        }
-
-
         // 1º verifica se os pontos são diferentes de 0, se forem então aplica a funçção scalef, senão passa a frente.
         if(escala->getXE()!=0 && escala->getYE()!=0 && escala->getZE()!=0) {
             glScalef(escala->getXE(),escala->getYE(),escala->getZE());
         }
-
 
         if(cor->getR1()!=0 && cor->getG1()!=0 && cor->getB1()!=0) {
             glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
@@ -380,12 +380,14 @@ void renderScene(void) {
                 }
 
                 aux[j]->desenha();
-
+                glPopMatrix();
             }
-
         }
 
-
+        if(cor->getR1()!=0 && cor->getG1()!=0 && cor->getB1()!=0) {
+            glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
+        }
+        grupo->desenha();
         glPopMatrix();
 
 
@@ -396,6 +398,24 @@ void renderScene(void) {
 
 }
 
+void setVBO() {
+    glPolygonMode(GL_FRONT,modo_desenho);
+
+    for (size_t i = 0; i<groups.size();i++) {
+
+
+        groups[i]->VBO();
+
+        if(groups[i]->getFilhos().size()>0) {
+            std::vector<Group*> sub = groups[i]->getFilhos();
+
+            for(size_t j=0; j<sub.size();j++) {
+                sub[j]->VBO();
+            }
+            groups[i]->setFilho(sub);
+        }
+    }
+}
 
 // Função main que vai receber o ficheiro XML e desenhar a figura.
 int main(int argc, char** argv) {
@@ -414,7 +434,7 @@ int main(int argc, char** argv) {
 
     else lerXML(argv[1]);
 
-    std::cout<< " DISAJSODIJSOADJOSAJDOSAIJDSOJIO" << std::endl;
+
 
     glutDisplayFunc(renderScene);
     glutReshapeFunc(changeSize);
@@ -427,7 +447,7 @@ int main(int argc, char** argv) {
     glEnable(GL_CULL_FACE);
 
     glCullFace(GL_BACK);
-    glEnableClientState(GL_VERTEX_ARRAY);
+    setVBO();
     glutMainLoop();
 
     return 1;
@@ -451,11 +471,9 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
         elemento = elemento->FirstChildElement();
     }
 
-    tinyxml2::XMLElement* atual;
-
-    std::cout << " IF ANTES 1º FOR " << std::endl;
-    for(atual=elemento->FirstChildElement(); (strcmp(atual->Value(),"models"))!=0; atual = atual->NextSiblingElement()) {
+    for( tinyxml2::XMLElement* atual=elemento->FirstChildElement(); (strcmp(atual->Value(),"models"))!=0; atual = atual->NextSiblingElement()) {
         std::cout << atual->Name() << std::endl;
+
         if((strcmp(atual->Value(),"translate"))==0) {
             std::cout << " IF TRANSLATE " << std::endl;
             translacao = parserTranslate(atual);
@@ -514,7 +532,7 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
         std::cout << " 2º FOR MODEL" << std::endl;
         Group* grupo = new Group();
         grupo->insereNome(modelo->Attribute("file"));
-        std::cout<<grupo->getNome() <<std::endl;
+
         std::vector<Vertices*> verts;
         std::string caminho3D= "../Files3D/";
         caminho3D.append(grupo->getNome());
@@ -523,18 +541,19 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
 
 
         grupo->insereVerts(verts);
-
+        grupo->insereN(0);
         grupo->insereTransformacoes(transform);
 
-        int tamanho = groups.size()-1;
+
 
         if(identif=="filho") {
+            int pos = groups.size() - 1;
             std::cout << " FILHO " << std::endl;
-            groups[tamanho]->insereFilho(grupo);
+            groups[pos]->insereFilho(grupo);
         }
         else if(identif=="pai") {
-            std::cout << " PAI" << std::endl;
-            groups[tamanho]->insereFilho(grupo);
+            int pos = groups.size() -1;
+            groups[pos]->insereFilho(grupo);
         }
         else {
             std::cout << "ULTIMO ELSE " << std::endl;
@@ -545,21 +564,19 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
     }
 
 
-
-
     if (elemento->FirstChildElement("group")) {
         std::cout << "CASO 2" << std::endl;
         parserElementos(elemento->FirstChildElement("group"),transform,"filho");
     }
 
 
-    if ( (identif=="filho" || identif=="pai") && elemento->NextSiblingElement("group"))  {
+    if ( (identif=="filho" || identif=="pai") && (elemento->NextSiblingElement("group"))) {
         std::cout << "CASO 1" << std::endl;
         parserElementos(elemento->NextSiblingElement("group"),transf,"pai");
     }
 
 
-    if ((identif!="filho" || identif!="pai") && elemento->NextSiblingElement("group")) {
+    if ((identif!="filho" && identif!="pai") && (elemento->NextSiblingElement("group"))) {
         std::cout << "CASO 3" << std::endl;
         parserElementos(elemento->NextSiblingElement("group"),transf,"irmao");
     }
@@ -582,12 +599,12 @@ void lerXML(std::string caminho) {
         transform->insereEscala(esc);
         std::cout << " Chegou ao if carregar ficheiro " << std::endl;
         parserElementos(elem,transform,"irmao");
-        std::cout<< " DISAJSODIJSOADJOSAJDOSAIJDSOJIOdIUAHIUDHWIUEQHIEWUHEIUWQHEIWUQHIUEHEUQHIEUWQHIEUWH" << std::endl;
+
     }
 
     else {
         std::cout << "Bip bip! Erro xml! Não consegui encontrar o ficheiro :(" << std::endl;
     }
 
-    std::cout<< " DOIWQJOQIDJOQIJDWQIOJOIWJDOSASADSADDSDSADSADSADSADSADISAJSODIJSOADJOSAJDOSAIJDSOJIO" << std::endl;
+
 }

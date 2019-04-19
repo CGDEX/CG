@@ -44,5 +44,30 @@ void Group::desenha() {
     glBindBuffer(GL_ARRAY_BUFFER,buffer[0]);
     glVertexPointer(3,GL_FLOAT,0,0);
     glDrawArrays(GL_TRIANGLES,0,nvertices);
+}
 
+void Group::VBO() {
+    glEnableClientState(GL_VERTEX_ARRAY);
+    float* vert = (float*) malloc(sizeof(float)*vertics.size()*3);
+    std::cout << nvertices << std::endl;
+    for(int i=0;i<vertics.size();i++) {
+
+        vert[nvertices] = vertics[i]->getX1();
+        vert[nvertices+1] = vertics[i]->getY1();
+        vert[nvertices+2] = vertics[i]->getZ1();
+        nvertices+=3;
+    }
+
+    glGenBuffers(1,buffer);
+    glBindBuffer(GL_ARRAY_BUFFER,buffer[0]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float)*vertics.size()*3,vert,GL_STATIC_DRAW);
+    free(vert);
+}
+
+void Group::setFilho(std::vector<Group*> g) {
+    filhos = g;
+}
+
+void Group::insereN(int n) {
+    nvertices = n;
 }
