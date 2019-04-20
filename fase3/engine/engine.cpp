@@ -209,6 +209,7 @@ void renderScene(void) {
 
 
 
+        grupo->desenha();
 // Parte dos filhos
         if(groups[i]->getFilhos().size()!=0) {
 
@@ -245,13 +246,23 @@ void renderScene(void) {
                     glScalef(scale->getXE(),scale->getYE(),scale->getZE());
                 }
 
+                Cor* cores = aux[j]->getTransformacoes()->getCor();
+
+                if(cores->getR1()!=0 && cores->getG1()!=0 && cores->getB1()!=0) {
+                    glColor3f(cores->getR1(),cores->getG1(),cores->getB1());
+                }
+
+
+
+
+
                 aux[j]->desenha();
                 glPopMatrix();
             }
         }
 
 
-        grupo->desenha();
+
         glPopMatrix();
 
 
