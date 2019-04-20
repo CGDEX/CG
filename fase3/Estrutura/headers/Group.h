@@ -1,6 +1,6 @@
 #include "Transformacao.h"
 #include "Vertices.h"
-#include <iostream>
+
 #include <vector>
 #include <GL/glew.h>
 #include <GL/glut.h>

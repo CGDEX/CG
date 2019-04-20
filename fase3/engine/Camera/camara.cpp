@@ -84,7 +84,6 @@ void camera() {
     centerX = 0;
     centerY = 0 ;
 
-
     if (fps_cam) {
         if (frente) move_frente_f();
         if (tras) move_tras_f();

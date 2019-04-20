@@ -18,7 +18,7 @@ float dir_z = 0;
 
 float h_angle;
 float v_angle;
-float speed = 0.2;
+float speed = 1;
 
 bool frente = false;
 bool tras = false;

@@ -5,7 +5,7 @@ include_directories(${GLUT_INCLUDE_DIR})
 
 
 project(engine)
-set(ENGINE_FILES ./engine/engine.cpp ./engine/tinyxml2.cpp Estrutura/Rotacao.cpp Estrutura/headers/Rotacao.h Estrutura/Cor.cpp Estrutura/headers/Cor.h Estrutura/Escala.cpp Estrutura/headers/Escala.h Estrutura/Translacao.cpp Estrutura/headers/Translacao.h Estrutura/Transformacao.cpp Estrutura/headers/Transformacao.h Estrutura/Group.cpp Estrutura/headers/Group.h Estrutura/Vertices.cpp Estrutura/headers/Vertices.h)
+set(ENGINE_FILES ./engine/engine.cpp ./engine/tinyxml2.cpp Estrutura/Rotacao.cpp Estrutura/headers/Rotacao.h Estrutura/Cor.cpp Estrutura/headers/Cor.h Estrutura/Escala.cpp Estrutura/headers/Escala.h Estrutura/Translacao.cpp Estrutura/headers/Translacao.h Estrutura/Transformacao.cpp Estrutura/headers/Transformacao.h Estrutura/Group.cpp Estrutura/headers/Group.h Estrutura/Vertices.cpp Estrutura/headers/Vertices.h )
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
 find_package(GLEW REQUIRED)

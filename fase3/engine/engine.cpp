@@ -6,7 +6,7 @@
 #include "./parser.cpp"
 
 #include "engine.h"
-#include "Camera/camera.cpp"
+#include "Camera/camara.cpp"
 std::vector<Group*> groups;
 
 
@@ -139,14 +139,14 @@ void fps() {
         sec = frame*1000.0 / (tempo - tempo2);
         tempo2 = tempo;
         frame = 0;
-        sprintf(titulo,"Engine  |  %.2f FPS",sec);
+        sprintf(titulo,"CG-BOT's engine  |  %.2f FPS",sec);
         glutSetWindowTitle(titulo);
     }
 }
 
 void renderCurva(std::vector<Vertices*> curva) {
     float ponts[3];
-    int i;
+    size_t i;
 
 
     glBegin(GL_LINE_LOOP);
@@ -167,7 +167,7 @@ void renderScene(void) {
 
     camera();
     glPolygonMode(GL_FRONT_AND_BACK,modo_desenho);
-    int i,j;
+    size_t i,j;
     float resultado[3];
 
 
@@ -179,6 +179,17 @@ void renderScene(void) {
         Translacao* transl = groups[i]->getTransformacoes()->getTranslacao();
         Group* grupo = groups[i];
 
+        if(cor->getR1()!=0 && cor->getG1()!=0 && cor->getB1()!=0) {
+            glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
+        }
+
+
+        if(rotacao->getTempo()!=0 && rotacao->getXR()!=0 && rotacao->getYR()!=0 && rotacao->getZR()!=0) {
+            float r1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
+            float r2 = (r1*360) / (transl->getTempo()*1000);
+            glRotatef(r2,rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
+        }
+
         if(transl->getTempo()!=0 && transl->getPontos().size()!=0) {
             float t1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
             float t2 = t1 / (transl->getTempo()*1000);
@@ -189,34 +200,33 @@ void renderScene(void) {
             glTranslatef(resultado[0],resultado[1],resultado[2]);
         }
 
-        if(rotacao->getTempo()!=0 && rotacao->getXR()!=0 && rotacao->getYR()!=0 && rotacao->getZR()!=0) {
-            float r1 = glutGet(GLUT_ELAPSED_TIME) % (int) (transl->getTempo()*1000);
-            float r2 = (r1*360) / (transl->getTempo()*1000);
-            glRotatef(r2,rotacao->getXR(),rotacao->getYR(),rotacao->getZR());
-        }
+
 
         // 1º verifica se os pontos são diferentes de 0, se forem então aplica a funçção scalef, senão passa a frente.
         if(escala->getXE()!=0 && escala->getYE()!=0 && escala->getZE()!=0) {
             glScalef(escala->getXE(),escala->getYE(),escala->getZE());
         }
 
-        if(cor->getR1()!=0 && cor->getG1()!=0 && cor->getB1()!=0) {
-            glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
-        }
 
 
 // Parte dos filhos
         if(groups[i]->getFilhos().size()!=0) {
+
             std::vector<Group*> aux = groups[i]->getFilhos();
 
             for(j=0;j<aux.size();j++) {
 
                 glPushMatrix();
                 Translacao* translacao = aux[j]->getTransformacoes()->getTranslacao();
+
                 if (!translacao->vazioT()) {
+
                     float t3 = glutGet(GLUT_ELAPSED_TIME) % (int) (translacao->getTempo()*1000);
+
                     float t4 = t3 / (translacao->getTempo()*1000);
+
                     std::vector<Vertices*> vertices = translacao->getPontos();
+
                     translacao->curva();
                     renderCurva(translacao->getCurva());
                     translacao->getGlobalCatmullRomPoint(t4,resultado,vertices);
@@ -240,9 +250,7 @@ void renderScene(void) {
             }
         }
 
-        if(cor->getR1()!=0 && cor->getG1()!=0 && cor->getB1()!=0) {
-            glColor3f(cor->getR1(),cor->getG1(),cor->getB1());
-        }
+
         grupo->desenha();
         glPopMatrix();
 
@@ -299,7 +307,7 @@ int main(int argc, char** argv) {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
 
-    glCullFace(GL_BACK);
+
     setVBO();
     glutMainLoop();
 
@@ -435,8 +443,7 @@ void lerXML(std::string caminho) {
         elem = doc.FirstChildElement("scene")->FirstChildElement("group");
         Transformacao* transform = new Transformacao();
         Escala* esc = new Escala(1,1,1);
-        transform->insereEscala(esc);
-        std::cout << " Chegou ao if carregar ficheiro " << std::endl;
+
         parserElementos(elem,transform,"irmao");
 
     }

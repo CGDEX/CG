@@ -42,7 +42,7 @@ android/log.h
 assert.h
 -
 
-/home/carlos/Desktop/fase3/engine/Camera/camera.cpp
+/home/carlos/Desktop/fase3/engine/Camera/camara.cpp
 ../engine.h
 /home/carlos/Desktop/fase3/engine/engine.h
 
@@ -61,8 +61,8 @@ iostream
 /home/carlos/Desktop/fase3/engine/./parser.cpp
 engine.h
 /home/carlos/Desktop/fase3/engine/engine.h
-Camera/camera.cpp
-/home/carlos/Desktop/fase3/engine/Camera/camera.cpp
+Camera/camara.cpp
+/home/carlos/Desktop/fase3/engine/Camera/camara.cpp
 
 /home/carlos/Desktop/fase3/engine/engine.h
 vector

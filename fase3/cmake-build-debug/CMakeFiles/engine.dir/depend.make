@@ -36,7 +36,7 @@ CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o: ../Estrutura/headers/Vertices.h
 
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/./parser.cpp
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/./tinyxml2.h
-CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/Camera/camera.cpp
+CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/Camera/camara.cpp
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/engine.cpp
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/engine.h
 
