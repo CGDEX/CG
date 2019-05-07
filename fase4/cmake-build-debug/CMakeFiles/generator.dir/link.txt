@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -O3  -Iinclude -DGLEW_BUILD -g -lGLEW  -g   CMakeFiles/generator.dir/Generator/generator.cpp.o CMakeFiles/generator.dir/Estrutura/Vertices.cpp.o CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.o  -o generator /usr/lib/x86_64-linux-gnu/libGLEW.so 

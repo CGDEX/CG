@@ -1,0 +1,16 @@
+<scene>
+    <group>
+        <translate X='5' Y='0' Z='2' />
+        <rotate angle='90' axisX='15' axisY='1' axisZ='0' />
+        <models>
+            <model file="sphere.3d" />
+        </models>
+    </group>
+    <group>
+        <translate X='15' Y='0' Z='2' />
+        <rotate angle='90' axisX='0' axisY='1' axisZ='0' />
+        <models>
+            <model file="sphere.3d" />
+        </models>
+    </group>
+</scene>
