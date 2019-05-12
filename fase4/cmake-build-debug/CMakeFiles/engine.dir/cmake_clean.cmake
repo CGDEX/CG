@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o"
   "CMakeFiles/engine.dir/Estrutura/Group.cpp.o"
   "CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o"
-  "CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.o"
   "engine.pdb"
   "engine"
 )

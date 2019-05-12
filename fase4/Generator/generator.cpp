@@ -12,15 +12,15 @@
 #include "./cilindro.cpp"
 #include "./torus.cpp"
 #include "./bezier.cpp"
-#include "../Estrutura/headers/Forma.h"
+
 #include "../Estrutura/headers/Vertices.h"
 std::vector<vertices> dados;
-Forma* form;
+
 
 
 // FUNÇÕES
 void escreverFicheiro(std::string, std::vector<vertices> dados);
-void escreverFicheiro2(std::string path, Forma* resultado);
+
 void imprimeMenuHelp();
 
 int main(int argc, char** argv) {
@@ -31,8 +31,8 @@ int main(int argc, char** argv) {
     // Para receber um Box é preciso: X, Y, Z, nº de divisões e caminho do ficheiro para gerar o ficheiro .3d <---- é preciso ver melhor este
 
     if (!(strcmp(argv[1],"plane"))) {
-        form = plano(atof(argv[2]));
-        escreverFicheiro2("../Files3D/plano.3d",form);
+
+
         std::cout << "Ficheiro plano.3d escrito com sucesso"<< std::endl;
     }
     else if (!(strcmp(argv[1],"cone"))) {
@@ -41,8 +41,7 @@ int main(int argc, char** argv) {
         std::cout << "Ficheiro cone.3d escrito com sucesso"<< std::endl;
     }
     else if (!(strcmp(argv[1],"sphere"))) {
-        form = esfera(atof(argv[2]),atoi(argv[3]),atoi(argv[4]));
-        escreverFicheiro2("../Files3D/sphere.3d",form);
+        sphere(atof(argv[2]),atof(argv[3]),atof(argv[4]));
         std::cout << "Ficheiro sphere.3d escrito com sucesso"<< std::endl;
     }
     else if (!(strcmp(argv[1],"box"))) {
@@ -134,36 +133,3 @@ void escreverFicheiro(std::string path, std::vector<vertices> coordenadas) {
 
     file.close();
 }
-
-void escreverFicheiro2(std::string path, Forma* resultado) {
-
-
-    std::ofstream file(path);
-
-    std::vector<Vertices*> coords = resultado->getVerts();
-    for (int i=0; i < coords.size();i++) {
-        file << coords[i]->getX1() << "," << coords[i]->getY1() << "," << coords[i]->getZ1() << std::endl;
-    //std::cout << "X: " << resultado->getVerts()[i]->getX1() << " Y: " << coords[i]->getY1() << std::endl;
-    }
-
-    file <<">>normais<<"<< std::endl;
-    std::vector<Vertices*> norms = resultado->getNorms();
-    for (int i=0; i < norms.size();i++) {
-        file << norms[i]->getX1() << "," << norms[i]->getY1() << "," << norms[i]->getZ1() << std::endl;
-        //std::cout << "X: " << resultado->getVerts()[i]->getX1() << " Y: " << coords[i]->getY1() << std::endl;
-    }
-
-    file <<">>texturas<<"<< std::endl;
-    std::vector<Vertices*> texts= resultado->getTexts();
-    for (int i=0; i < texts.size();i++) {
-        file << texts[i]->getX1() << "," << texts[i]->getY1() << "," << texts[i]->getZ1() << std::endl;
-        //std::cout << "X: " << resultado->getVerts()[i]->getX1() << " Y: " << coords[i]->getY1() << std::endl;
-    }
-
-
-
-
-    file.close();
-}
-
-

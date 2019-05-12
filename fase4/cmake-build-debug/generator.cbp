@@ -158,14 +158,6 @@
 		<Unit filename="/home/carlos/Desktop/fase4/Estrutura/headers/Escala.h">
 			<Option target="engine"/>
 		</Unit>
-		<Unit filename="/home/carlos/Desktop/fase4/Estrutura/headers/Forma.cpp">
-			<Option target="engine"/>
-			<Option target="generator"/>
-		</Unit>
-		<Unit filename="/home/carlos/Desktop/fase4/Estrutura/headers/Forma.h">
-			<Option target="engine"/>
-			<Option target="generator"/>
-		</Unit>
 		<Unit filename="/home/carlos/Desktop/fase4/Estrutura/headers/Group.h">
 			<Option target="engine"/>
 		</Unit>

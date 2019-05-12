@@ -35,3 +35,16 @@ void Vertices::insereY1(float yy) {
 void Vertices::insereZ1(float zz) {
     vertice_z=zz;
 }
+
+
+Vertices* Vertices::normalCalc(Vertices* v) {
+    float l, coordX, coordY, coordZ;
+
+    l = sqrt(v->vertice_x * v->vertice_x + v->vertice_y * v->vertice_y + v->vertice_z * v->vertice_z);
+    coordX = v->vertice_x / l;
+    coordY = v->vertice_y / l;
+    coordZ = v->vertice_z / l;
+
+    return new Vertices(coordX, coordY, coordZ);
+}
+

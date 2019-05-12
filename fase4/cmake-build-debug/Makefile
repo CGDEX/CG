@@ -328,36 +328,6 @@ Estrutura/Vertices.cpp.s:
 	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/Vertices.cpp.s
 .PHONY : Estrutura/Vertices.cpp.s
 
-Estrutura/headers/Forma.o: Estrutura/headers/Forma.cpp.o
-
-.PHONY : Estrutura/headers/Forma.o
-
-# target to build an object file
-Estrutura/headers/Forma.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.o
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.o
-.PHONY : Estrutura/headers/Forma.cpp.o
-
-Estrutura/headers/Forma.i: Estrutura/headers/Forma.cpp.i
-
-.PHONY : Estrutura/headers/Forma.i
-
-# target to preprocess a source file
-Estrutura/headers/Forma.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.i
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.i
-.PHONY : Estrutura/headers/Forma.cpp.i
-
-Estrutura/headers/Forma.s: Estrutura/headers/Forma.cpp.s
-
-.PHONY : Estrutura/headers/Forma.s
-
-# target to generate assembly for a file
-Estrutura/headers/Forma.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.s
-	$(MAKE) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.s
-.PHONY : Estrutura/headers/Forma.cpp.s
-
 Generator/generator.o: Generator/generator.cpp.o
 
 .PHONY : Generator/generator.o
@@ -470,9 +440,6 @@ help:
 	@echo "... Estrutura/Vertices.o"
 	@echo "... Estrutura/Vertices.i"
 	@echo "... Estrutura/Vertices.s"
-	@echo "... Estrutura/headers/Forma.o"
-	@echo "... Estrutura/headers/Forma.i"
-	@echo "... Estrutura/headers/Forma.s"
 	@echo "... Generator/generator.o"
 	@echo "... Generator/generator.i"
 	@echo "... Generator/generator.s"

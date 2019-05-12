@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/carlos/Desktop/fase4/Estrutura/Vertices.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/generator.dir/Estrutura/Vertices.cpp.o"
-  "/home/carlos/Desktop/fase4/Estrutura/headers/Forma.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.o"
   "/home/carlos/Desktop/fase4/Generator/generator.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/generator.dir/Generator/generator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

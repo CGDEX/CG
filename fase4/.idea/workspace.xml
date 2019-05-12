@@ -41,22 +41,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Generator/plano.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1463">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/engine/engine.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="275">
+              <caret line="347" column="30" selection-start-line="347" selection-start-column="20" selection-end-line="347" selection-end-column="30" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -65,52 +53,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Generator/sphere.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Estrutura/headers/estrutura.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" selection-start-line="4" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Files3D/plano.3d">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Estrutura/headers/Group.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Generator/generator.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
+            <state relative-caret-position="101">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -119,13 +65,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Estrutura/Group.cpp">
+        <entry file="file://$PROJECT_DIR$/engine/Camera/camara.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="36" column="2" lean-forward="true" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="19">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -138,8 +81,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Examples/sistemaSolar.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            <state relative-caret-position="200">
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Generator/sphere.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Estrutura/Vertices.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="39" selection-start-line="39" selection-end-line="39" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Estrutura/headers/Vertices.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Generator/plano.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Estrutura/Group.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="101" selection-start-line="101" selection-end-line="104" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,44 +145,45 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tras</find>
-      <find>move_tras</find>
-      <find>dir_x</find>
-      <find>Camara.cpp</find>
-      <find>camera</find>
-      <find>Engine</find>
-      <find>engin</find>
-      <find>point</find>
-      <find>fps</find>
-      <find>std</find>
-      <find>::cout</find>
-      <find>lerX</find>
+      <find>texID</find>
+      <find>sim</find>
+      <find>lerTex</find>
       <find>std::cout</find>
-      <find>c</find>
-      <find>clear</find>
-      <find>is</find>
-      <find>std::co</find>
-      <find>luzX</find>
-      <find>vbo</find>
+      <find>a_shi</find>
+      <find>h_shift</find>
+      <find>getTexts</find>
+      <find>norma</find>
+      <find>tamanho</find>
+      <find>norm</find>
+      <find>render</find>
+      <find>renderScene</find>
+      <find>renderS</find>
       <find>renderSc</find>
-      <find>li</find>
-      <find>texture</find>
-      <find>lerXML</find>
-      <find>readF</find>
-      <find>fich</find>
-      <find>lerFich</find>
-      <find>lerF</find>
+      <find>textura</find>
+      <find>insereN</find>
+      <find>Forma</find>
+      <find>setVBO</find>
+      <find>lerFi</find>
+      <find>insereVerts</find>
       <find>parser</find>
-      <find>forma</find>
+      <find>translate</find>
+      <find>renderCurva</find>
       <find>tex</find>
+      <find>setV</find>
+      <find>modo_d</find>
+      <find>main</find>
+      <find>changeSiz</find>
+      <find>changeSize</find>
+      <find>texU</find>
     </findStrings>
     <replaceStrings>
       <replace>result</replace>
-      <replace>desl2</replace>
       <replace>sphere</replace>
       <replace>Time</replace>
       <replace>Camara</replace>
       <replace>Camara1</replace>
+      <replace>desl2</replace>
+      <replace>texH</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -198,7 +196,6 @@
         <option value="$PROJECT_DIR$/Estrutura/Vertices.h" />
         <option value="$PROJECT_DIR$/Files3D/orbita.3d" />
         <option value="$PROJECT_DIR$/Estrutura/estrutura.h" />
-        <option value="$PROJECT_DIR$/Files3D/sphere.3d" />
         <option value="$PROJECT_DIR$/Estrutura/Rotacao.h" />
         <option value="$PROJECT_DIR$/Estrutura/Translacao.h" />
         <option value="$PROJECT_DIR$/Estrutura/Escala.h" />
@@ -209,14 +206,12 @@
         <option value="$PROJECT_DIR$/Estrutura/Escala.cpp" />
         <option value="$PROJECT_DIR$/Estrutura/Rotacao.cpp" />
         <option value="$PROJECT_DIR$/Estrutura/Transformacao.cpp" />
-        <option value="$PROJECT_DIR$/Estrutura/Vertices.cpp" />
         <option value="$PROJECT_DIR$/Estrutura/headers/Transformacao.h" />
         <option value="$PROJECT_DIR$/Generator/box.cpp" />
         <option value="$PROJECT_DIR$/Generator/cilindro.cpp" />
         <option value="$PROJECT_DIR$/Generator/torus.cpp" />
         <option value="$PROJECT_DIR$/Generator/bezier.cpp" />
         <option value="$PROJECT_DIR$/Generator/cone.cpp" />
-        <option value="$PROJECT_DIR$/engine/parser.cpp" />
         <option value="$PROJECT_DIR$/engine/Camera/camara.cpp" />
         <option value="$PROJECT_DIR$/engine/Camera/camera.h" />
         <option value="$PROJECT_DIR$/engine/Camera/camera.cpp" />
@@ -225,17 +220,21 @@
         <option value="$PROJECT_DIR$/Examples/example4.xml" />
         <option value="$PROJECT_DIR$/Examples/example6.xml" />
         <option value="$PROJECT_DIR$/Estrutura/Translacao.cpp" />
-        <option value="$PROJECT_DIR$/Examples/example7.xml" />
-        <option value="$PROJECT_DIR$/Examples/sistemaSolar.xml" />
-        <option value="$PROJECT_DIR$/engine/engine.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Estrutura/headers/Forma.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/Examples/example7.xml" />
+        <option value="$PROJECT_DIR$/Files3D/sphere.3d" />
         <option value="$PROJECT_DIR$/Estrutura/headers/Forma.cpp" />
-        <option value="$PROJECT_DIR$/Generator/plano.cpp" />
-        <option value="$PROJECT_DIR$/Generator/sphere.cpp" />
-        <option value="$PROJECT_DIR$/Generator/generator.cpp" />
+        <option value="$PROJECT_DIR$/engine/parser.cpp" />
         <option value="$PROJECT_DIR$/Estrutura/headers/Group.h" />
         <option value="$PROJECT_DIR$/Estrutura/Group.cpp" />
+        <option value="$PROJECT_DIR$/Generator/plano.cpp" />
+        <option value="$PROJECT_DIR$/Examples/sistemaSolar.xml" />
+        <option value="$PROJECT_DIR$/engine/engine.cpp" />
+        <option value="$PROJECT_DIR$/Estrutura/Vertices.cpp" />
+        <option value="$PROJECT_DIR$/Generator/generator.cpp" />
+        <option value="$PROJECT_DIR$/Estrutura/headers/Vertices.h" />
+        <option value="$PROJECT_DIR$/Generator/sphere.cpp" />
       </list>
     </option>
   </component>
@@ -250,6 +249,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,16 +262,41 @@
               <item name="fase4" type="462c0819:PsiDirectoryNode" />
               <item name="engine" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fase4" type="462c0819:PsiDirectoryNode" />
+              <item name="engine" type="462c0819:PsiDirectoryNode" />
+              <item name="Camera" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fase4" type="462c0819:PsiDirectoryNode" />
+              <item name="Estrutura" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fase4" type="462c0819:PsiDirectoryNode" />
+              <item name="Files3D" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fase4" type="462c0819:PsiDirectoryNode" />
+              <item name="Generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fase4" type="462c0819:PsiDirectoryNode" />
+              <item name="Texturas" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/CG-Trabalho-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -302,7 +327,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="generator" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" PROGRAM_PARAMS="sphere 1 20 20 5" PASS_PARENT_ENVS_2="true" PROJECT_NAME="generator" TARGET_NAME="generator" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="generator" RUN_TARGET_NAME="generator">
+    <configuration name="generator" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" PROGRAM_PARAMS="../Examples/sistemaSolar.xml" PASS_PARENT_ENVS_2="true" PROJECT_NAME="generator" TARGET_NAME="engine" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="generator" RUN_TARGET_NAME="engine">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -325,19 +350,20 @@
       <workItem from="1555432765940" duration="33084000" />
       <workItem from="1556029466907" duration="6184000" />
       <workItem from="1556979202794" duration="4451000" />
-      <workItem from="1557069145524" duration="14653000" />
+      <workItem from="1557069145524" duration="28663000" />
+      <workItem from="1557421872210" duration="21887000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59517000" />
+    <option name="totallyTimeSpent" value="95414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="944" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17431694" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17431694" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CMake" order="0" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5002767" side_tool="true" weight="0.32925338" />
@@ -346,7 +372,7 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="bottom" id="Database Changes" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.4997233" weight="0.3659731" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.4997233" visible="true" weight="0.3659731" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3985056" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
@@ -373,8 +399,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Estrutura/Escala.h" />
-    <entry file="file://$PROJECT_DIR$/Estrutura/Cor.h" />
     <entry file="file:///usr/include/GL/glew.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -479,32 +503,8 @@
     <entry file="file://$PROJECT_DIR$/Texturas/neptuno.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/Camera/camara.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Examples/example7.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Files3D/box.3d">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/parser.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Estrutura/headers/Rotacao.h">
       <provider selected="true" editor-type-id="text-editor" />
@@ -520,23 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-218">
           <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Estrutura/Translacao.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="127" column="3" selection-start-line="127" selection-start-column="3" selection-end-line="127" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Generator/torus.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -564,63 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="151" selection-start-line="18" selection-start-column="151" selection-end-line="18" selection-end-column="151" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Estrutura/headers/Forma.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#54#75#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Estrutura/headers/Forma.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Estrutura/headers/Vertices.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Estrutura/Vertices.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Generator/sphere.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Examples/sistemaSolar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Generator/plano.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Files3D/plano.3d">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -628,13 +554,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Generator/generator.cpp">
+    <entry file="file://$PROJECT_DIR$/Files3D/bezier.3d">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="377">
+          <caret line="76800" lean-forward="true" selection-start-line="76800" selection-end-line="76800" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/example7.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -645,35 +575,153 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Estrutura/headers/Forma.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#54#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Estrutura/headers/Forma.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Estrutura/headers/Group.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+        <state relative-caret-position="689">
+          <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="311" selection-start-line="7" selection-start-column="306" selection-end-line="7" selection-end-column="311" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Generator/torus.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/parser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Estrutura/Translacao.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-147">
+          <caret line="99" column="2" selection-start-line="99" selection-start-column="2" selection-end-line="101" selection-end-column="110" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Estrutura/headers/Translacao.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185">
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/sistemaSolar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/Camera/camara.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Files3D/sphere.3d">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Generator/plano.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Estrutura/Group.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="2" lean-forward="true" selection-start-line="36" selection-start-column="2" selection-end-line="36" selection-end-column="2" />
+        <state relative-caret-position="152">
+          <caret line="101" selection-start-line="101" selection-end-line="104" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Estrutura/Vertices.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="39" selection-start-line="39" selection-end-line="39" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/engine/engine.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="275">
+          <caret line="347" column="30" selection-start-line="347" selection-start-column="20" selection-end-line="347" selection-end-column="30" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Generator/generator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Estrutura/headers/Vertices.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Generator/sphere.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>

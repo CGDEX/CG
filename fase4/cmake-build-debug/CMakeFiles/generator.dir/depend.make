@@ -4,11 +4,6 @@
 CMakeFiles/generator.dir/Estrutura/Vertices.cpp.o: ../Estrutura/Vertices.cpp
 CMakeFiles/generator.dir/Estrutura/Vertices.cpp.o: ../Estrutura/headers/Vertices.h
 
-CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.o: ../Estrutura/headers/Forma.cpp
-CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.o: ../Estrutura/headers/Forma.h
-CMakeFiles/generator.dir/Estrutura/headers/Forma.cpp.o: ../Estrutura/headers/Vertices.h
-
-CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Estrutura/headers/Forma.h
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Estrutura/headers/Vertices.h
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/./bezier.cpp
 CMakeFiles/generator.dir/Generator/generator.cpp.o: ../Generator/./box.cpp

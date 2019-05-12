@@ -1,83 +1,105 @@
 #include "../Estrutura/headers/estrutura.h"
+#include "../Estrutura/headers/Vertices.h"
 #include <algorithm>
 #include <vector>
 #include <math.h>
+using namespace std;
 
 // Função que cria um vector com as coordenadas de vários pontos para criar uma esfera
-Forma* esfera (float raio, int slices, int stacks) {
+void sphere (float radius, int slices, int stacks){
+    ofstream file("../Files3D/sphere.3d");
 
-    // STACKS - CAMADAS HORIZONTAIS
-    // SLICES - VERTICAL
+    std::vector<Vertices*> normal;
+    std::vector<Vertices*> textura;
+    Vertices* aux;
 
-    Forma* resultado = new Forma();
+    float a = 0, h = 0;
+    float desl1 = (2 * M_PI)/slices;
+    float desl2 = M_PI/stacks;
 
-    float desl1 = (2*M_PI)/slices;
-    float desl2 = (M_PI)/stacks;
-    float textV = 1/(float)stacks;
-    float textH = 1/(float) slices;
+    float texH = 1 / (float)slices;
+    float texV = 1 / (float)stacks;
 
+    for(int i = 0; i < stacks; i++){
+        a = 0;
 
+        for(int j = 0; j < slices;j++){
+            float x1 = (radius*sin(a)*sin(h));
+            float y1 = (radius*cos(h));
+            float z1 = (radius*cos(a)*sin(h));
 
-    float a,b = 0;
+            float x2 = (radius*sin(a+desl1)*sin(h+desl2));
+            float y2 = (radius*cos(h+desl2));
+            float z2 = (radius*cos(a+desl1)*sin(h+desl2));
 
-    for (int i=0;i<stacks;i++) {
-        a=0;
-        for(int j=0;j<slices;j++) {
+            float x3 = (radius*sin(a+desl1)*sin(h));
+            float y3 = (radius*cos(h));
+            float z3 = (radius*cos(a+desl1)*sin(h));
 
-
-            float x1= raio*sin(b)*sin(a);
-            float y1 = raio*cos(b);
-            float z1 = raio*sin(b)*cos(a);
-
-
-            float x2 = raio*sin(b+desl2)*sin(a+desl1);
-            float y2 = raio*cos(b+desl2);
-            float z2 = raio*sin(b+desl2)*cos(a+desl1);
-
-
-            float x3 = raio*sin(a+desl1)*sin(b);
-            float y3 = raio*cos(b);
-            float z3 = raio*sin(b)*cos(a+desl1);
-
-
-            float x4 = raio*sin(a)*sin(b+desl2);
-            float y4 = raio*cos(b+desl2);
-            float z4 = raio*sin(b+desl2)*cos(a);
+            float  x4 = (radius*sin(a)*sin(h+desl2));
+            float  y4 = (radius*cos(h+desl2));
+            float  z4 = (radius*cos(a)*sin(h+desl2));
 
 
-            resultado->insereVerts(new Vertices(x1,y1,z1));
-            resultado->insereVerts(new Vertices(x2,y2,z2));
-            resultado->insereVerts(new Vertices(x3,y3,z3));
+            file << x1 << "," << y1 << "," << z1 << endl;
+            aux = Vertices::normalCalc(new Vertices(x1,y1,z1));
+            normal.push_back(aux);
+            textura.push_back(new Vertices(j*texH,i*texV + texV,0));
 
 
-            resultado->insereNorms(new Vertices(x1/raio,y1/raio,z1/raio));
-            resultado->insereNorms(new Vertices(x2/raio,y2/raio,z2/raio));
-            resultado->insereNorms(new Vertices(x3/raio,y3/raio,z3/raio));
+
+            file << x2 << "," << y2 << "," << z2 << endl;
+            aux = Vertices::normalCalc(new Vertices(x2,y2,z2));
+            normal.push_back(aux);
+            textura.push_back(new Vertices(j*texH + texH,i*texV,0));
 
 
-            resultado->insereVerts(new Vertices(x1,y1,z1));
-            resultado->insereVerts(new Vertices(x3,y3,z3));
-            resultado->insereVerts(new Vertices(x4,y4,z4));
+
+            file << x3 << "," << y3 << "," << z3 << endl;
+            aux = Vertices::normalCalc(new Vertices(x3,y3,z3));
+            normal.push_back(aux);
+            textura.push_back(new Vertices(j*texH + texH, i*texV + texV, 0));
 
 
-            resultado->insereNorms(new Vertices(x1/raio,y1/raio,z1/raio));
-            resultado->insereNorms(new Vertices(x3/raio,y3/raio,z3/raio));
-            resultado->insereNorms(new Vertices(x4/raio,y4/raio,z4/raio));
+
+            file << x1 << "," << y1 << "," << z1 << endl;
+            aux = Vertices::normalCalc(new Vertices(x1,y1,z1));
+            normal.push_back(aux);
+            textura.push_back(new Vertices(j*texH,i*texV + texV,0));
 
 
-            resultado->insereTexts(new Vertices(j*textV,i*textH,0));
-            resultado->insereTexts(new Vertices(j*textV + textV,i*textH + textH,0));
-            resultado->insereTexts(new Vertices(j*textV + textV,i*textH,0));
-
-            resultado->insereTexts(new Vertices(j*textV + textV,i*textH + textH,0));
-            resultado->insereTexts(new Vertices(j*textV,i*textH,0));
-            resultado->insereTexts(new Vertices(j*textV,i*textH + textH,0));
+            file << x4 << "," << y4 << "," << z4 << endl;
+            aux = Vertices::normalCalc(new Vertices(x4,y4,z4));
+            normal.push_back(aux);
+            textura.push_back(new Vertices(j*texH, i*texV, 0));
 
 
-            a = (j+1)*desl1;
+
+            file << x2 << "," << y2 << "," << z2 << endl;
+            aux = Vertices::normalCalc(new Vertices(x2,y2,z2));
+            normal.push_back(aux);
+            textura.push_back(new Vertices(j*texH + texH, i*texV + texV, 0));
+
+            a= (j+1) * desl1;
         }
-        b = (i+1)*desl2;
+
+        h= (i+1) * desl2;
     }
 
-    return resultado;
+
+    file <<">>normais<<" << endl;
+    for(int i=0;i<normal.size();i++) {
+        file << normal[i]->getX1() << "," << normal[i]->getY1() << "," << normal[i]->getZ1()<< endl;
+    }
+
+
+    file << ">>texturas<<" << endl;
+    for(int i = textura.size() - 1; i >= 0; i-=3){
+        file << textura[i]->getX1() << "," << textura[i]->getY1()<< "," << textura[i]->getZ1() << endl;
+        file << textura[i-1]->getX1() << "," << textura[i-1]->getY1()<< "," << textura[i-1]->getZ1() << endl;
+        file << textura[i-2]->getX1() << "," << textura[i-2]->getY1()<< "," << textura[i-2]->getZ1() << endl;
+    }
+    file.close();
 }
+
+

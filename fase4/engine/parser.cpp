@@ -8,36 +8,6 @@ int achouT = 0;
 int achouC = 0;
 
 // Função que recebe um string que é o caminho e vai ler o ficheiro e a medida que vai lendo o ficheiro vai meter na estrutura as coordenadas
-std::vector<Vertices*> lerFicheiro(std::string caminho) {
-
-    std::vector<Vertices*> verts;
-    std::ifstream ficheiro(caminho);
-    std::string linha;
-
-
-    if(ficheiro.fail()) {
-        std::cout << "Bip bip! não consegui encontrar o ficheiro 3D!"<< std::endl;
-    }
-    else {
-        while(getline(ficheiro,linha)) {
-            size_t pos;
-            Vertices* vertice = new Vertices();
-
-
-            vertice->insereX1(std::stof(linha,&pos));
-
-            linha.erase(0,pos+1);
-            vertice->insereY1(std::stof(linha,&pos));
-
-            linha.erase(0,pos+1);
-            vertice->insereZ1(std::stof(linha,&pos));
-
-            verts.push_back(vertice);
-        }
-    }
-    return verts;
-}
-
 
 
 Rotacao* parserRotation(tinyxml2::XMLElement* elemento) {
@@ -130,6 +100,5 @@ Escala* parserScale(tinyxml2::XMLElement* elemento) {
     return escala;
 
 }
-
 
 

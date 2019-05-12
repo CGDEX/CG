@@ -6,15 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/carlos/Desktop/fase4/Estrutura/headers/Forma.h
-Vertices.h
 /home/carlos/Desktop/fase4/Estrutura/headers/Vertices.h
-iostream
+math.h
 -
-vector
--
-
-/home/carlos/Desktop/fase4/Estrutura/headers/Vertices.h
 
 /home/carlos/Desktop/fase4/Generator/./bezier.cpp
 ../Estrutura/headers/estrutura.h
@@ -55,8 +49,6 @@ math.h
 /home/carlos/Desktop/fase4/Generator/./plano.cpp
 ../Estrutura/headers/estrutura.h
 /home/carlos/Desktop/fase4/Generator/Estrutura/headers/estrutura.h
-../Estrutura/headers/Forma.h
-/home/carlos/Desktop/fase4/Generator/Estrutura/headers/Forma.h
 stdio.h
 -
 stdlib.h
@@ -67,6 +59,8 @@ vector
 /home/carlos/Desktop/fase4/Generator/./sphere.cpp
 ../Estrutura/headers/estrutura.h
 /home/carlos/Desktop/fase4/Generator/Estrutura/headers/estrutura.h
+../Estrutura/headers/Vertices.h
+/home/carlos/Desktop/fase4/Generator/Estrutura/headers/Vertices.h
 algorithm
 -
 vector
@@ -113,8 +107,6 @@ algorithm
 /home/carlos/Desktop/fase4/Generator/./torus.cpp
 ./bezier.cpp
 /home/carlos/Desktop/fase4/Generator/./bezier.cpp
-../Estrutura/headers/Forma.h
-/home/carlos/Desktop/fase4/Estrutura/headers/Forma.h
 ../Estrutura/headers/Vertices.h
 /home/carlos/Desktop/fase4/Estrutura/headers/Vertices.h
 

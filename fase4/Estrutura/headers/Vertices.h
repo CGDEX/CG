@@ -2,7 +2,7 @@
 #ifndef GENERATOR_VERTICES_H
 #define GENERATOR_VERTICES_H
 
-
+#include <math.h>
 class Vertices {
     float vertice_x;
     float vertice_y;
@@ -18,7 +18,7 @@ public:
     void insereX1(float xx);
     void insereY1(float yy);
     void insereZ1(float zz);
-
+    static Vertices* normalCalc(Vertices* v);
 };
 
 

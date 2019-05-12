@@ -11,7 +11,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/carlos/Desktop/fase4/Estrutura/Transformacao.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Transformacao.cpp.o"
   "/home/carlos/Desktop/fase4/Estrutura/Translacao.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o"
   "/home/carlos/Desktop/fase4/Estrutura/Vertices.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o"
-  "/home/carlos/Desktop/fase4/Estrutura/headers/Forma.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.o"
   "/home/carlos/Desktop/fase4/engine/engine.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/engine.dir/engine/engine.cpp.o"
   "/home/carlos/Desktop/fase4/engine/tinyxml2.cpp" "/home/carlos/Desktop/fase4/cmake-build-debug/CMakeFiles/engine.dir/engine/tinyxml2.cpp.o"
   )

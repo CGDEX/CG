@@ -34,10 +34,6 @@ CMakeFiles/engine.dir/Estrutura/Translacao.cpp.o: ../Estrutura/headers/Vertices.
 CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o: ../Estrutura/Vertices.cpp
 CMakeFiles/engine.dir/Estrutura/Vertices.cpp.o: ../Estrutura/headers/Vertices.h
 
-CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.o: ../Estrutura/headers/Forma.cpp
-CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.o: ../Estrutura/headers/Forma.h
-CMakeFiles/engine.dir/Estrutura/headers/Forma.cpp.o: ../Estrutura/headers/Vertices.h
-
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/./parser.cpp
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/./tinyxml2.h
 CMakeFiles/engine.dir/engine/engine.cpp.o: ../engine/Camera/camara.cpp

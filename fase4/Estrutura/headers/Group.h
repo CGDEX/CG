@@ -5,7 +5,7 @@
 #include <GL/glew.h>
 #include <GL/glut.h>
 #include <GL/gl.h>
-#include "Forma.h"
+
 #ifndef GENERATOR_GROUP_H
 #define GENERATOR_GROUP_H
 
@@ -13,16 +13,31 @@
 class Group {
     std::string nome;
     Transformacao* tranformacoes;
-    //std::vector<Vertices*> vertics;
-    std::vector<Forma*> figuras;
+
+    std::vector<Vertices*> vertics;
+    std::vector<Vertices*> normal;
+    std::vector<Vertices*> textura;
+
+
+
     std::vector<Group*> filhos;
+
+    //VBOS
     GLuint buffer[3];
     int nvertices;
+    int nnormais;
+    int ntexturas;
+    float* v;
+    float* n;
+    float* t;
 
 
 
+    unsigned int tt, width, height;
+    unsigned int texID;
+    unsigned char *data;
 
-    std::string textura;
+    std::string nomeTextura;
 
 
 
@@ -30,20 +45,30 @@ class Group {
         Group();
         void setFilho(std::vector<Group*> g);
         void insereTransformacoes(Transformacao* t);
-        void insereFiguras(std::vector<Forma*> figrs);
-        //void insereVerts(std::vector<Vertices*> vert);
+
+        void insereVerts(std::vector<Vertices*> vert);
+        void insereNorms(std::vector<Vertices*> nms);
+        void insereTexts(std::vector<Vertices*> texts);
         void insereFilho(Group* f);
         void insereNome(std::string name);
         Transformacao* getTransformacoes();
-        //std::vector<Vertices*> getVertices();
-        std::vector<Forma*> getFormas();
+        std::vector<Vertices*> getVertices();
+
         std::vector<Group*> getFilhos();
         std::string getNome();
         void desenha();
         void VBO();
-        void insereN(int n);
+
         void insereTextura(std::string text);
         std::string getTextura();
+
+
+        void insereVertice(Vertices* vv);
+        void insereNormal(Vertices* nn);
+        void insertTextura(Vertices* tt);
+
+        void novaTextura();
+        unsigned int getTexID();
 
 
 };
