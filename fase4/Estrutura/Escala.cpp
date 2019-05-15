@@ -8,11 +8,6 @@ Escala::Escala() {
     ze = 1;
 };
 
-Escala::Escala(float x, float y, float z){
-    x = x;
-    y = y;
-    z = z;
-};
 
 
 void Escala::insereXE(float x) {

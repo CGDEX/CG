@@ -246,10 +246,7 @@
             <model file = "sphere.3d" texture="saturno.jpg"/>
         </models>
         <group>
-            <translate Time="10">
-                <point X="0" Y="0" Z="0" />
-            </translate>
-            <models>d
+            <models>
                 <model file = "torus.3d" texture = "anel.jpg"/>
             </models>
         </group>

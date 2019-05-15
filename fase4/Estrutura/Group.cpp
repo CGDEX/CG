@@ -27,9 +27,7 @@ Transformacao* Group::getTransformacoes() {
 }
 
 
-std::vector<Vertices*> Group::getVertices() {
-    return vertics;
-}
+
 
 
 

@@ -233,7 +233,7 @@ void renderScene(void) {
                 glPushMatrix();
                 Translacao* translacao = aux[j]->getTransformacoes()->getTranslacao();
 
-                if (!translacao->vazioT()) {
+                if (translacao->getTempo()!=0 && translacao->getPontos().size()!=0) {
 
                     float t3 = glutGet(GLUT_ELAPSED_TIME) % (int) (translacao->getTempo()*1000);
 

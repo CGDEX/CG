@@ -126,7 +126,7 @@ std::vector<Vertices*> Translacao::curva() {
     float t;
     for (t = 0; t < 1; t += 0.01) {
         getGlobalCatmullRomPoint(t, res, pontosT);
-        //    std::cout << res[0] << " " << res[1] << " " << res[2] << std::endl;
+
         Vertices* v = new Vertices(res[0], res[1], res[2]);
         pontosC.push_back(v);
     }
