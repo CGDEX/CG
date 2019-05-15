@@ -62,7 +62,7 @@ void Group::desenha() {
 
 void Group::VBO() {
 
-    int i=0;
+    size_t i=0;
     int p=0;
 
     glEnableClientState(GL_VERTEX_ARRAY);
@@ -99,9 +99,6 @@ void Group::VBO() {
     nvertices = vertics.size() * 3;
     nnormais = normal.size() * 3;
     ntexturas= textura.size() * 2;
-    std::cout<< "Tamanho vertcs: " << vertics.size() << std::endl;
-    std::cout<< "Tamanho norm: " << normal.size() << std::endl;
-    std::cout<< "Tamanho text: " << textura.size()<< std::endl;
 
     glGenBuffers(3,buffer);
     glBindBuffer(GL_ARRAY_BUFFER,buffer[0]);
@@ -160,18 +157,6 @@ std::string Group::getTextura() {
 
 
 
-
-void Group::insertTextura(Vertices *tt) {
-    textura.push_back(tt);
-}
-
-void Group::insereNormal(Vertices *nn) {
-    normal.push_back(nn);
-}
-
-void Group::insereVertice(Vertices *vv) {
-    vertics.push_back(vv);
-}
 
 
 void Group::insereVerts(std::vector<Vertices *> vert) {

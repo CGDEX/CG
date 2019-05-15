@@ -67,9 +67,6 @@ void letrasTeclado(unsigned char key, int x, int y){
             }
             else break;
 
-
-
-
         case 'f':
         case 'F':
             glutFullScreen();
@@ -145,7 +142,7 @@ void fps() {
     }
 }
 
-void renderCurva(std::vector<Vertices*> curva) {
+void renderCurva(std::vector<Vertices*> curva, float r, float g, float b) {
     float ponts[3];
     size_t i;
 
@@ -155,6 +152,7 @@ void renderCurva(std::vector<Vertices*> curva) {
         ponts[0] = curva[i]->getX1();
         ponts[1] = curva[i]->getY1();
         ponts[2] = curva[i]->getZ1();
+        glColor3f(r,g,b);
         glVertex3fv(ponts);
     }
     glEnd();
@@ -162,7 +160,7 @@ void renderCurva(std::vector<Vertices*> curva) {
 
 
 void renderScene(void) {
-    std::cout << "Chegou ao render scene" << std::endl;
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glLoadIdentity();
@@ -183,7 +181,7 @@ void renderScene(void) {
         Group* grupo = groups[i];
 
         if(i==0) {
-            std::cout << "i = 0 do sol." << std::endl;
+
             GLfloat pos[4] = { luzX, luzY, luzZ, isPoint};
             GLfloat amb[3] = { 0.0, 0.0, 0.0 };
             GLfloat diff[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -212,7 +210,7 @@ void renderScene(void) {
             float t2 = t1 / (transl->getTempo()*1000);
             std::vector<Vertices*> pontos = transl->getPontos();
             transl->curva();
-            renderCurva(transl->getCurva());
+            renderCurva(transl->getCurva(),cor->getR1(),cor->getG1(),cor->getB1());
             transl->getGlobalCatmullRomPoint(t2,resultado,pontos);
             glTranslatef(resultado[0],resultado[1],resultado[2]);
         }
@@ -222,16 +220,9 @@ void renderScene(void) {
             glScalef(escala->getXE(),escala->getYE(),escala->getZE());
         }
 
-        if (grupo->getTextura().compare("") != 0) {
-            std::cout << "Chegou ao if da textura "<< grupo->getTexID() << std::endl;
 
-            glBindTexture(GL_TEXTURE_2D,grupo->getTexID());
 
-        }
-        grupo->desenha();
 
-        glBindTexture(GL_TEXTURE_2D, 0);
-        glPopMatrix();
 // Parte dos filhos
         if(groups[i]->getFilhos().size()!=0) {
 
@@ -251,7 +242,7 @@ void renderScene(void) {
                     std::vector<Vertices*> vertices = translacao->getPontos();
 
                     translacao->curva();
-                    renderCurva(translacao->getCurva());
+                    renderCurva(translacao->getCurva(),aux[j]->getTransformacoes()->getCor()->getR1(),aux[j]->getTransformacoes()->getCor()->getG1(),aux[j]->getTransformacoes()->getCor()->getB1());
                     translacao->getGlobalCatmullRomPoint(t4,resultado,vertices);
                     glTranslatef(resultado[0],resultado[1],resultado[2]);
                 }
@@ -268,26 +259,32 @@ void renderScene(void) {
                     glScalef(scale->getXE(),scale->getYE(),scale->getZE());
                 }
 
-                Cor* cores = aux[j]->getTransformacoes()->getCor();
 
-                if(cores->getR1()!=0 && cores->getG1()!=0 && cores->getB1()!=0) {
-                    glColor3f(cores->getR1(),cores->getG1(),cores->getB1());
-                }
+                if (aux[j]->getTextura().compare("") != 0) {
 
-
-                if (grupo->getTextura().compare("") != 0) {
-                    std::cout << "Chegou ao if da textura "<< grupo->getTexID() << std::endl;
 
                     glBindTexture(GL_TEXTURE_2D,aux[j]->getTexID());
-
+                    glEnable(GL_LIGHTING);
                 }
+
                 aux[j]->desenha();
+                glDisable(GL_LIGHTING);
+                glBindTexture(GL_TEXTURE_2D,0);
                 glPopMatrix();
             }
         }
 
 
+        if (grupo->getTextura().compare("") != 0) {
+            glBindTexture(GL_TEXTURE_2D,grupo->getTexID());
+            glEnable(GL_LIGHTING);
+        }
 
+
+        grupo->desenha();
+        glDisable(GL_LIGHTING);
+        glBindTexture(GL_TEXTURE_2D,0);
+        glPopMatrix();
 
 
 
@@ -306,13 +303,13 @@ void setVBO() {
     glEnable(GL_TEXTURE_2D);
     glShadeModel (GL_SMOOTH);
 
-    for (int i = 0; i<groups.size();i++) {
+    for (size_t i = 0; i<groups.size();i++) {
         groups[i]->VBO();
 
         if(groups[i]->getFilhos().size()>0) {
             std::vector<Group*> sub = groups[i]->getFilhos();
 
-            for(int j=0; j<sub.size();j++) {
+            for(size_t j=0; j<sub.size();j++) {
 
                 sub[j]->VBO();
             }
@@ -424,7 +421,7 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
     }
     if(achouC==1) transform->insereCor(cor);
     else {
-        cor->insereR1(1);cor->insereG1(1);cor->insereB1(1);
+        cor->insereR1(0);cor->insereG1(0);cor->insereB1(0);
         transform->insereCor(cor);
     }
     if(achouR==1) transform->insereRotacao(rotacao);
@@ -435,6 +432,7 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
     if(achouT==1) transform->insereTranslacao(translacao);
     else {
         Translacao* transl = new Translacao();
+
         transform->insereTranslacao(transl);
 
     }
@@ -454,9 +452,6 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
         caminho3D.append(grupo->getNome());
 
         lerFicheiro(caminho3D);
-        std::cout<< "Tamanho vertcs no for: " << ponts.size() << std::endl;
-        std::cout<< "Tamanho norm no for: " << norms.size() << std::endl;
-        std::cout<< "Tamanho text no for: " << txts.size()<< std::endl;
 
         grupo->insereVerts(ponts);
         grupo->insereNorms(norms);
@@ -469,11 +464,11 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
 
         if(identif=="filho") {
             int pos = groups.size() - 1;
-
             groups[pos]->insereFilho(grupo);
         }
         else if(identif=="pai") {
             int pos = groups.size() -1;
+
             groups[pos]->insereFilho(grupo);
         }
         else {
@@ -491,7 +486,6 @@ void parserElementos(tinyxml2::XMLElement* elemento,Transformacao* transf, std::
     }
 
     if ((identif!="filho" && identif!="pai") && (elemento->NextSiblingElement("group"))) {
-
         parserElementos(elemento->NextSiblingElement("group"),transf,"irmao");
     }
 
@@ -522,16 +516,9 @@ void lerXML(std::string caminho) {
             luzX = atof (light->Attribute("posX"));
             luzY = atof(light->Attribute("posY"));
             luzZ = atof(light->Attribute("posZ"));
-
-            std::cout<<"POS X " << luzX << " POS Y" << luzY << " POS Z " << luzZ << " TIPO " << isPoint << std::endl;
         }
 
         Transformacao* transform = new Transformacao();
-        Escala* esc = new Escala(1,1,1);
-
-
-
-
         parserElementos(group,transform,"irmao");
 
     }

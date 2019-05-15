@@ -31,8 +31,7 @@ int main(int argc, char** argv) {
     // Para receber um Box é preciso: X, Y, Z, nº de divisões e caminho do ficheiro para gerar o ficheiro .3d <---- é preciso ver melhor este
 
     if (!(strcmp(argv[1],"plane"))) {
-
-
+        plano(atof(argv[2]));
         std::cout << "Ficheiro plano.3d escrito com sucesso"<< std::endl;
     }
     else if (!(strcmp(argv[1],"cone"))) {
@@ -45,9 +44,7 @@ int main(int argc, char** argv) {
         std::cout << "Ficheiro sphere.3d escrito com sucesso"<< std::endl;
     }
     else if (!(strcmp(argv[1],"box"))) {
-        dados = box (atof(argv[2]),atof(argv[3]),atof(argv[4]),atoi(argv[5]));
-        escreverFicheiro("../Files3D/box.3d",dados);
-        std::cout << "Ficheiro box.3d escrito com sucesso"<< std::endl;
+
     }
     else if (!(strcmp(argv[1],"-help"))){
         imprimeMenuHelp();
@@ -58,14 +55,13 @@ int main(int argc, char** argv) {
         std::cout << "Ficheiro cilindro.3d escrito com sucesso"<< std::endl;
     }
     else if(!(strcmp(argv[1],"torus"))) {
-        dados = createTorus(atof(argv[2]),atof(argv[3]),atof(argv[4]),atof(argv[5]));
-        escreverFicheiro("../Files3D/torus.3d",dados);
+        createTorus(atof(argv[2]),atof(argv[3]),atof(argv[4]),atof(argv[5]));
         std::cout <<"Ficheiro torus.3d escrito com sucesso" << std::endl;
     }
     else if(!(strcmp(argv[1],"orbit"))) {
         std::cout << "dsadsad" << std::endl;
-        dados = createTorus(atof(argv[2]),atof(argv[3]),atof(argv[4]),atof(argv[5]));
-        escreverFicheiro("../Files3D/orbita.3d",dados);
+
+
         std::cout<<"Ficheiro orbita.3d escrito com sucesso" <<std::endl;
     }
     else if(!(strcmp(argv[1],"patch"))){

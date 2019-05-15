@@ -10,7 +10,7 @@ class Escala {
 
     public:
         Escala();
-        Escala(float x, float y, float z);
+
         float getXE();
         float getYE();
         float getZE();

@@ -1,8 +1,12 @@
 #include "../Estrutura/headers/estrutura.h"
+#include "../Estrutura/headers/Vertices.h"
 #include <algorithm>
 #include <vector>
 
-// Função que cria um vector com as coordenadas de vários pontos para criar um plano de frente e outra de trás.
+
+std::vector<Vertices*> resultado1; std::vector<Vertices*> normal1; std::vector<Vertices*> textura1;
+
+
 std::vector<vertices> cria_plano_frente_tras(float largura, float altura, float comprimento, int camadas) {
     std::vector<vertices> resultado;
     vertices coordenadas1;
@@ -194,7 +198,7 @@ std::vector<vertices> cria_plano_esquerda_direita(float largura, float altura, f
 
 
 // Função que cria um vector com as coordenadas de vários pontos para criar uma caixa
-std::vector<vertices> box(float largura, float altura, float comprimento, int camadas) {
+void box(float largura, float altura, float comprimento, int camadas) {
     // Face da frente
     std::vector<vertices> resultado1 = cria_plano_frente_tras(largura,altura,(comprimento/2),camadas);
 
@@ -217,14 +221,7 @@ std::vector<vertices> box(float largura, float altura, float comprimento, int ca
     std::reverse(resultado6.begin(),resultado6.end());
 
 
-    std::vector<vertices> resultadoFinal (resultado1.size()+resultado2.size()+resultado3.size()+resultado4.size()+resultado5.size()+resultado6.size());
-    resultadoFinal.insert(resultadoFinal.end(),resultado1.begin(),resultado1.end());
-    resultadoFinal.insert(resultadoFinal.end(),resultado2.begin(),resultado2.end());
-    resultadoFinal.insert(resultadoFinal.end(),resultado3.begin(),resultado3.end());
-    resultadoFinal.insert(resultadoFinal.end(),resultado4.begin(),resultado4.end());
-    resultadoFinal.insert(resultadoFinal.end(),resultado5.begin(),resultado5.end());
-    resultadoFinal.insert(resultadoFinal.end(),resultado6.begin(),resultado6.end());
 
 
-    return resultadoFinal;
+
 }

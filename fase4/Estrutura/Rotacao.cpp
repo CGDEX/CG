@@ -24,9 +24,6 @@ void Rotacao::insereTempo(float t) {
 }
 
 
-float Rotacao::getAngulo() {
-    return angleR;
-}
 
 float Rotacao::getTempo(){
     return timeR;

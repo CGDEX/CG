@@ -38,9 +38,7 @@ float Translacao::getZ() {
 }
 
 */
-void Translacao::inserePonto(Vertices* ponto) {
-    pontosT.push_back(ponto);
-}
+
 
 void Translacao::insereTempo(float t) {
     tempo = t;
@@ -62,9 +60,7 @@ void Translacao::inserePontosT(std::vector<Vertices*> pontos) {
     pontosT = pontos;
 }
 
-void Translacao::inserePontosC(std::vector<Vertices*> pontos) {
-    pontosC = pontos;
-}
+
 
 void Translacao::getCatmullRomPoint(float t, int* indices, float* resultado, std::vector<Vertices*> pontosT) {
 

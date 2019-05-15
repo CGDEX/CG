@@ -16,7 +16,7 @@ class Rotacao {
         void insereX(float x);
         void insereY(float y);
         void insereZ(float z);
-        float getAngulo();
+
         float getTempo();
         float getXR();
         float getYR();

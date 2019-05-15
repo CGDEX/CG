@@ -1,0 +1,8 @@
+<scene>
+    <group>
+        <scale X="0.5" Y="0.5" Z="0.0"/>
+        <models>
+            <model file = "torus.3d" texture = "terra.jpg"/>
+        </models>
+    </group>
+</scene>

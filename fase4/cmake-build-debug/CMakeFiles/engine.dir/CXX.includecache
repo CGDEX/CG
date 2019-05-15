@@ -18,22 +18,6 @@ headers/Group.h
 IL/il.h
 -
 
-/home/carlos/Desktop/fase4/Estrutura/Transformacao.cpp
-headers/Transformacao.h
-/home/carlos/Desktop/fase4/Estrutura/headers/Transformacao.h
-
-/home/carlos/Desktop/fase4/Estrutura/Translacao.cpp
-headers/Translacao.h
-/home/carlos/Desktop/fase4/Estrutura/headers/Translacao.h
-iostream
--
-math.h
--
-
-/home/carlos/Desktop/fase4/Estrutura/Vertices.cpp
-headers/Vertices.h
-/home/carlos/Desktop/fase4/Estrutura/headers/Vertices.h
-
 /home/carlos/Desktop/fase4/Estrutura/headers/Cor.h
 
 /home/carlos/Desktop/fase4/Estrutura/headers/Escala.h

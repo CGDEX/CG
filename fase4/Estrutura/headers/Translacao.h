@@ -24,9 +24,9 @@ class Translacao {
         //void insereY(float y);
         //void insereZ(float z);
         void insereTempo(float t);
-        void inserePonto(Vertices* ponto);
+
         void inserePontosT(std::vector<Vertices*> pontos);
-        void inserePontosC(std::vector<Vertices*> pontos);
+
         std::vector<Vertices*> getPontos();
         float getTempo();
         std::vector<Vertices*> curva();

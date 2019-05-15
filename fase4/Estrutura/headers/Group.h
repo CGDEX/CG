@@ -52,7 +52,7 @@ class Group {
         void insereFilho(Group* f);
         void insereNome(std::string name);
         Transformacao* getTransformacoes();
-        std::vector<Vertices*> getVertices();
+
 
         std::vector<Group*> getFilhos();
         std::string getNome();
@@ -63,9 +63,7 @@ class Group {
         std::string getTextura();
 
 
-        void insereVertice(Vertices* vv);
-        void insereNormal(Vertices* nn);
-        void insertTextura(Vertices* tt);
+
 
         void novaTextura();
         unsigned int getTexID();

@@ -9,7 +9,7 @@ class Cor {
 
     public:
         Cor();
-        Cor(float r1, float g1, float b1);
+
         void insereR1(float r1);
         void insereG1(float g1);
         void insereB1(float b1);
@@ -17,6 +17,7 @@ class Cor {
         float getG1();
         float getB1();
         bool vazioC();
+
 
 };
 
